@@ -1,0 +1,70 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff;
+  }
+nav{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+nav p{
+    color: #f24d9a;
+}
+nav p:hover{
+    color: #94acff;
+}
+
+.menu{
+    color: #f24d9a;
+}
+
+.cart{
+    color: #f24d9a;
+}
+.cart:hover{
+    color: #94acff;
+}
+
+.home:hover{
+    color: #94acff;
+
+}
+.shop:hover{
+    color: #94acff;
+
+}
+.about:hover{
+    color: #94acff;
+
+}
+
+
+.button{
+    background-color: #f24d9a;
+}
+.button:active{
+    background-color: #94acff;
+}
+/* .button:hover{
+    background-color: #94acff;
+} */
+
+.search {
+    border: 3px solid;
+    /* border-color: #94acff; */
+    border-color: #f24d9a;
+    padding: 2px;
+}
+.cart-count{
+    margin-bottom: 40px;
+    margin-left: 350px;
+}
+
+.search:focus {
+    outline: none;
+    border: 3px solid;
+    border-color: #94acff;
+}
+
