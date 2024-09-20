@@ -61,12 +61,12 @@ const Register = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-blue-100">
+    <div className="flex items-center justify-center bg-blue-100">
       <form
         onSubmit={clickSubmit}
-        className="bg-white mt-24 p-4 rounded-lg shadow-lg w-full max-w-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105"
+        className="bg-white mt-28 mb-16 p-4 rounded-lg shadow-lg w-full max-w-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105"
       >
-        <h2 className="text-3xl font-bold mb-4 text-center text-pink-400">
+        <h2 className="text-2xl font-bold mb-4 text-center text-pink-400">
           Thanks For Choosing Us..🤩
         </h2>
         <h3 className="text-xl font-bold mb-4 text-center text-blue-400">

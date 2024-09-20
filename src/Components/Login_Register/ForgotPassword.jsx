@@ -51,10 +51,10 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-200">
+    <div className="flex items-center justify-center bg-gray-200">
       <form
         onSubmit={handlePasswordReset}
-        className="bg-white mt-20 p-8 rounded-lg shadow-lg w-full max-w-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105"
+        className="bg-white mt-12 mb-12 p-6 rounded-lg shadow-lg w-full max-w-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105"
       >
         <h2 className="text-2xl font-bold mb-4 text-center text-pink-400">
           Reset Your Password 🔑

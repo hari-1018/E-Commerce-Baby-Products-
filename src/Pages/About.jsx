@@ -1,11 +1,11 @@
 
 const About = () => {
   return (
-    <section className="py-12 bg-gray-100">
+    <section className="py-12 bg-gray-100 mt-20">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-8">About Us</h1>
         <p className="text-lg text-gray-700 mb-6">
-          Welcome to <span className="font-semibold text-orange-500">Baby Bliss</span> – where every product is crafted with love and care to support the special bond between you and your baby. Our journey began with a simple yet profound mission: to provide parents with the finest selection of baby products that combine safety, style, and functionality. Today, Baby Bliss is proud to be a trusted name in the world of baby care.
+          Welcome to <span className="font-semibold text-orange-500">Baby Buds</span> – where every product is crafted with love and care to support the special bond between you and your baby. Our journey began with a simple yet profound mission: to provide parents with the finest selection of baby products that combine safety, style, and functionality. Today, Baby Bliss is proud to be a trusted name in the world of baby care.
         </p>
 
         <h2 className="text-2xl font-semibold mb-4">Our Story</h2>

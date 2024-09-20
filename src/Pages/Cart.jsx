@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { GiShoppingBag } from "react-icons/gi";
-import empty from '../assets/empty-shopping-cart.png'
+import { BsFillCartFill } from "react-icons/bs";
+import empty from '../assets/empty-shopping-cart.png';
+
+export const totalItems = (cartItems) => {
+  return cartItems.length;
+}
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -27,7 +31,10 @@ const Cart = () => {
   }, []);
 
   const handlePayNow = () => {
-    navigate('/payment');
+    const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    navigate('/payment', {
+      state: { cartItems, totalAmount },
+    });
   };
 
   const handleRemoveItem = async (id) => {
@@ -75,16 +82,21 @@ const Cart = () => {
         <img
           src={empty}
           alt="Empty Cart"
-          className="w-72 h-60  mb-4"
+          className="w-72 h-60 mb-4"
         />
-        <p className="text-center text-2xl font-bold text-gray-600">Oops..!  Your cart is as empty. 😓</p>
+        <p className="text-center text-2xl font-bold text-gray-600">Oops..! Your cart is as empty. 😓</p>
       </div>
     );
   }
 
   return (
-    <div className="cart-container bg-gradient-to-r from-pink-100 to-blue-100 p-8 rounded-lg shadow-lg max-w-4xl mx-auto mt-32 mb-24">
-      <h1 className="text-center text-3xl font-bold text-indigo-600 mb-8">Shopping Bag <GiShoppingBag /></h1>
+    <div className="cart-container bg-gradient-to-r from-pink-100 to-blue-100 p-8 rounded-lg shadow-lg max-w-3xl mx-auto mt-36 mb-28">
+      <div className="flex items-center justify-center mb-8">
+        <h1 className="text-3xl font-bold text-indigo-600 flex items-center">
+          Your Shopping Cart
+          <BsFillCartFill className="ml-2 text-3xl" />
+        </h1>
+      </div>
 
       {cartItems.map((item) => (
         <div key={item.id} className="flex items-center justify-between border-b-2 pb-4 mb-4">
@@ -95,7 +107,7 @@ const Cart = () => {
               className="w-16 h-16 object-cover rounded-lg shadow-md"
             />
             <div>
-              <h2 className="text-xl font-semibold text-indigo-600">{item.name}</h2>
+              <h2 className="text-base font-semibold text-indigo-600">{item.name}</h2>
               <p className="text-sm text-gray-600">⭐{item.stars}</p>
               <p className="text-sm text-gray-600">Price: ₹ {item.price}/-</p>
             </div>
@@ -108,26 +120,28 @@ const Cart = () => {
             >
               -
             </button>
-            <p className="text-xl font-semibold text-indigo-600">{item.quantity}</p>
+            <p className="text-base font-semibold text-indigo-600">{item.quantity}</p>
             <button
               onClick={() => handleIncreaseQuantity(item)}
               className="px-3 py-1 bg-green-500 text-white rounded-md"
             >
               +
             </button>
-            <p className="text-xl font-semibold text-indigo-600">₹{item.price * item.quantity}</p>
+            <p className="text-base font-semibold text-indigo-600">₹{item.price * item.quantity}</p>
             <button
               onClick={() => handleRemoveItem(item.id)}
-              className="text-red-500 text-2xl"
+              className="text-red-500 text-base bg-transparent border border-red-500 px-3 py-1 rounded-md hover:bg-red-500 hover:text-white"
             >
-              &times;
+              Remove
             </button>
           </div>
         </div>
       ))}
 
       <div className="flex justify-between items-center mt-8">
-        <h2 className="text-2xl font-bold text-indigo-600">Total: ₹{totalPrice}</h2>
+        <h2 className="text-2xl font-bold text-indigo-600">Total Items: {totalItems(cartItems)}</h2>
+        <h2 className="text-2xl font-bold text-indigo-600">Total: ₹{totalPrice}/-</h2>
+        
         <button
           onClick={handlePayNow}
           className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-6 py-3 rounded-lg font-semibold text-lg shadow-lg transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-l hover:from-blue-500 hover:to-pink-500"

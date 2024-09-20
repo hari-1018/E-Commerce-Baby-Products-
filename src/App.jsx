@@ -13,6 +13,9 @@ import Login from './Components/Login_Register/Login'
 import Register from './Components/Login_Register/Register'
 import ProductDetails from './Pages/ProductDetails/';
 import ForgotPassword from './Components/Login_Register/ForgotPassword';
+import Payment from './Pages/Payment';
+import SearchProduct from './Pages/SearchProduct';
+import ReturnPolicy from './Pages/ReturnPolicy'
 
 function App() {
 
@@ -25,12 +28,15 @@ function App() {
           <Route path="/category/:category" element={<CategoryPage />}/> 
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/payment" element={<Payment />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/search" element={<SearchProduct />} />
           <Route path="/about" element={<About />}/>
           <Route path="/contact" element={<Contact />}/>
           <Route path="*" element={<NotFound />} />
+          <Route path="/return-policy" element={<ReturnPolicy />}/>
         </Routes>
         <Footer />
     </>

@@ -9,7 +9,6 @@ import pic_5 from '../../assets/Slider-img-5.png';
 import pic_6 from '../../assets/Slider-img-6.png';
 import pic_7 from '../../assets/Slider-img-7.png';
 
-import '../../CSS/Hero.css'
 
 const Hero = () => {
   const sliding = {
@@ -28,7 +27,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className='mx-32 w-auto h-custom-height bg-black hero-container'>
+      <div className='mx-32 w-auto h-custom-height mt-20 hero-container '>
         <Slider {...sliding}>
         <div className="relative h-custom-height w-1/2 slide-1">
             <img 

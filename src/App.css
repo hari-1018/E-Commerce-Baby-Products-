@@ -1,4 +1,24 @@
-
+.slide-1{
+  background-color: #ffffff;
+}
+.slide-2{
+   background-color: #fffae6;
+}
+.slide-3{
+  background-color: #ffffff;
+}
+.slide-4{
+   background-color: #e7e8ec;
+}
+.slide-5{
+   background-color: #f0ede8
+}
+.slide-6{
+   background-color: #fff9ef;
+}
+.slide-7{
+   background-color: #f9e2ff;
+}
 .light {
   --background-color: #ffffff;
   --text-color: #000000;
@@ -18,13 +38,77 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
 }
-.category-container{
-  margin-top: 110px;
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #ffffff;
 }
-.shop-container{
-  margin-top: 110px;
+nav{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-section{
-  margin-top: 110px;
+nav p{
+  color: #f24d9a;
 }
+nav p:hover{
+  color: #94acff;
+}
+
+.menu{
+  color: #f24d9a;
+}
+
+.cart{
+  color: #f24d9a;
+}
+.cart:hover{
+  color: #94acff;
+}
+
+.home:hover{
+  color: #94acff;
+
+}
+.shop:hover{
+  color: #94acff;
+
+}
+.about:hover{
+  color: #94acff;
+
+}
+
+
+.button{
+  background-color: #f24d9a;
+}
+.button:active{
+  background-color: #94acff;
+}
+/* .button:hover{
+  background-color: #94acff;
+} */
+
+.search {
+  border: 3px solid;
+  /* border-color: #94acff; */
+  border-color: #f24d9a;
+  padding: 2px;
+}
+.cart-count{
+  margin-bottom: 40px;
+  margin-left: 350px;
+}
+
+.search:focus {
+  outline: none;
+  border: 3px solid;
+  border-color: #94acff;
+}
+
+
+
 

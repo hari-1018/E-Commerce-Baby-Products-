@@ -6,15 +6,12 @@ const Login = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [error, setError] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
 
   useEffect(() => {
-    // Load remembered user data if available
     const loggedInUser = localStorage.getItem("loggedInUser");
     if (loggedInUser) {
       const user = JSON.parse(loggedInUser);
-      setFormData({ username: user.username, password: "" }); // Clear password for security
-      setRememberMe(true);
+      setFormData({ username: user.username, password: user.password });
     }
   }, []);
 
@@ -22,16 +19,11 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleRememberMeChange = (e) => {
-    setRememberMe(e.target.checked);
-  };
-
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.get('http://localhost:5000/users');
       const users = response.data;
-
       const foundUser = users.find(
         (user) =>
           user.username === formData.username &&
@@ -39,11 +31,7 @@ const Login = () => {
       );
 
       if (foundUser) {
-        if (rememberMe) {
-          localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
-        } else {
-          sessionStorage.setItem("loggedInUser", JSON.stringify(foundUser));
-        }
+        localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
         window.dispatchEvent(new Event('loginChange')); // Notify of login state change
         navigate('/'); // Navigate to home
       } else {
@@ -56,10 +44,10 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-blue-100">
+    <div className="flex items-center justify-center bg-blue-100 mt-24">
       <form
         onSubmit={handleLogin}
-        className="bg-white mt-20 p-6 rounded-lg shadow-lg w-full max-w-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105"
+        className="bg-white mt-8 mb-8 p-6 rounded-lg shadow-lg w-full max-w-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105"
       >
         <h2 className="text-2xl font-bold mb-4 text-center text-pink-400">
           Welcome Back - Unlock Your Space 🤩
@@ -97,18 +85,6 @@ const Login = () => {
 
         {error && <p className="text-red-500 text-sm">{error}</p>}
 
-        <div className="flex items-center mb-4">
-          <input
-            type="checkbox"
-            id="rememberMe"
-            name="rememberMe"
-            checked={rememberMe}
-            onChange={handleRememberMeChange}
-            className="mr-2"
-          />
-          <label htmlFor="rememberMe" className="text-base font-semibold">Remember Me</label>
-        </div>
-
         <button
           type="button"
           onClick={() => navigate('/forgot-password')}
@@ -127,7 +103,7 @@ const Login = () => {
           <span className="text-sm text-gray-600">Don&apos;t have an account?
             <button
               onClick={() => navigate('/register')}
-              className="ml-2 text-pink-400 font-semibold"
+              className="ml-2 text-pink-400 text-base font-semibold underline hover:text-blue-400 transition-colors duration-300"
             >
               Register
             </button>

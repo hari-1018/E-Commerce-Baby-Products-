@@ -26,9 +26,8 @@ const ProductDetails = () => {
   }, [id]);
 
   const handleAddToCart = async () => {
-    const isLoggedIn = !!localStorage.getItem("loggedInUser"); // Check if user is logged in
-
-    if (!isLoggedIn) {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    if (!loggedInUser) {
       navigate('/login');  // Redirect to login page if not logged in
       return;
     }
@@ -41,10 +40,10 @@ const ProductDetails = () => {
         const updatedItem = { ...existingItem, quantity: existingItem.quantity + 1 };
         await axios.put(`http://localhost:5000/cart/${existingItem.id}`, updatedItem);
       } else {
-        const cartItem = { ...product, quantity: 1 }; 
+        const cartItem = { ...product, quantity: 1 };
         await axios.post('http://localhost:5000/cart', cartItem);
       }
-      navigate('/cart');  // Ensure navigation to the Cart page
+      navigate('/cart');
     } catch (err) {
       console.error("Error adding to cart", err);
       setError("An error occurred while adding the product to the cart.");
@@ -55,7 +54,7 @@ const ProductDetails = () => {
   if (error) return <p className="text-red-500 text-center">{error}</p>;
 
   return (
-    <div className="product-details-container bg-gradient-to-r from-pink-100 to-blue-100 p-8 rounded-lg shadow-lg max-w-4xl mx-auto mt-32 mb-24">
+    <div className="product-details-container bg-gradient-to-r from-pink-100 to-blue-100 p-8 rounded-lg shadow-lg max-w-4xl mx-auto mt-28 mb-24">
       {product ? (
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
           <div className="flex-1 lg:w-1/2">
@@ -68,7 +67,22 @@ const ProductDetails = () => {
           <div className="flex-1 lg:w-1/2">
             <h1 className="text-3xl font-bold text-indigo-600 mb-4">{product.name}</h1>
             <p className="text-base md:text-lg text-gray-700 mb-4">{product.description}</p>
-            <p className="text-xl font-semibold text-indigo-600 mb-4">₹{product.price}/-</p>
+            <p className="font-semibold md:text-base text-yellow-500 mb-4">More Info: {product.additional_details}</p>
+
+            {product.material && (
+              <p className="text-base font-semibold md:text-lg text-yellow-500 mb-4">Material: {product.material}</p>
+            )}
+
+            {product.discount > 0 ? (
+              <>
+                <p className="text-xl font-semibold text-red-500 mb-4 line-through">MRP: ₹ {product.mrp.toFixed(2)}/-</p>
+                <p className="text-small font-semibold text-green-600 mb-4">{product.discount} % Off</p>
+                <p className="text-2xl font-semibold text-green-600 mb-4">Offer Price: ₹ {product.price.toFixed(2)}/-</p>
+              </>
+            ) : (
+              <p className="text-2xl font-semibold text-indigo-600 mb-4">MRP: ₹ {product.price}/-</p>
+            )}
+
             <p className="text-lg font-medium text-yellow-500 mb-6">⭐ {product.stars}</p>
 
             <button 

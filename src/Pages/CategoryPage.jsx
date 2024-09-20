@@ -34,7 +34,7 @@ const CategoryPage = () => {
 
   if (items.length > 0) {
     content = (
-      <div className="category-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 p-4">
+      <div className="category-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 p-4 mt-28">
         {items.map(item => (
           <div 
             key={item.id}
@@ -46,7 +46,7 @@ const CategoryPage = () => {
               className="w-full h-64 object-contain rounded-md"
             />
             <h3 className="text-lg font-bold mt-2 text-center">{item.name}</h3>
-            <p className="text-green-500 font-semibold mt-1 text-center">₹{item.price}/-</p>
+            <p className="text-green-500 font-semibold mt-1 text-center">₹ {item.price}/-</p>
             <p className="text-green-500 font-semibold mt-1 text-center">⭐{item.stars}</p>
             <Link to={`/product/${item.id}`}> 
               <button

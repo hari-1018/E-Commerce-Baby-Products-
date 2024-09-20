@@ -24,11 +24,11 @@ const Darkmode = () => {
     <div className='relative'>
         <img src={light} alt='light_theme' 
         onClick={() => setTheme(theme=='dark' ? 'light': 'dark')}
-        className={`w-12 cursor-pointer absolute right-0 z-10 ${theme==="dark" ? 'opacity-0':'opacity-100'} transition-all duration-300`}/>
+        className={`w-8 cursor-pointer absolute right-0 z-10 ${theme==="dark" ? 'opacity-0':'opacity-100'} transition-all duration-300`}/>
 
         <img src={dark} alt='light_theme' 
         onClick={() => setTheme(theme=='dark' ? 'light': 'dark')}
-        className={`w-12 cursor-pointer`}/>
+        className={`w-8 cursor-pointer`}/>
     </div>
   )
 }
