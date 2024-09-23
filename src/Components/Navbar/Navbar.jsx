@@ -4,22 +4,23 @@ import logo from '../../assets/Baby_Buds.png';
 import { BsFillCartFill, BsPersonCircle } from "react-icons/bs";
 import { FaSearch, FaBars, FaTimes } from 'react-icons/fa';
 import Darkmode from './Darkmode';
-import axios from 'axios';
+import { useCart } from '../../Context/CartContext'; 
 import { MdMenu } from 'react-icons/md';
 import { IoClose } from 'react-icons/io5';
 import NavMobile from './NavbarMobile';
-// import SearchProduct from '../../Pages/SearchProduct';
+import ProfileData from '../Login_Register/ProfileData'; // Import the new ProfileData component
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
+  const { cart } = useCart(); 
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
 
   const handleSearchSubmit = (e) => {
-    e.preventDefault(); // Prevent form submission (page reload)
+    e.preventDefault();
     if (searchQuery.trim() !== '') {
       navigate(`/search?query=${searchQuery}`);
     }
@@ -29,7 +30,7 @@ const Navbar = () => {
   const [userData, setUserData] = useState(null);
   const [showUserData, setShowUserData] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [cartCount, setCartCount] = useState(0);
+  const [cartCount, setCartCount] = useState(cart.length); // Initialize with the number of unique items
   const [open, setOpen] = useState(false);
 
   const checkLoginState = () => {
@@ -43,29 +44,20 @@ const Navbar = () => {
     }
   };
 
-  const fetchCartCount = async () => {
-    try {
-      const response = await axios.get('http://localhost:5000/cart');
-      setCartCount(response.data.length);
-    } catch (err) {
-      console.error('Error fetching cart count', err);
-      setCartCount(0);
-    }
-  };
-
   useEffect(() => {
     checkLoginState();
-    fetchCartCount();
     window.addEventListener('loginChange', checkLoginState);
 
-    const interval = setInterval(() => {
-      fetchCartCount();
-    }, 1000);
+    // Update cart count whenever the cart changes
+    const updateCartCount = () => setCartCount(cart.length); // Count unique items
+
+    // Call updateCartCount initially
+    updateCartCount();
+
     return () => {
-      clearInterval(interval);
       window.removeEventListener('loginChange', checkLoginState);
     };
-  }, []);
+  }, [cart]); // Depend on cart to update count
 
   const handleLogout = () => {
     localStorage.removeItem('loggedInUser');
@@ -95,6 +87,10 @@ const Navbar = () => {
           <li className="cursor-pointer text-base hover:text-blue-400"><Link to="/shop">SHOP</Link></li>
           <li className="cursor-pointer text-base hover:text-blue-400"><Link to="/about">ABOUT US</Link></li>
           <li className="cursor-pointer text-base hover:text-blue-400"><Link to="/contact">CONTACT US</Link></li>
+          {/* Show "Dashboard" only if admin is logged in */}
+          {isLoggedIn && userData && userData.admin && (
+            <li className="cursor-pointer text-base hover:text-blue-400"><Link to="/admin-dashboard">DASHBOARD</Link></li>
+          )}
         </ul>
 
         <div className="md:hidden flex items-center">
@@ -131,30 +127,29 @@ const Navbar = () => {
                 onClick={() => setShowUserData(!showUserData)}
               />
               {showUserData && (
-                <div className="absolute w-72 right-0 mt-2 p-4 bg-white text-black shadow-lg rounded-md dark:bg-gray-800 dark:text-white">
-                  <p><b>Username:</b> {userData.username}</p>
-                  <p><b>Email:</b> {userData.email}</p>
-                  <button
-                    className="mt-2 px-4 py-2 bg-pink-400 text-white font-bold rounded"
-                    onClick={handleLogout}
-                  >
-                    Logout
-                  </button>
-                </div>
+                <ProfileData 
+                  userData={userData} 
+                  handleLogout={handleLogout} 
+                  closeProfile={() => setShowUserData(false)} // Pass the function to close the profile
+                />
               )}
             </div>
           )}
 
-          <div className="relative flex items-center">
-            <div className="absolute bottom-6 right-0 bg-pink-400 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center border border-gray-300">
-              {cartCount}
-            </div>
-            <Link to="/cart">
-              <BsFillCartFill className="text-3xl cursor-pointer text-pink-400" />
-            </Link>
-          </div>
-
-          <Darkmode />
+          {/* Only show cart and theme switcher if not admin */}
+          {!isLoggedIn || (userData && !userData.admin) ? (
+            <>
+              <div className="relative flex items-center">
+                <div className="absolute bottom-6 right-0 bg-pink-400 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center border border-gray-300">
+                  {cartCount} {/* Count of unique items */}
+                </div>
+                <Link to="/cart">
+                  <BsFillCartFill className="text-3xl cursor-pointer text-pink-400" />
+                </Link>
+              </div>
+              <Darkmode />
+            </>
+          ) : null}
         </div>
         <div className="inline-block md:hidden text-3xl font-extrabold text-black">
           <button

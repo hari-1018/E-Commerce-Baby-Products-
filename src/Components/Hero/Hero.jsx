@@ -3,7 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import pic_1 from '../../assets/Slider-img-1.png';
 import pic_2 from '../../assets/Slider-img-2.png';
-import pic_3 from '../../assets/Slider-img-3.png';
+// import pic_3 from '../../assets/Slider-img-3.png';
 import pic_4 from '../../assets/Slider-img-4.png';
 import pic_5 from '../../assets/Slider-img-5.png';
 import pic_6 from '../../assets/Slider-img-6.png';
@@ -46,13 +46,13 @@ const Hero = () => {
             />
         </div>
 
-        <div className="relative h-custom-height w-1/2 slide-3">
+        {/* <div className="relative h-custom-height w-1/2 slide-3">
             <img 
             src={pic_3} 
             alt="Sliding Image" 
             className="w-full h-full object-contain" 
             />
-        </div>
+        </div> */}
 
         <div className="relative h-custom-height w-1/2 slide-4">
             <img 

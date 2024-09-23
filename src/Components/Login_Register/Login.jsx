@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -32,8 +34,40 @@ const Login = () => {
 
       if (foundUser) {
         localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
-        window.dispatchEvent(new Event('loginChange')); // Notify of login state change
-        navigate('/'); // Navigate to home
+        window.dispatchEvent(new Event('loginChange'));
+
+        toast.success(
+          <div>
+            <span style={{ fontWeight: 'bold' }}>You&apos;re in! Time to explore all baby things! ✨🎉</span>
+          </div>,
+          {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            style: {
+              backgroundColor: '#ffe5b4',
+              border: '1px solid #ffcc00',
+              color: '#333',
+              width: '300px',
+              padding: '10px',
+              borderRadius: '8px',
+              fontSize: '16px',
+            },
+            progressStyle: {
+              backgroundColor: '#ffcc00',
+            },
+          }
+        );
+
+        // Check if the user is an admin and navigate accordingly
+        if (foundUser.admin) {
+          navigate('/admin-dashboard');
+        } else {
+          navigate('/');
+        }
       } else {
         setError("Incorrect Username or Password. Please Try Again.");
       }

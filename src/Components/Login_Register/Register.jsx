@@ -1,13 +1,16 @@
-import { useState} from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'; // Install axios with `npm install axios`
+import { ToastContainer, toast } from 'react-toastify'; // Import ToastContainer and toast
+import 'react-toastify/dist/ReactToastify.css'; // Import CSS for toast
 
 const Register = () => {
   const navigate = useNavigate(); 
   const [data, setData] = useState({
     username: '',
     email: '',
-    password: ''
+    password: '',
+    mobile: ''
   });
   const [iferrors, setErrors] = useState({});
   const [submit, setSubmit] = useState(false);
@@ -21,17 +24,50 @@ const Register = () => {
     if (Object.keys(errors).length === 0) {
       try {
         await axios.post('http://localhost:5000/users', data);
-        alert('Registration successful!');
+        toast.success(
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <span style={{ fontSize: '24px', marginRight: '8px' }}>🎉</span>
+            <span style={{ fontWeight: 'bold' }}>
+              Welcome to the family! You&apos;re officially registered and ready to explore a world of baby products.
+            </span>
+          </div>,
+          {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            style: {
+              backgroundColor: '#ffe5b4', 
+              border: '1px solid #ffcc00', 
+              color: '#333',
+              width: '400px',
+              padding: '20px',
+              borderRadius: '8px', 
+              fontSize: '16px',
+            },
+            progressStyle: {
+              backgroundColor: '#ffcc00', 
+            },
+          }
+        );
+        
         navigate('/login');
       } catch (error) {
-        alert('Error registering user.');
+        toast.error('Error registering user.', {
+          position: "top-center",
+          autoClose: 5000,
+        });
       }
     }
   };
 
   const validate = (values) => {
     const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const regexMobile = /^[0-9]{10}$/;
+
     if (!values.username) {
       errors.username = "Username is required!";
     } else if (values.username.length < 4) {
@@ -39,11 +75,19 @@ const Register = () => {
     } else if (values.username.length > 12) {
       errors.username = "Username cannot exceed more than 12 characters";
     }
+
     if (!values.email) {
       errors.email = "Email is required!";
-    } else if (!regex.test(values.email)) {
+    } else if (!regexEmail.test(values.email)) {
       errors.email = "This is not a valid email format!";
     }
+
+    if (!values.mobile) {
+      errors.mobile = "Mobile number is required!";
+    } else if (!regexMobile.test(values.mobile)) {
+      errors.mobile = "Mobile number must be 10 digits!";
+    }
+
     if (!values.password) {
       errors.password = "Password is required";
     } else if (values.password.length < 6) {
@@ -51,6 +95,7 @@ const Register = () => {
     } else if (values.password.length > 10) {
       errors.password = "Password cannot exceed more than 10 characters";
     }
+
     return errors;
   };
 
@@ -62,6 +107,7 @@ const Register = () => {
 
   return (
     <div className="flex items-center justify-center bg-blue-100">
+      {/* <ToastContainer /> Ensure this is rendered here */}
       <form
         onSubmit={clickSubmit}
         className="bg-white mt-28 mb-16 p-4 rounded-lg shadow-lg w-full max-w-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105"
@@ -107,6 +153,19 @@ const Register = () => {
         </label>
 
         <label className="block mb-4">
+          <b className="text-pink-400 text-lg">Mobile Number:</b>
+          <input
+            className="w-full mt-2 text-gray-900 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-sm transition-shadow duration-300 hover:shadow-md"
+            type="text"
+            name="mobile"
+            placeholder="Enter Your Mobile Number"
+            value={data.mobile}
+            onChange={handleSubmit}
+          />
+          <p className="text-red-500 text-sm mt-1">{iferrors.mobile}</p>
+        </label>
+
+        <label className="block mb-4">
           <b className="text-pink-400 text-lg">Password:</b>
           <input
             className="w-full mt-2 text-gray-900 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-sm transition-shadow duration-300 hover:shadow-md"
@@ -118,7 +177,7 @@ const Register = () => {
           />
           <p className="text-red-500 text-sm mt-1">{iferrors.password}</p>
           <span className="text-gray-500 text-sm">
-            Password should contain at least 6 characters, including an uppercase, symbol, or number.
+            Password should contain at least 6 characters.
           </span>
         </label>
 
