@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/Baby_Buds.png';
 import { BsFillCartFill, BsPersonCircle } from "react-icons/bs";
 import { FaSearch, FaBars, FaTimes } from 'react-icons/fa';
 import Darkmode from './Darkmode';
-import { useCart } from '../../Context/CartContext'; 
+import { CartContext} from '../../Context/CartContext'; 
 import { MdMenu } from 'react-icons/md';
 import { IoClose } from 'react-icons/io5';
 import NavMobile from './NavbarMobile';
@@ -13,7 +13,7 @@ import ProfileData from '../Login_Register/ProfileData'; // Import the new Profi
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
-  const { cart } = useCart(); 
+  const { cart, clearCart } = useContext(CartContext); 
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
@@ -60,7 +60,10 @@ const Navbar = () => {
   }, [cart]); // Depend on cart to update count
 
   const handleLogout = () => {
+    clearCart();
     localStorage.removeItem('loggedInUser');
+    window.dispatchEvent(new Event('loginChange'));
+    localStorage.removeItem('id');
     setShowUserData(false);
     setIsLoggedIn(false);
     setUserData(null);

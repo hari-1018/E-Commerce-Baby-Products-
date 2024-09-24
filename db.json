@@ -1,11 +1,29 @@
 {
   "users": [
     {
-      "id": "f040",
+      "id": "f7bd",
       "username": "Hari",
       "email": "krishnakripaharikrishnan@gmail.com",
-      "password": "@hari2001",
-      "mobile": "8086765870"
+      "password": "hari1018",
+      "mobile": "8086765870",
+      "admin": true,
+      "cart": []
+    },
+    {
+      "id": "9199",
+      "username": "Silpa Das",
+      "email": "silpadas4251@gmail.com",
+      "password": "silpadas",
+      "mobile": "9961158293",
+      "cart": []
+    },
+    {
+      "id": "360a",
+      "username": "Testname",
+      "email": "test@gmail.com",
+      "password": "tester",
+      "mobile": "9876543210",
+      "cart": []
     }
   ],
   "item": [
@@ -495,7 +513,7 @@
     },
     {
       "id": "35",
-      "name": "Rocking Chair for Nursery",
+      "name": "Rocking Chair",
       "description": "A comfortable rocking chair designed for late-night feedings and bonding with your baby. Crafted with both comfort and style and ensures every feeding session is soothing as possible.",
       "mrp": 1500,
       "price": 1350,
@@ -614,7 +632,7 @@
     },
     {
       "id": "43",
-      "name": "Baby Stroller with Adjustable Seat",
+      "name": "Baby Stroller",
       "description": "A lightweight and durable stroller with an adjustable seat, designed for comfort and convenience while traveling with your baby.",
       "mrp": 7800,
       "price": 7020,
@@ -658,7 +676,7 @@
     },
     {
       "id": "46",
-      "name": "Baby Car Seat with Safety Harness",
+      "name": "Baby Car Seat",
       "description": "Rear-Facing Car Seat is medesigned to ensure your baby's safety and comfort during car rides. Equipped with a secure 5-point safety harness and advanced safety features, this car seat provides peace of mind while traveling with your little one.",
       "price": 4800,
       "stars": 4.9,
@@ -672,7 +690,7 @@
     },
     {
       "id": "47",
-      "name": "Baby Swing with Music and Lights",
+      "name": "Swing with Music & Lights",
       "description": "Soothing Baby Swing is designed to provide a tranquil and comforting environment for your baby, making it easier to lull them to sleep. With its array of features, including calming music, gentle lights, and adjustable swing speeds, this swing offers a good experienc",
       "mrp": 4100,
       "price": 3485,
@@ -687,7 +705,7 @@
     },
     {
       "id": "48",
-      "name": "Portable Diaper Changing Station",
+      "name": "Portable Diaper Changer",
       "description": "Ultimate solution for on-the-go diaper changes, providing convenience and organization in a portable package. Designed with busy parents in mind, this changing station ensures that you’re always prepared for diaper duty, whether at home or away.",
       "price": 1100,
       "stars": 4.3,
@@ -716,7 +734,7 @@
     },
     {
       "id": "50",
-      "name": "Diaper Bag Backpack with Insulated Pockets",
+      "name": "Diaper Bag Backpack",
       "description": "Backpack with multiple compartments, insulated pockets, and a comfortable design, this diaper bag makes it easy to carry all your baby essentials while keeping everything organized and accessible.",
       "mrp": 1280,
       "price": 1088,
@@ -731,7 +749,7 @@
     },
     {
       "id": "51",
-      "name": "Baby Soothing Massage Oil",
+      "name": "Soothing Massage Oil",
       "description": "Crafted with natural ingredients to provide soothing care for your baby's delicate skin. This lightweight oil is perfect for daily moisturizing, massage, and relaxation, helping to keep your baby's skin soft, smooth, and hydrated.",
       "mrp": 560,
       "price": 448,
@@ -746,7 +764,7 @@
     },
     {
       "id": "52",
-      "name": "Baby Skin Protectant Cream",
+      "name": "Skin Protectant Cream",
       "description": "Protect your baby’s delicate skin from dryness, irritation, and diaper rash. Made with safe, gentle ingredients, this nourishing cream helps maintain soft, smooth, and healthy skin while providing relief from common skin irritations.",
       "mrp": 450,
       "price": 405,
@@ -761,7 +779,7 @@
     },
     {
       "id": "53",
-      "name": "Baby Fever Reducer Syrup",
+      "name": "Fever Reducer Syrup",
       "description": "Oral Fever Reducer Syrup provide fast and effective relief from fever and pain in babies. Made with safe ingredients and no added preservatives, this gentle syrup is designed to offer comfort during teething, colds, or flu, ensuring your baby feels better quickly.",
       "price": 170,
       "stars": 4.9,
@@ -775,7 +793,7 @@
     },
     {
       "id": "54",
-      "name": "Baby Cold & Cough Medicine",
+      "name": "Cold & Cough Medicine",
       "description": "A gentle cold and cough medicine for babies, providing fast relief from common cold symptoms without causing drowsiness. Ease the sneezing, soothe the sore throat, and loosen up the congestion so that many parents have demand on thi item",
       "price": 270,
       "stars": 4.1,
@@ -789,7 +807,7 @@
     },
     {
       "id": "55",
-      "name": "Baby Sunscreen Lotion SPF 50",
+      "name": "Sunscreen Lotion SPF 50",
       "description": "Specially formulated to provide optimal sun protection for your baby's delicate skin. With SPF 50 and broad-spectrum coverage, this sunscreen shields your baby from harmful UVA and UVB rays, ensuring they stay safe during outdoor play.",
       "price": 350,
       "stars": 4.2,
@@ -803,7 +821,7 @@
     },
     {
       "id": "56",
-      "name": "Baby Nail Care Set",
+      "name": "Nail Care Set",
       "description": "Help parents to safely and easily trim and maintain their baby’s delicate nails. This set includes all the essential tools like nail scissors, clippers, and a gentle nail buffer making it easy to keep your baby's nails trimmed, smooth, and free from sharp edges.",
       "price": 300,
       "stars": 4.4,
@@ -817,7 +835,7 @@
     },
     {
       "id": "57",
-      "name": "Baby Teething Gel",
+      "name": "Teething Gel",
       "description": "Specially formulated for instant relief from the discomfort of teething, offering a gentle and effective solution for sore gums and irritability in babies. Made with baby-friendly ingredients, this teething gel is a must-have for parents looking to ease their baby’s teething pain.",
       "mrp": 479,
       "price": 407,
@@ -832,7 +850,7 @@
     },
     {
       "id": "58",
-      "name": "Baby Ear & Nose Cleaner Kit",
+      "name": "Ear & Nose Cleaner Kit",
       "description": "A safe and effective ear and nose cleaning kit for babies, including a soft-tipped aspirator and cleaning tools designed to remove mucus and wax gently and make the both ear and nose clear. Soft rubber coating is slip-free and gentle against baby’s skin.",
       "price": 580,
       "stars": 4.3,

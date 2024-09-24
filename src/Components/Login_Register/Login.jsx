@@ -34,6 +34,7 @@ const Login = () => {
 
       if (foundUser) {
         localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
+        localStorage.setItem("id", foundUser.id);
         window.dispatchEvent(new Event('loginChange'));
 
         toast.success(

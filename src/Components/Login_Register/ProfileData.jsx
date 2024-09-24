@@ -16,7 +16,7 @@ const ProfileData = ({ userData, handleLogout, closeProfile }) => {
   return (
     <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div className="bg-white rounded-lg shadow-lg w-[600px] h-96 flex flex-col md:flex-row p-5 relative">
-        <FaTimes 
+        <FaTimes
           className="absolute top-4 right-4 text-pink-400 cursor-pointer hover:text-pink-500"
           onClick={closeProfile}
           size={24}
@@ -24,7 +24,7 @@ const ProfileData = ({ userData, handleLogout, closeProfile }) => {
 
         <div className="flex flex-col justify-center items-center bg-gradient-to-r from-orange-500 to-pink-400 p-5 rounded-lg md:w-1/2">
           <img
-            src="https://png.pngtree.com/png-clipart/20191122/original/pngtree-user-icon-isolated-on-abstract-background-png-image_5192004.jpg" 
+            src="https://png.pngtree.com/png-clipart/20191122/original/pngtree-user-icon-isolated-on-abstract-background-png-image_5192004.jpg"
             alt="Profile"
             className="rounded-full w-24 h-24 mb-4"
           />
@@ -50,17 +50,17 @@ const ProfileData = ({ userData, handleLogout, closeProfile }) => {
             <p>Password:</p>
             <div className="flex items-center">
               <p className="font-semibold mr-2">
-                {showPassword ? userData.password : '********'} 
+                {showPassword ? userData.password : '********'}
               </p>
               {showPassword ? (
                 <FaEye
                   className="cursor-pointer text-pink-400"
-                  onClick={() => setShowPassword(false)} 
+                  onClick={() => setShowPassword(false)}
                 />
               ) : (
                 <FaEyeSlash
                   className="cursor-pointer text-pink-400"
-                  onClick={() => setShowPassword(true)} 
+                  onClick={() => setShowPassword(true)}
                 />
               )}
             </div>
@@ -88,7 +88,7 @@ const ProfileData = ({ userData, handleLogout, closeProfile }) => {
               </button>
               <button
                 onClick={() => {
-                  handleLogout(); 
+                  handleLogout();  // Immediately log out and clear the cart
                 }}
                 className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
               >

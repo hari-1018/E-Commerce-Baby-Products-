@@ -1,10 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import { BsFillCartFill } from "react-icons/bs";
-import { useCart } from '../Context/CartContext'; 
+import { CartContext } from '../Context/CartContext'; 
 import empty from '../assets/empty-shopping-cart.png';
+import { useContext } from 'react';
 
 const Cart = () => {
-  const { cart, removeFromCart, increaseQuantity, decreaseQuantity, totalPrice, totalItems } = useCart();
+  const { cart, removeFromCart, increaseQuantity, decreaseQuantity, totalPrice, totalItems } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handlePayNow = () => {

@@ -1,5 +1,6 @@
 import Hero from '../Components/Hero/Hero';
 import ShopByCategory from '../Pages/ShopByCategory';
+import TopProducts from '../Components/Top_Products/TopProducts';
 
 const Home = () => {
 
@@ -8,7 +9,8 @@ const Home = () => {
     <>
         <Hero />
         <ShopByCategory />
-x    </>
+        <TopProducts />
+    </>
   )
 }
 

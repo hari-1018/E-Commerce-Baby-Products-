@@ -91,7 +91,7 @@ const Register = () => {
     if (!values.password) {
       errors.password = "Password is required";
     } else if (values.password.length < 6) {
-      errors.password = "Password must be more than 6 characters";
+      errors.password = "Password should contain at least 6 characters.";
     } else if (values.password.length > 10) {
       errors.password = "Password cannot exceed more than 10 characters";
     }
@@ -176,9 +176,6 @@ const Register = () => {
             onChange={handleSubmit}
           />
           <p className="text-red-500 text-sm mt-1">{iferrors.password}</p>
-          <span className="text-gray-500 text-sm">
-            Password should contain at least 6 characters.
-          </span>
         </label>
 
         <input

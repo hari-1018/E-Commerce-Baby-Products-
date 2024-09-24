@@ -1,13 +1,13 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import { useCart } from '../Context/CartContext';
+import { CartContext} from '../Context/CartContext';
 import '../../src/App.css';
 
 const ProductDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { addToCart } = useCart();
+  const { addToCart } = useContext(CartContext);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -41,17 +41,15 @@ const ProductDetails = () => {
       return;
     }
 
-    const userId = JSON.parse(loggedInUser).id; // Assuming loggedInUser has user id
+    const userId = JSON.parse(loggedInUser).id; 
 
-    // Add product to cart locally
+
     addToCart(product);
-
-    // Update the cart on the server
     try {
       const currentCart = await getUserCart(userId);
       const updatedCart = [...currentCart, { ...product, quantity: 1 }];
 
-      await axios.put(`http://localhost:5000/users/${userId}`, { cart: updatedCart });
+      await axios.patch(`http://localhost:5000/users/${userId}`, { cart: updatedCart });
     } catch (err) {
       console.error("Error updating cart on server", err);
     }

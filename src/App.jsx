@@ -18,6 +18,10 @@ import SearchProduct from './Pages/SearchProduct';
 import ReturnPolicy from './Components/Footer/ReturnPolicy';
 import Dashboard from './Components/Admin_Side/Dashboard';
 import { CartProvider } from './Context/CartContext';
+import PaymentMethod from './Components/Footer/PaymentMethod';
+import AllProducts from './Components/Admin_Side/AllProducts';
+import AllCustomers from './Components/Admin_Side/AllCustomers'
+import EditProduct from './Components/Admin_Side/EditProduct';
 
 function App() {
   return (
@@ -31,6 +35,9 @@ function App() {
         <Route path="/search" element={<SearchProduct />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin-dashboard" element={<Dashboard />} />
+        <Route path="/all-products" element={<AllProducts />} />
+        <Route path="/all-customers" element={<AllCustomers />} />
+        <Route path="/edit-product/:id" element={<EditProduct />} /> 
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<Cart />} />
@@ -38,7 +45,9 @@ function App() {
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/return-policy" element={<ReturnPolicy />} />        
+        <Route path="/return-policy" element={<ReturnPolicy />} />    
+        <Route path="/payment-methods" element={<PaymentMethod />} />        
+    
       </Routes>
       <Footer />
     </CartProvider>
