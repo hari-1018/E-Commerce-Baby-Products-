@@ -33,8 +33,11 @@ const Login = () => {
       );
 
       if (foundUser) {
+        // Store logged-in user details and their cart in local storage
         localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
         localStorage.setItem("id", foundUser.id);
+        localStorage.setItem("cart", JSON.stringify(foundUser.cart || [])); // Save cart to local storage
+
         window.dispatchEvent(new Event('loginChange'));
 
         toast.success(
@@ -76,6 +79,14 @@ const Login = () => {
       console.error("Error fetching users", err);
       setError("An error occurred while logging in. Please try again.");
     }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("loggedInUser");
+    localStorage.removeItem("cart"); // Clear the cart
+    localStorage.removeItem("id");
+    window.dispatchEvent(new Event('loginChange'));
+    navigate('/login'); 
   };
 
   return (

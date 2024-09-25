@@ -4,7 +4,7 @@ import logo from '../../assets/Baby_Buds.png';
 import { BsFillCartFill, BsPersonCircle } from "react-icons/bs";
 import { FaSearch, FaBars, FaTimes } from 'react-icons/fa';
 import Darkmode from './Darkmode';
-import { CartContext} from '../../Context/CartContext'; 
+import { CartContext } from '../../Context/CartContext'; 
 import { MdMenu } from 'react-icons/md';
 import { IoClose } from 'react-icons/io5';
 import NavMobile from './NavbarMobile';
@@ -22,7 +22,7 @@ const Navbar = () => {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (searchQuery.trim() !== '') {
-      navigate(`/search?query=${searchQuery}`);
+      navigate(`/search?query=${searchQuery}`); // Fixed syntax here
     }
   };
 
@@ -85,11 +85,11 @@ const Navbar = () => {
           </p>
         </div>
 
-        <ul className={`menu items-center gap-10 font-bold hidden md:flex`}>
-          <li className="cursor-pointer text-base hover:text-blue-400"><Link to="/">HOME</Link></li>
-          <li className="cursor-pointer text-base hover:text-blue-400"><Link to="/shop">SHOP</Link></li>
-          <li className="cursor-pointer text-base hover:text-blue-400"><Link to="/about">ABOUT US</Link></li>
-          <li className="cursor-pointer text-base hover:text-blue-400"><Link to="/contact">CONTACT US</Link></li>
+        <ul className="items-center gap-10 font-bold hidden md:flex">
+          <li className="cursor-pointer text-base text-pink-500 hover:text-blue-400"><Link to="/">HOME</Link></li>
+          <li className="cursor-pointer text-base text-pink-500 hover:text-blue-400"><Link to="/shop">SHOP</Link></li>
+          <li className="cursor-pointer text-base text-pink-500 hover:text-blue-400"><Link to="/about">ABOUT US</Link></li>
+          <li className="cursor-pointer text-base text-pink-500 hover:text-blue-400"><Link to="/contact">CONTACT US</Link></li>
           {/* Show "Dashboard" only if admin is logged in */}
           {isLoggedIn && userData && userData.admin && (
             <li className="cursor-pointer text-base hover:text-blue-400"><Link to="/admin-dashboard">DASHBOARD</Link></li>

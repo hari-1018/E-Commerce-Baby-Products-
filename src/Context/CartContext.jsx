@@ -3,38 +3,44 @@ import axios from 'axios';
 
 export const CartContext = createContext();
 
-// export const useCart = () => {
-//   const context = useContext(CartContext);
-  
-//   if (!context) {
-//     throw new Error('useCart must be used within a CartProvider');
-//   }
-//   return context;
-// };
-
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  // const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-  const id = localStorage.getItem('id');
 
-  // useEffect(() => {
-  //   const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-  //   if (loggedInUser && loggedInUser.cart) {
-  //     setCart(loggedInUser.cart);
-  //   }
-  // }, [id]);
   useEffect(() => {
-    const handleLoginChange = () => {
+    const handleLoginChange = async () => {
       const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-      if (loggedInUser && loggedInUser.cart) {
-        setCart(loggedInUser.cart);
+      if (loggedInUser) {
+        try {
+          // Fetch cart from server when the user logs in
+          const response = await axios.get(`http://localhost:5000/users/${loggedInUser.id}`);
+          const serverCart = response.data.cart || [];
+
+          // Merge existing cart with the fetched cart from the server
+          setCart((prevCart) => {
+            const mergedCart = [...prevCart];
+
+            serverCart.forEach(serverItem => {
+              const existingItem = mergedCart.find(item => item.id === serverItem.id);
+              if (existingItem) {
+                // Merge quantities if item exists in both carts
+                existingItem.quantity += serverItem.quantity;
+              } else {
+                // Add new item from server cart
+                mergedCart.push({ ...serverItem });
+              }
+            });
+
+            return mergedCart;
+          });
+        } catch (err) {
+          console.error('Error fetching cart from server', err);
+        }
+      } else {
+        setCart([]); // Clear cart when no user is logged in
       }
     };
 
-    // Add event listener
     window.addEventListener('loginChange', handleLoginChange);
-
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener('loginChange', handleLoginChange);
     };
@@ -44,7 +50,9 @@ export const CartProvider = ({ children }) => {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     if (loggedInUser) {
       try {
+        // Update the cart on the server
         await axios.patch(`http://localhost:5000/users/${loggedInUser.id}`, { cart });
+        // No need to store the cart in local storage anymore
       } catch (err) {
         console.error('Error updating cart on server', err);
       }
@@ -100,8 +108,8 @@ export const CartProvider = ({ children }) => {
   };
 
   const clearCart = () => {
-    setCart([]);
-    updateCartOnServer([]);
+    setCart([]); 
+    // No need to update the server cart here; just clear local state
   };
 
   const totalItems = () => {

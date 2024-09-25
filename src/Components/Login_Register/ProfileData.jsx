@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FaEye, FaEyeSlash, FaTimes } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 
 const ProfileData = ({ userData, handleLogout, closeProfile }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -100,6 +101,17 @@ const ProfileData = ({ userData, handleLogout, closeProfile }) => {
       )}
     </div>
   );
+};
+
+ProfileData.propTypes = {
+  userData: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    mobile: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
+  }).isRequired,
+  handleLogout: PropTypes.func.isRequired,
+  closeProfile: PropTypes.func.isRequired,
 };
 
 export default ProfileData;
