@@ -22,6 +22,7 @@ import PaymentMethod from './Components/Footer/PaymentMethod';
 import AllProducts from './Components/Admin_Side/AllProducts';
 import AllCustomers from './Components/Admin_Side/AllCustomers'
 import EditProduct from './Components/Admin_Side/EditProduct';
+import AddProduct from './Components/Admin_Side/AddProducts'
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path="/admin-dashboard" element={<Dashboard />} />
         <Route path="/all-products" element={<AllProducts />} />
         <Route path="/all-customers" element={<AllCustomers />} />
+        <Route path="/add-product" element={<AddProduct />} />
         <Route path="/edit-product/:id" element={<EditProduct />} /> 
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/register" element={<Register />} />

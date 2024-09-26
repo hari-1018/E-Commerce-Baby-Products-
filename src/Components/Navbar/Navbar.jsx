@@ -92,7 +92,7 @@ const Navbar = () => {
           <li className="cursor-pointer text-base text-pink-500 hover:text-blue-400"><Link to="/contact">CONTACT US</Link></li>
           {/* Show "Dashboard" only if admin is logged in */}
           {isLoggedIn && userData && userData.admin && (
-            <li className="cursor-pointer text-base hover:text-blue-400"><Link to="/admin-dashboard">DASHBOARD</Link></li>
+            <li className="cursor-pointer text-base text-pink-500 hover:text-blue-400"><Link to="/admin-dashboard">DASHBOARD</Link></li>
           )}
         </ul>
 

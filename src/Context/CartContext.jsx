@@ -4,7 +4,11 @@ import axios from 'axios';
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    // Load cart from localStorage on initial render
+    const savedCart = localStorage.getItem('cart');
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
 
   useEffect(() => {
     const handleLoginChange = async () => {
@@ -46,13 +50,17 @@ export const CartProvider = ({ children }) => {
     };
   }, []);
 
+  // Save cart to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+
   const updateCartOnServer = async (cart) => {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     if (loggedInUser) {
       try {
-        // Update the cart on the server
         await axios.patch(`http://localhost:5000/users/${loggedInUser.id}`, { cart });
-        // No need to store the cart in local storage anymore
+
       } catch (err) {
         console.error('Error updating cart on server', err);
       }
@@ -109,7 +117,7 @@ export const CartProvider = ({ children }) => {
 
   const clearCart = () => {
     setCart([]); 
-    // No need to update the server cart here; just clear local state
+    localStorage.removeItem('cart');
   };
 
   const totalItems = () => {

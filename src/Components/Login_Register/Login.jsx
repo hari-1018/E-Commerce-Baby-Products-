@@ -90,7 +90,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center bg-blue-100 mt-24">
+    <div className="flex items-center justify-center bg-blue-100 mt-28">
       <form
         onSubmit={handleLogin}
         className="bg-white mt-8 mb-8 p-6 rounded-lg shadow-lg w-full max-w-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105"

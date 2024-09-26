@@ -100,7 +100,7 @@ const ProductDetails = () => {
                 <p className="text-2xl font-semibold text-green-600 mb-2">Offer Price: ₹ {product.price.toFixed(2)}/-</p>
               </>
             ) : (
-              <p className="text-2xl font-semibold text-indigo-600 mb-2">MRP: ₹ {product.price}/-</p>
+              <p className="text-2xl font-semibold text-indigo-600 mb-2">MRP: ₹ {product.mrp.toFixed(2)}/-</p>
             )}
             <div className=' border bg-green-400 w-[60px] h-[30px] mb-2'>
               <p className="text-lg font-bold text-white mb-2">⭐ {product.stars}</p>
