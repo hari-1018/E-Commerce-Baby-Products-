@@ -32,7 +32,9 @@ const CategoryPage = () => {
 
   return (
     <div className="category-page-container mb-12 mt-28 px-4">
-      <p className="text-center text-lg text-gray-600 mb-8">{items.length} items available</p>
+      <p className="text-center text-2xl font-bold text-pink-400 mb-4">Search Results</p>
+
+      <p className="text-center text-lg text-blue-400 mb-8">{items.length} Items Available</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
         {items.length > 0 ? (
           items.map(item => (

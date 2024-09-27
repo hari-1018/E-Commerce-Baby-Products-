@@ -7,7 +7,24 @@
       "password": "hari1018",
       "mobile": "8086765870",
       "admin": true,
-      "cart": []
+      "cart": [
+        {
+          "id": "29",
+          "name": "Toddler Snack Bars",
+          "description": "Made with real apples and a hint of warm cinnamon, these bars offer a perfect balance of natural sweetness and wholesome nutrition. Packed with fiber and essential vitamins, they provide a nutritious snack that supports babies energy and growth.",
+          "mrp": 640,
+          "price": 608,
+          "stars": 4.1,
+          "category": "Food",
+          "image_url": "https://m.media-amazon.com/images/I/81pMM-7dFQL._AC_UF894,1000_QL80_.jpg",
+          "in_stock": true,
+          "discount": 5,
+          "quantity": 1,
+          "additional_details": "Soft and easy to chew | Free from artificial flavors, preservatives, and added sugars.",
+          "flip_image_url": "https://m.media-amazon.com/images/I/61XpONAEtFL.jpg",
+          "stock": 20
+        }
+      ]
     },
     {
       "id": "9199",
@@ -39,38 +56,40 @@
       "id": "2",
       "name": "Twin Bunny Set Combo",
       "description": "The Twin Cute Bunny Set Combo features two soft, breathable cotton outfits with adorable bunny designs, perfect for keeping your little ones cute and stylish",
-      "mrp": 435,
-      "price": 435,
+      "mrp": 400,
+      "price": 400,
       "stars": 4.3,
       "category": "Toys",
       "image_url": "https://imgcdn.floweraura.com/cute-white-bunny-soft-toy-duo-9861177gf-B_0.jpg",
       "flip_image_url": "https://imgcdn.floweraura.com/cute-white-bunny-soft-toy-duo-9861177gf-C_0.jpg",
-      "in_stock": false,
-      "discount": "0",
+      "in_stock": true,
+      "discount": 0,
       "quantity": 1,
-      "additional_details": "Light weighted, attractive, colorful, soft and easy to carry | Perfect bed companion toy for kids sleeping | Machine and Hand Washable."
+      "additional_details": "Light weighted, attractive, colorful, soft and easy to carry | Perfect bed companion toy for kids sleeping | Machine and Hand Washable.",
+      "stock": 2
     },
     {
       "id": "3",
-      "name": "Colorful Birdies",
-      "description": "Colorful Birdies on Orange Bandana adds a beautiful touch with vibrant bird prints on a soft, orange fabric perfect for brightening up your little ones outfit!.",
-      "mrp": 190,
-      "price": 160,
-      "stars": 4.1,
+      "name": "Baby Unisex Outfits",
+      "description": "A cute summer outfit for toddlers. Includes a short-sleeve top with matching shorts with a comfy drawstring waist. The set is perfect for warm days, offering both style and comfort for little ones. ",
+      "mrp": 830,
+      "price": 705,
+      "stars": 4.3,
       "category": "Clothes",
-      "image_url": "https://roghayehsaadifar.com/wp-content/uploads/2020/12/baby-store-product-img-10.jpg",
-      "flip_image_url": "https://shoptigertree.com/cdn/shop/files/sl9tqd2gfuerzlvx3ze6_550x_b2244746-5e7a-4fd7-86f8-1ae845b8fb55_300x300.webp?v=1692814501",
+      "image_url": "https://i5.walmartimages.com/asr/ed2d8b35-52b4-4f44-bb20-98ca9b19bc96.f4e0b6b2a66a33d1ca6afa3b949e5b6b.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+      "flip_image_url": "https://i5.walmartimages.com/seo/Summer-Toddler-Baby-Boy-Girl-Clothes-Set-Unisex-Outfits-Color-Block-Short-Sleeve-Pocket-Tops-New-Bundle-Princess-Little-Babies-5t-Girls-6months_18a00b07-172a-4c72-a76d-12c50fb2b5b7.a5a8ff1faa5b1d643d7d8b1bd011d025.jpeg",
       "in_stock": true,
       "discount": 15,
       "quantity": 1,
-      "additional_details": "Each one is printed using state of the art technology and laminated to last longer | Available in various colors and sizes."
+      "additional_details": "The white sneakers and toy camera add a fun touch to the look.",
+      "stock": 20
     },
     {
       "id": "4",
       "name": "Nutrikid-Protein Shake",
       "description": "The Nutrikids Food Nutrition DHA+ Orange is a nutrient-rich formula with DHA to support healthy brain development, packed with a refreshing orange flavor your kids will love.",
-      "mrp": 1525,
-      "price": 1220,
+      "mrp": 1530,
+      "price": 1224,
       "stars": 4.2,
       "category": "Food",
       "image_url": "https://nutrikidshake.com/cdn/shop/files/485240507748844428-bba09d7b-dff8-41d3-ad61-3d519664b75d.jpg?v=5009415756166593820",
@@ -78,7 +97,8 @@
       "in_stock": true,
       "discount": 20,
       "quantity": 1,
-      "additional_details": "Vanilla and Chocolate flavours are available | Special offer ends soon. Free shipping included."
+      "additional_details": "Vanilla and Chocolate flavours are available | Special offer ends soon. Free shipping included.",
+      "stock": 15
     },
     {
       "id": "5",
@@ -93,7 +113,8 @@
       "in_stock": true,
       "discount": 12,
       "quantity": 1,
-      "additional_details": "Hand Wash Only | We've got dresses to suit every age, from 1-2 years to 9-10 years!"
+      "additional_details": "Hand Wash Only | We've got dresses to suit every age, from 1-2 years to 9-10 years!",
+      "stock": 15
     },
     {
       "id": "6",
@@ -105,10 +126,11 @@
       "category": "Toys",
       "image_url": "https://ae01.alicdn.com/kf/H18762f701f254c4386c959849f908187d/22CM-Pilot-Teddy-Bear-Plush-Toy-Captain-Bear-flight-attendant-Doll-Birthday-Gift-Kids-Toy-Baby.jpg",
       "flip_image_url": "https://ae-pic-a1.aliexpress-media.com/kf/Ha6cdf3234c0c4a619d54f942b8080c61I.jpg_640x640Q90.jpg_.webp",
-      "in_stock": false,
+      "in_stock": true,
       "discount": 0,
       "quantity": 1,
-      "additional_details": "15-inches tall (38cm) | Movable head, arms and legs."
+      "additional_details": "15-inches tall (38cm) | Movable head, arms and legs.",
+      "stock": 25
     },
     {
       "id": "7",
@@ -123,7 +145,8 @@
       "in_stock": true,
       "discount": 18,
       "quantity": 1,
-      "additional_details": "Size-40 cm, Pack Of 1, Orange Color | Useful for all ages. Machine washable."
+      "additional_details": "Size-40 cm, Pack Of 1, Orange Color | Useful for all ages. Machine washable.",
+      "stock": 25
     },
     {
       "id": "8",
@@ -131,14 +154,15 @@
       "description": "Designed for imaginative play. Made from eco-friendly materials, it encourages creativity by building tracks and drive their trains through endless adventures. Its construction ensures durability for years, making it a perfect addition to any playroom.",
       "mrp": 1079,
       "price": 971,
-      "stars": 4,
+      "stars": 4.1,
       "category": "Toys",
       "image_url": "https://images-cdn.ubuy.co.in/65d050ab7f5cb864d9282112-sainsmart-jr-wooden-train-set-for.jpg",
       "flip_image_url": "https://m.media-amazon.com/images/I/916QNAULGaL._AC_UF1000,1000_QL80_.jpg",
       "in_stock": true,
       "discount": 10,
       "quantity": 1,
-      "additional_details": "Premium wood craftsmanship with smooth edges and non-toxic water-based paint."
+      "additional_details": "Premium wood craftsmanship with smooth edges and non-toxic water-based paint.",
+      "stock": 4
     },
     {
       "id": "9",
@@ -150,7 +174,7 @@
       "category": "Clothes",
       "image_url": "https://ae01.alicdn.com/kf/Sacdf99723035412aa2deff087e3586e09/Unicorn-Kigurumi-Baby-Pajamas-One-Piece-Hooded-Jumpsuits-for-Newborn-Babies-Unicorn-Onesies-Babi-Girl-Winter.jpg",
       "flip_image_url": "https://iconix.co.za/cdn/shop/products/pink-blue-starry-unicorn-kids-onesie-iconix-771711_600x.jpg?v=1653920183",
-      "in_stock": true,
+      "in_stock": false,
       "discount": 10,
       "quantity": 1,
       "additional_details": "Available in sizes 0-12 months | Machine washable."
@@ -168,7 +192,8 @@
       "in_stock": true,
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Made from 100% organic cotton | Half Sleeve, Round Collar"
+      "additional_details": "Made from 100% organic cotton | Half Sleeve, Round Collar",
+      "stock": 20
     },
     {
       "id": "11",
@@ -183,7 +208,8 @@
       "in_stock": true,
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Sizes available for toddlers and preschoolers | Striped Patterns."
+      "additional_details": "Sizes available for toddlers and preschoolers | Striped Patterns.",
+      "stock": 20
     },
     {
       "id": "12",
@@ -198,7 +224,8 @@
       "in_stock": true,
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Available in sizes 1-5 years. Free matching Hat and Headband"
+      "additional_details": "Available in sizes 1-5 years. Free matching Hat and Headband",
+      "stock": 18
     },
     {
       "id": "13",
@@ -213,7 +240,8 @@
       "in_stock": true,
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Available in multiple superhero designs."
+      "additional_details": "Available in multiple superhero designs.",
+      "stock": 15
     },
     {
       "id": "14",
@@ -228,7 +256,8 @@
       "in_stock": true,
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Suitable for babies 6 months and older | Pack of four (4) 3.5 oz pouches | No artificial flavors or colors, no added starch | USDA Certified Organic, Non-GMackage not made with BPA."
+      "additional_details": "Suitable for babies 6 months and older | Pack of four (4) 3.5 oz pouches | No artificial flavors or colors, no added starch | USDA Certified Organic, Non-GMackage not made with BPA.",
+      "stock": 25
     },
     {
       "id": "15",
@@ -243,7 +272,8 @@
       "in_stock": true,
       "discount": 0,
       "quantity": 1,
-      "additional_details": "No artificial colors or flavors."
+      "additional_details": "No artificial colors or flavors.",
+      "stock": 15
     },
     {
       "id": "16",
@@ -258,7 +288,8 @@
       "in_stock": true,
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Made from organic fruits | BPA-free packaging | Rich in vitamins and antioxidants, also provides essential nutrients to support your baby's growth and development."
+      "additional_details": "Made from organic fruits | BPA-free packaging | Rich in vitamins and antioxidants, also provides essential nutrients to support your baby's growth and development.",
+      "stock": 20
     },
     {
       "id": "17",
@@ -269,11 +300,12 @@
       "stars": 4.2,
       "category": "Food",
       "image_url": "https://images-cdn.ubuy.co.in/66c4d606363c31645d114b56-gerber-snacks-for-baby-yogurt-melts.jpg",
-      "flip_image_url": "",
+      "flip_image_url": "https://images-cdn.ubuy.co.in/66b21df46270ef122a0a891d-gerber-snacks-for-baby-yogurt-melts.jpg",
       "in_stock": true,
       "discount": 0,
       "quantity": 1,
-      "additional_details": "No added sugar | Free from artificial flavors, colors, and preservatives | Perfect for snacking on-the-go."
+      "additional_details": "No added sugar | Free from artificial flavors, colors, and preservatives | Perfect for snacking on-the-go.",
+      "stock": 20
     },
     {
       "id": "18",
@@ -281,14 +313,15 @@
       "description": "Exciting interactive musical toy, featuring the iconic Baby Shark song that kids love. This toy lets little ones dive into a world of music and rhythm. With easy-to-use buttons, your child can control the fun as they sing, dance, and play along.",
       "mrp": 1280,
       "price": 1100,
-      "stars": 3.7,
+      "stars": 4.1,
       "category": "Toys",
       "image_url": "https://images-cdn.ubuy.qa/6355c7790d454479385365d9-baby-shark-39-s-big-show-sing.jpg",
-      "flip_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw7BoT_b1MkOnx5d1ur-u4RrXFk9gk040A1g&s", 
+      "flip_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw7BoT_b1MkOnx5d1ur-u4RrXFk9gk040A1g&s",
       "in_stock": true,
       "discount": 14,
       "quantity": 1,
-      "additional_details": "Batteries included | Suitable for ages 2+."
+      "additional_details": "Batteries included | Suitable for ages 2+.",
+      "stock": 14
     },
     {
       "id": "19",
@@ -303,7 +336,8 @@
       "in_stock": true,
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Comes with a convenient storage bag | Wide variety of vibrant colors and shapes."
+      "additional_details": "Comes with a convenient storage bag | Wide variety of vibrant colors and shapes.",
+      "stock": 20
     },
     {
       "id": "20",
@@ -315,7 +349,7 @@
       "category": "Toys",
       "image_url": "https://m.media-amazon.com/images/I/91UjodxFY4L.jpg",
       "flip_image_url": "https://rukminim2.flixcart.com/image/850/1000/l15bxjk0/puzzle/q/i/n/35-space-explorer-wooden-jigsaw-puzzle-for-kids-35-pieces-floor-original-imagcsytcwhuk6hm.jpeg?q=20&crop=false",
-      "in_stock": true,
+      "in_stock": false,
       "discount": 0,
       "quantity": 1,
       "additional_details": " The high-quality, durable pieces are easy for little hands to grasp, ensuring hours of educational fun."
@@ -324,16 +358,17 @@
       "id": "21",
       "name": "Rainbow Art Set",
       "description": "Unleash your child's creativity with this complete art set, designed especially for young artists! Packed with vibrant markers, colorful crayons, and washable paints, this set provides everything your little one needs to explore their artistic side.",
-      "mrp": 463,
-      "price": 463,
+      "mrp": 460,
+      "price": 460,
       "stars": 3.9,
       "category": "Toys",
-      "image_url":"https://m.media-amazon.com/images/I/71RJzmbCJGL._AC_UF894,1000_QL80_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71RJzmbCJGL._AC_UF894,1000_QL80_.jpg",
       "flip_image_url": "https://images-cdn.ubuy.co.in/6352d3bd2ae2e56c3b57e0b4-watercolor-paint-magic-art-set.jpg",
       "in_stock": true,
       "discount": 0,
       "quantity": 1,
-      "additional_details": "The non-toxic and washable materials ensure safe, worry-free fun, allowing kids to experiment with different techniques and colors."
+      "additional_details": "The non-toxic and washable materials ensure safe, worry-free fun, allowing kids to experiment with different techniques and colors.",
+      "stock": 15
     },
     {
       "id": "22",
@@ -341,14 +376,15 @@
       "description": "Wrap your little one in comfort with this cozy and soft baby blanket set, perfect for snuggles! Made from premium, ultra-soft materials, these blankets are gentle on your baby’s delicate skin, providing warmth during naps and bedtime sessions.",
       "mrp": 570,
       "price": 570,
-      "stars": 4.0,
+      "stars": 4,
       "category": "Clothes",
       "image_url": "https://m.media-amazon.com/images/I/71ISjPNsoBL._AC_UF894,1000_QL80_.jpg",
       "flip_image_url": "https://m.media-amazon.com/images/I/718CNc9gzQL.jpg",
       "in_stock": true,
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Available in multiple colors | Designed with a breathable fabric, they offer the perfect balance of warmth without overheating."
+      "additional_details": "Available in multiple colors | Designed with a breathable fabric, they offer the perfect balance of warmth without overheating.",
+      "stock": 14
     },
     {
       "id": "23",
@@ -358,137 +394,157 @@
       "price": 300,
       "stars": 4.4,
       "category": "Clothes",
-      "image_url": "https://img.tatacliq.com/images/i12/437Wx649H/MP000000018384630_437Wx649H_202307192231401.jpeg",
-      "flip_image_url": "https://img.tatacliq.com/images/i12/437Wx649H/MP000000018384630_437Wx649H_202307192231422.jpeg",
+      "image_url": "https://i.etsystatic.com/22669858/r/il/3301a1/2789253526/il_fullxfull.2789253526_f9bh.jpg",
+      "flip_image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS3AUSviBDU8_COYVcFJ_lXCdJ-Fv1AAQAQ_-WJdkEOX8st1Ar2",
       "in_stock": true,
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Available in sizes 0-18 months | The matching hat also provides extra warmth and protection during outdoor adventures."
+      "additional_details": "Available in sizes 0-18 months | The matching hat also provides extra warmth and protection during outdoor adventures.",
+      "stock": 20
     },
     {
       "id": "24",
       "name": "Polka Dot Baby Dress",
-      "description": "A charming baby dress with a polka dot pattern, perfect for special occasions.",
-      "price": 30,
-      "stars": 4.4,
+      "description": "Featuring an adorable polka dot pattern that’s perfect for special occasions! It ensures your baby stays comfortable while looking stylish. The elegant red polka dots in the white colmakes it ideal for family gatherings, holidays, or parties.",
+      "mrp": 450,
+      "price": 425,
+      "stars": 4.2,
       "category": "Clothes",
-      "image_url": "https://assets.ajio.com/medias/sys_master/root/20220113/MogW/61e03e80f997dd66232011b1/-473Wx593H-410260996-blue-MODEL2.jpg",
+      "image_url": "https://rukminim2.flixcart.com/image/850/1000/kzpw2vk0/kids-apparel-combo/5/c/l/0-3-months-strap-white-em-dresses-original-imagbzafxab9m4zc.jpeg?q=90&crop=false",
+      "flip_image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSETpJVcksDeTVDQEu2aYN952aZ4IMdQkshJFlzetw28E0Eg2mR",
       "in_stock": true,
       "discount": 5,
       "quantity": 1,
-      "additional_details": "Includes a matching headband. Available in sizes 6-24 months."
+      "additional_details": "Includes a matching headband. Available in sizes 6-24 months.",
+      "stock": 5
     },
     {
       "id": "25",
       "name": "Soft Cotton Pajama Set",
-      "description": "A soft and cozy pajama set to ensure a good night sleep for your baby.",
-      "price": 18,
+      "description": "Ensure a restful night’s sleep for your baby with this soft and cozy pajama set! This pajama set is designed to keep your little one comfortable and snug throughout the night. The gentle material is perfect for delicate skin, offering warmth without overheating, making it ideal for all seasons.",
+      "mrp": 380,
+      "price": 380,
       "stars": 3.8,
       "category": "Clothes",
       "image_url": "https://images-cdn.ubuy.co.in/644c1eeac6777d078a5d9b4f-apocaly-infant-baby-unisex-thermal.jpg",
+      "flip_image_url": "https://images-cdn.ubuy.co.in/644c1eeac6777d078a5d9b4f-apocaly-infant-baby-unisex-thermal.jpg",
       "in_stock": true,
-      "special_offer": "None",
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Available in unisex designs. Sizes 0-2 years."
+      "additional_details": "Available in unisex designs. Sizes 0-2 years.",
+      "stock": 15
     },
     {
       "id": "26",
       "name": "Baby Denim Overalls",
-      "description": "Stylish denim overalls that are durable and comfortable for your little explorer.",
-      "price": 35,
-      "stars": 4,
+      "description": "Stylish denim overalls that are durable and comfortable for your little explorer.  With a classic look and practical design, they’re ideal for outdoor play, family outings, or casual everyday wear.",
+      "mrp": 380,
+      "price": 350,
+      "stars": 3.9,
       "category": "Clothes",
-      "image_url": "https://m.media-amazon.com/images/I/619AePf+mkS._AC_UY1100_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/51b63IYTAzL._SL1080_.jpg",
       "in_stock": true,
-      "special_offer": "None",
-      "discount": 0,
+      "discount": 8,
       "quantity": 1,
-      "additional_details": "Adjustable straps and snap closures. Sizes 1-3 years."
+      "additional_details": "Adjustable straps and snap closures. Sizes 1-3 years.",
+      "flip_image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTp-A7ju-kxfeDlep11YzXRn9T2nK4-kqABw-7oHbUfMQ2MGfFF",
+      "stock": 10
     },
     {
       "id": "27",
       "name": "Winter Knit Sweater",
-      "description": "A warm and cozy knit sweater to keep your baby snug during the winter months.",
-      "price": 28,
+      "description": "Keep your baby warm and snug all winter long with this cozy knit sweater! Made from soft, high-quality yarn, this sweater provides exceptional warmth while being gentle on your baby’s delicate skin.",
+      "mrp": 1528,
+      "price": 1298,
       "stars": 4.2,
       "category": "Clothes",
-      "image_url": "https://image.made-in-china.com/2f0j00KwTVPhlaaYgM/Ins-Children-Knitted-Loose-Sweater-Girls-Boys-Solid-Colors-Pullover-Infant-Autumn-Winter-Garment.webp",
+      "image_url": "https://i5.walmartimages.com/seo/Esaierr-Kids-Baby-Knit-Sweaters-Boys-Girls-Baby-Solid-Color-Woolen-Clothes-Infant-Autumn-Winter-Sweatshirt-Round-Neck-Warm-Loose-Knitted-Top_94c23ba2-d3a7-4675-a77c-6584a1ee2bd6.438b298aa2af658542402e7d0872e8ac.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
       "in_stock": true,
-      "special_offer": "Free shipping",
-      "discount": 0,
+      "discount": 15,
       "quantity": 1,
-      "additional_details": "Available in multiple colors. Sizes 6 months - 2 years."
+      "additional_details": "A winter essential for any baby wardrobe! | 4 No.s with multiple color in one packet | Sizes 6 months - 2 years.",
+      "flip_image_url": "https://image.made-in-china.com/2f0j00KwTVPhlaaYgM/Ins-Children-Knitted-Loose-Sweater-Girls-Boys-Solid-Colors-Pullover-Infant-Autumn-Winter-Garment.webp",
+      "stock": 8
     },
     {
       "id": "28",
-      "name": "Sweet Potato & Pear Baby Food",
-      "description": "A smooth and nutritious blend of sweet potato and pear for your little one.",
-      "price": 6,
+      "name": "Potato & Pear Baby Food",
+      "description": "A smooth and nutritious blend of sweet potato and pear for your little one. Made with Sweet Potatoes, Mangoes, Pears, Organic Kale, Lemon Juice Concentrate, Vitamin C (Ascorbic Acid), Vitamin E (Alpha Tocopheryl Acetate).",
+      "mrp": 1392,
+      "price": 1238,
       "stars": 4.3,
       "category": "Food",
-      "image_url": "https://babyamore.in/wp-content/uploads/2023/03/Gerber-Natural-for-Baby-Veggie-Power-Sweet-Potato-Mango-Pear-and-Kale-99g-01.jpg",
+      "image_url": "https://www.kroger.com/product/images/large/front/0001500091020",
       "in_stock": true,
-      "special_offer": "None",
-      "discount": 0,
+      "discount": 11,
       "quantity": 1,
-      "additional_details": "Organic and free from artificial preservatives."
+      "additional_details": "Organic and free from artificial preservatives | One pouch contains 6 packets, each with 100g.",
+      "flip_image_url": "https://babyamore.in/wp-content/uploads/2023/03/Gerber-Natural-for-Baby-Veggie-Power-Sweet-Potato-Mango-Pear-and-Kale-99g-01.jpg",
+      "stock": 12
     },
     {
       "id": "29",
       "name": "Toddler Snack Bars",
-      "description": "Healthy and delicious apple cinnamon snack bars for toddlers.",
-      "price": 7,
+      "description": "Made with real apples and a hint of warm cinnamon, these bars offer a perfect balance of natural sweetness and wholesome nutrition. Packed with fiber and essential vitamins, they provide a nutritious snack that supports babies energy and growth.",
+      "mrp": 640,
+      "price": 608,
       "stars": 4.1,
       "category": "Food",
       "image_url": "https://m.media-amazon.com/images/I/81pMM-7dFQL._AC_UF894,1000_QL80_.jpg",
       "in_stock": true,
-      "special_offer": "Buy 2, Get 1 Free",
-      "discount": 0,
+      "discount": 5,
       "quantity": 1,
-      "additional_details": "Made with whole grains and natural ingredients."
+      "additional_details": "Soft and easy to chew | Free from artificial flavors, preservatives, and added sugars.",
+      "flip_image_url": "https://m.media-amazon.com/images/I/61XpONAEtFL.jpg",
+      "stock": 20
     },
     {
       "id": "30",
       "name": "Cheddar Cheese Puffs",
-      "description": "Crunchy and tasty cheddar cheese puffs that are perfect for little snacks.",
-      "price": 5,
+      "description": "Treat your little one to a crunchy and tasty snack with these cheddar cheese puffs! Made with real cheddar cheese. Light and airy with a satisfying crunch, they’re the perfect bite-sized snack for little hands.\n",
+      "mrp": 1020,
+      "price": 918,
       "stars": 3.9,
       "category": "Food",
-      "image_url": "https://m.media-amazon.com/images/S/assets.wholefoodsmarket.com/PIE/product/661498909e44b67eb10f0b84_2024-04-09_01-24-12_front.main.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/81wYuyGuQGL.jpg",
       "in_stock": true,
-      "special_offer": "10% off",
       "discount": 10,
       "quantity": 1,
-      "additional_details": "Gluten-free and made with real cheddar cheese."
+      "additional_details": "Non-GMO baked | Offer 5 grams of whole grains and contain no artificial flavors or colors.",
+      "flip_image_url": "https://m.media-amazon.com/images/I/81DAMesedTL.jpg",
+      "stock": 12
     },
     {
       "id": "31",
       "name": "Wooden Animal Stacker",
-      "description": "A classic wooden toy featuring stackable animal shapes to develop motor skills.",
-      "price": 22,
-      "stars": 4,
+      "description": "Introduce your child to the timeless fun of this classic wooden toy, featuring stackable animal shapes. Each wooden piece is crafted with smooth, rounded edges, making it safe and easy for little hands to grasp and stack.",
+      "mrp": 460,
+      "price": 460,
+      "stars": 4.1,
       "category": "Toys",
       "image_url": "https://smolblock.com/cdn/shop/files/Untitleddesign_31.png?v=1699342764",
       "in_stock": true,
-      "special_offer": "None",
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Crafted from non-toxic wood and painted with safe, vibrant colors."
+      "additional_details": "Crafted from non-toxic wood and painted with safe, vibrant colors.",
+      "stock": 20,
+      "flip_image_url": "https://smolblock.com/cdn/shop/files/WildStack_PuzzleBoard.jpg?v=1706004118"
     },
     {
       "id": "32",
       "name": "Adventure Dinosaur Hoodie",
-      "description": "A cozy hoodie with a fun dinosaur graphic, perfect for little adventurers.",
-      "price": 25,
+      "description": "Keep your little adventurer warm and stylish with this cozy hoodie, featuring a fun dinosaur graphic! Made from soft, breathable fabric, this hoodie is perfect for active kids who love to explore. The playful dinosaur design adds a touch of excitement and imagination, making it a favorite for any dino-loving child.",
+      "mrp": 530,
+      "price": 530,
       "stars": 4.1,
       "category": "Clothes",
-      "image_url": "https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/d032df2af0c19da4470cd1a9d2712041.jpg?imageView2/2/w/500/q/60/format/webp",
-      "in_stock": true,
-      "special_offer": "None",
+      "image_url": "https://i5.walmartimages.com/seo/CM-Kid-Toddler-Boy-Hoodies-Sweatshirts-Dinosaur-Pullover-Zip-up-Jacket-5T_981fec82-e0c7-4db2-8c35-899dea91109e.db7b383fca47fff801ac376ab8e76b17.jpeg?odnHeight=50px&odnWidth=50px&odnBg=FFFFFF",
+      "in_stock": false,
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Made from soft cotton blend. Available in sizes 2-4 years."
+      "additional_details": "Made from soft cotton blend. Available in sizes 2-4 years.",
+      "flip_image_url": "https://i5.walmartimages.com/seo/CM-Kid-Boys-Dinosaur-Hoodies-Kids-Zipper-Pullover-Hoodie-Sweatshirts-6T_7c157970-1598-44e3-af5d-695b3ad62ada.a8fba0f8dd6c2d24133e62d319ed996d.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+      "stock": 11
     },
     {
       "id": "33",
@@ -499,28 +555,30 @@
       "stars": 4.8,
       "category": "Furniture",
       "material": "Wood",
-      "image_url": "https://m.media-amazon.com/images/I/81KZkNtYq5L._AC_UF894,1000_QL80_.jpg",
+      "image_url": "https://staranddaisy.in/wp-content/uploads/2024/07/Woodsy-Wonder-baby-Wooden-Crib-B26-main.jpg",
       "in_stock": true,
-      "special_offer": "Buy with a changing table and save 15%",
       "discount": 15,
       "quantity": 1,
-      "additional_details": "Includes a mattress and adjustable mattress height."
+      "additional_details": "Includes a mattress and adjustable mattress height.",
+      "flip_image_url": "https://staranddaisy.in/wp-content/uploads/2024/07/B27-Multifuctional-Baby-Wooden-Cot-Main.jpg",
+      "stock": 9
     },
     {
       "id": "34",
       "name": "Dressing Shelf",
-      "description": "Elegant and practical solution designed to keep dresses organized and easily accessible. Ideal for both everyday use and special occasions, this shelf combines style with functionality to enhance your wardrobe space.",
+      "description": "A practical solution to keep dresses organized and easily accessible. Ideal for both everyday use and special occasions. It combines style with functionality to enhance your wardrobe space.",
       "mrp": 2200,
       "price": 1980,
       "stars": 4.5,
       "category": "Furniture",
       "material": "Fibre",
       "image_url": "https://m.media-amazon.com/images/I/81qD3t67kvL.jpg",
-      "in_stock": true,
-      "special_offer": "Free shipping on orders over $200",
+      "in_stock": false,
       "discount": 10,
       "quantity": 1,
-      "additional_details": "Features plenty of storage for baby essentials."
+      "additional_details": "Features plenty of storage for baby essentials.",
+      "flip_image_url": "https://cdn.fcglcdn.com/brainbees/images/products/280x338/15270878a.webp",
+      "stock": 14
     },
     {
       "id": "35",
@@ -531,57 +589,63 @@
       "stars": 4.6,
       "category": "Furniture",
       "material": "Fibre",
-      "image_url": "https://m.media-amazon.com/images/I/81d-1wxN8tL.jpg",
+      "image_url": "https://babymoo.in/cdn/shop/files/7888-GREEN-1.jpg?v=1719854715",
       "in_stock": true,
-      "special_offer": "Buy two and get 10% off",
       "discount": 10,
       "quantity": 1,
-      "additional_details": "Available in multiple upholstery options."
+      "additional_details": "Available in multiple upholstery options.",
+      "flip_image_url": "https://babymoo.in/cdn/shop/files/88925-GREEN-1.png?v=1719854741&width=1500",
+      "stock": 15
     },
     {
       "id": "36",
       "name": "Portable Baby Playpen",
       "description": "The Perfect solution for safe, versatile, and convenient playtime for your little one. Designed with both home and travel in mind, this playpen features a compact, foldable design that makes it easy to transport and store.",
+      "mrp": 4500,
       "price": 4500,
       "stars": 4.4,
       "category": "Furniture",
       "material": "Fibre",
-      "image_url": "https://m.media-amazon.com/images/I/81+xgFPBGCL._AC_UF894,1000_QL80_.jpg",
+      "image_url": "https://staranddaisy.in/wp-content/uploads/2024/05/Baby-Playpen-Crocodile-main.jpg",
       "in_stock": true,
-      "special_offer": "Includes a free carrying case",
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Features mesh sides for ventilation."
+      "additional_details": "Features mesh sides for ventilation | Includes a free carrying case.",
+      "flip_image_url": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/d66ef939-c478-4345-bc02-58d4ca5641e7.__CR0,0,1200,900_PT0_SX600_V1___.jpg",
+      "stock": 5
     },
     {
       "id": "37",
       "name": "Baby Rocker with Music",
-      "description": "Soothing Baby Rocker is designed to create a calm and comforting environment for your little one. Featuring built-in music and vibration settings, offers gentle motions and soothing sounds to relax your baby and make a peaceful rest.",
-      "mrp": 6200,
-      "price": 4960,
+      "description": "Soothing Baby Rocker is designed to create a calm and comforting environment for your little one. Featuring built-in music and vibration settings, offers gentle motions and soothing sounds.",
+      "mrp": 7990,
+      "price": 6390,
       "stars": 4.3,
       "category": "Furniture",
       "material": "Aluminium & Plastic",
       "image_url": "https://babyteddy.shop/wp-content/uploads/2023/10/tiger12.png",
       "in_stock": true,
-      "special_offer": "Save $20 on your first purchase",
       "discount": 20,
       "quantity": 1,
-      "additional_details": "Removable and washable fabric cover."
+      "additional_details": "Removable and washable fabric cover.",
+      "flip_image_url": "https://babyteddy.shop/wp-content/uploads/2023/10/2.png",
+      "stock": 7
     },
     {
       "id": "38",
       "name": "High Chair with Tray",
       "description": "Perfect solution for easy and convenient feeding times. Designed to grow with your child, this high chair offers multiple adjustable features, including an adaptable tray and easy-to-clean.",
+      "mrp": 1600,
       "price": 1600,
       "stars": 4.7,
       "category": "Furniture",
       "image_url": "https://meemee.in/cdn/shop/products/MeeMeeUltraSleekPortableBabyHighChairwithAdjustableFeedingTray.jpg?v=1649864164",
       "in_stock": true,
-      "special_offer": "Includes a free waterproof seat cover",
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Easy to fold and store.Includes a free waterproof seat cover"
+      "additional_details": "Easy to fold and store | Includes a free waterproof seat cover",
+      "flip_image_url": "https://www.menmoms.in/cdn/shop/files/MM-860-6.jpg?v=1715152601&width=1000",
+      "stock": 11
     },
     {
       "id": "39",
@@ -591,12 +655,13 @@
       "price": 4140,
       "stars": 4.6,
       "category": "Furniture",
-      "image_url": "https://rukminim2.flixcart.com/image/850/1000/k6v2ykw0/cot-bassinet/y/s/h/new-born-baby-swing-baby-cradle-baby-crib-baby-jhula-with-original-imafp8ksgudz5ptk.jpeg?q=90&crop=false",
+      "image_url": "https://5.imimg.com/data5/SA/KC/YI/SELLER-79284565/baby-cradles-swings-heighted.jpg",
       "in_stock": true,
-      "special_offer": "Get a free crib mobile with purchase",
       "discount": 10,
       "quantity": 1,
-      "additional_details": "Includes removable and washable bedding. Provided with a mosquito netting."
+      "additional_details": "Includes removable and washable bedding. Provided with a mosquito netting.",
+      "flip_image_url": "https://5.imimg.com/data5/RQ/ES/LP/SELLER-79284565/modern-baby-cradle-swing-500x500.png",
+      "stock": 20
     },
     {
       "id": "40",
@@ -606,40 +671,45 @@
       "price": 1560,
       "stars": 4.4,
       "category": "Furniture",
-      "image_url": "https://i0.wp.com/natalieinthenorthwest.com/wp-content/uploads/2021/03/img_4348.jpg?resize=605%2C909&ssl=1",
+      "image_url": "https://m.media-amazon.com/images/I/81gYmUY0DcL._AC_UF1000,1000_QL80_.jpg",
       "in_stock": true,
-      "special_offer": "Buy one, get one 25% off",
       "discount": 25,
       "quantity": 1,
-      "additional_details": "Fits neatly anywhere in the room and easily manageble."
+      "additional_details": "Fits neatly anywhere in the room and easily manageble.",
+      "flip_image_url": "https://m.media-amazon.com/images/I/81GWk3q-D9L._AC_UF350,350_QL80_.jpg",
+      "stock": 14
     },
     {
       "id": "41",
-      "name": "Convertible Crib to Toddler Bed",
+      "name": "Crib to Toddler Bed",
       "description": "Convertible Crib is designed to grow with your child, providing a safe and comfortable sleep environment. With its adaptable design, this crib easily converts into a toddler bed, offering long-term value and practicality for your family.",
-      "price": 3200,
+      "mrp": 5200,
+      "price": 5200,
       "stars": 4.8,
       "category": "Furniture",
-      "image_url": "https://media.architecturaldigest.com/photos/646d20f44d1cdb9287667ff9/1:1/w_1682,h_1682,c_limit/convertiblecribs_header.jpg",
+      "image_url": "https://babyletto.com/cdn/shop/products/exyoecmpro3pr00tlkuq_1024x1024.jpg?v=1724786634",
       "in_stock": true,
-      "special_offer": "Includes a toddler rail free",
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Meets all safety standards."
+      "additional_details": "Meets all safety standards.",
+      "flip_image_url": "https://m.media-amazon.com/images/I/71RTtFjARxL._AC_UF350,350_QL80_.jpg",
+      "stock": 5
     },
     {
       "id": "42",
-      "name": "Baby Nursery Storage Cabinet",
+      "name": "Baby Storage Cabinet",
       "description": "Stylish Storage Cabinet isfor organizing your baby's clothes, toys, and other essentials. Combining functionality with modern design, this cabinet offers ample storage space while enhancing the aesthetic of any nursery or playroom.",
+      "mrp": 4180,
       "price": 4180,
       "stars": 4.5,
       "category": "Furniture",
-      "image_url": "https://images-cdn.ubuy.co.in/667e01c9a6527108141192b9-baby-dresser-kids-closet-organizers.jpg",
+      "image_url": "https://www.kidswardrobe.in/upload/Product_file/6086825b128b93737551da361e511cdab2cff61b12bdcW3.jpg",
       "in_stock": true,
-      "special_offer": "Free delivery and assembly",
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Durable and easy to clean. Seperate spaces for organizing baby clothes, toys, medicines and other items."
+      "additional_details": "Durable and easy to clean. Seperate spaces for organizing baby clothes, toys, medicines and other items.",
+      "flip_image_url": "https://www.kidswardrobe.in/upload/Product_file/60867a7454147c81911d9fb92cd0b055dbeb696484385C3.jpg",
+      "stock": 15
     },
     {
       "id": "43",
@@ -651,10 +721,11 @@
       "category": "Gear",
       "image_url": "https://kidzon.co/cdn/shop/products/BR958-RD1_1800x1800.jpg?v=1669114170",
       "in_stock": true,
-      "special_offer": "Free stroller rain cover",
       "discount": 10,
       "quantity": 1,
-      "additional_details": "Includes a storage basket and cup holder."
+      "additional_details": "Includes a storage basket and cup holder | Free stroller rain cover.",
+      "flip_image_url": "https://m.media-amazon.com/images/I/71zfQx0cEhL._AC_UF350,350_QL80_.jpg",
+      "stock": 8
     },
     {
       "id": "44",
@@ -665,98 +736,107 @@
       "stars": 4.6,
       "category": "Gear",
       "image_url": "https://themomstore.in/cdn/shop/products/infantino-flip-4-in-1-light-airy-convertible-carrier-grey-256846.jpg?v=1710315041",
-      "in_stock": true,
-      "special_offer": "Buy one, get 20% off on accessories",
+      "in_stock": false,
       "discount": 20,
       "quantity": 1,
-      "additional_details": "Machine washable with adjustable straps."
+      "additional_details": "Machine washable with adjustable straps.",
+      "flip_image_url": "https://www.toys4all.in/cdn/shop/files/300079-4_300x.jpg?v=1709027555"
     },
     {
       "id": "45",
       "name": "Baby Travel Crib",
       "description": "Designed to offer a comfortable and safe sleeping environment for your baby, whether you're at home or on the go. With its lightweight, portable, easy-to-assemble design make sure your little one can nap peacefully wherever you are.",
+      "mrp": 6850,
       "price": 6850,
       "stars": 4.8,
       "category": "Gear",
-      "image_url": "https://thedomfamily.com/wp-content/uploads/2021/08/Dream-on-Me-Travel-Light-Playard-kalix-xcastiel.jpg",
+      "image_url": "https://pamobabe.com/cdn/shop/files/81XSbbkVQ4L._SL1500.jpg?v=1698458306",
       "in_stock": true,
-      "special_offer": "Free carrying bag included",
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Compact and lightweight design."
+      "additional_details": "Compact and lightweight design | Free carrying bag included.",
+      "flip_image_url": "https://m.media-amazon.com/images/I/816HR5uesdL._AC_UF894,1000_QL80_.jpg",
+      "stock": 9
     },
     {
       "id": "46",
       "name": "Baby Car Seat",
       "description": "Rear-Facing Car Seat is medesigned to ensure your baby's safety and comfort during car rides. Equipped with a secure 5-point safety harness and advanced safety features, this car seat provides peace of mind while traveling with your little one.",
-      "price": 4800,
+      "mrp": 7200,
+      "price": 5760,
       "stars": 4.9,
       "category": "Gear",
       "image_url": "https://m.media-amazon.com/images/I/81FC2h4iyXL.jpg",
       "in_stock": true,
-      "special_offer": "Get free installation assistance",
-      "discount": 0,
+      "discount": 20,
       "quantity": 1,
-      "additional_details": "Meets all safety standards with side impact protection."
+      "additional_details": "Meets all safety standards with side impact protection.",
+      "flip_image_url": "https://www.happybear.co.in/image/cache/catalog/products/baby-seat/baby-car-seater-red-500x500.jpg",
+      "stock": 15
     },
     {
       "id": "47",
       "name": "Swing with Music & Lights",
       "description": "Soothing Baby Swing is designed to provide a tranquil and comforting environment for your baby, making it easier to lull them to sleep. With its array of features, including calming music, gentle lights, and adjustable swing speeds, this swing offers a good experienc",
-      "mrp": 4100,
-      "price": 3485,
+      "mrp": 6100,
+      "price": 5185,
       "stars": 4.5,
       "category": "Gear",
       "image_url": "https://5.imimg.com/data5/SELLER/Default/2021/8/LN/PJ/NF/131989713/ingenuity-convertible-electric-swing-cradle-lights-toys-and-music-rotatable-seat-500x500.jpeg",
       "in_stock": true,
-      "special_offer": "Save 15% when purchased with a baby rocker",
       "discount": 15,
       "quantity": 1,
-      "additional_details": "Battery-operated with removable washable seat cover."
+      "additional_details": "Battery-operated with removable washable seat cover.",
+      "flip_image_url": "https://5.imimg.com/data5/SELLER/Default/2021/8/HY/KS/OY/131989713/ingenuity-convertible-electric-swing-cradle-lights-toys-and-music-rotatable-seat.jpeg",
+      "stock": 10
     },
     {
       "id": "48",
       "name": "Portable Diaper Changer",
       "description": "Ultimate solution for on-the-go diaper changes, providing convenience and organization in a portable package. Designed with busy parents in mind, this changing station ensures that you’re always prepared for diaper duty, whether at home or away.",
+      "mrp": 1100,
       "price": 1100,
       "stars": 4.3,
       "category": "Gear",
       "image_url": "https://m.media-amazon.com/images/I/815zSRkbGiL.jpg",
       "in_stock": true,
-      "special_offer": "Buy 2, get 1 free",
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Waterproof and easy to clean."
+      "additional_details": "Waterproof and easy to clean.",
+      "flip_image_url": "https://m.media-amazon.com/images/I/815zSRkbGiL.jpg",
+      "stock": 15
     },
     {
       "id": "49",
       "name": "Baby Monitor with Camera",
-      "description": "It provides peace of mind for parents by offering real-time video and audio monitoring of your baby, no matter where you are. With its high-definition camera and night vision, this monitor ensures you can keep a close eye on your baby both day and night.",
+      "description": "Provides peace for parents by offering real-time video and audio monitoring of your baby, no matter where you are. With its high-definition camera and night vision, this monitor ensures you can keep a close eye on your baby both day and night.",
       "mrp": 13150,
       "price": 10520,
       "stars": 4.7,
       "category": "Gear",
       "image_url": "https://m.media-amazon.com/images/I/6129wK0rc-L.jpg",
       "in_stock": true,
-      "special_offer": "Free extra camera included",
       "discount": 20,
       "quantity": 1,
-      "additional_details": "Includes remote pan and tilt functionality. 5 Inch Split IPS Screen, Support Up to 2 Cameras, Pan-Tilt-Zoom, 4800mAh Battery, Night Vision"
+      "additional_details": "5 Inch Split IPS Screen, Support Up to 2 Cameras,  4800mAh Battery, Night Vision",
+      "flip_image_url": "https://m.media-amazon.com/images/I/61wTIti5dIL._AC_UF350,350_QL80_.jpg",
+      "stock": 10
     },
     {
       "id": "50",
-      "name": "Diaper Bag Backpack",
+      "name": "Bag Backpack",
       "description": "Backpack with multiple compartments, insulated pockets, and a comfortable design, this diaper bag makes it easy to carry all your baby essentials while keeping everything organized and accessible.",
       "mrp": 1280,
       "price": 1088,
       "stars": 4.4,
       "category": "Gear",
-      "image_url": "https://m.media-amazon.com/images/I/81OBsganOzS._AC_UF350,350_QL80_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71RMRKb-ElL._AC_UF894,1000_QL80_.jpg",
       "in_stock": true,
-      "special_offer": "Includes free matching changing mat",
       "discount": 15,
       "quantity": 1,
-      "additional_details": "Water-resistant with multiple compartments."
+      "additional_details": "Water-resistant with multiple compartments.",
+      "flip_image_url": "https://m.media-amazon.com/images/I/71FwfwJs+nL._AC_SL1500_.jpg",
+      "stock": 19
     },
     {
       "id": "51",
@@ -768,10 +848,11 @@
       "category": "Care",
       "image_url": "https://staranddaisy.in/wp-content/uploads/2023/08/Sebamed-Soothing-Baby-Massage-Oil-150-ml-1.jpg",
       "in_stock": true,
-      "special_offer": "Buy 2, get 1 free",
       "discount": 20,
       "quantity": 1,
-      "additional_details": "Dermatologically tested, hypoallergenic."
+      "additional_details": "Dermatologically tested, hypoallergenic | One bottle 150 ml.",
+      "flip_image_url": "https://www.luluhypermarket.com/cdn-cgi/image/f=auto/medias/442713-01.jpg-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w5MzUxNHxpbWFnZS9qcGVnfGFHVm1MMmcwWXk4eE1qVTFPRGcwT0RZMU5UTTVNQzgwTkRJM01UTXRNREV1YW5Cblh6RXlNREJYZURFeU1EQkl8Njc4NmFkYzAyMzE5MDgwOWM1ZmZhNDE2OWIyMWFmNTBkNWUwODY4YTg4OWRkZDc0NzY4NDczNzJlY2M0YzdlNA",
+      "stock": 15
     },
     {
       "id": "52",
@@ -779,61 +860,68 @@
       "description": "Protect your baby’s delicate skin from dryness, irritation, and diaper rash. Made with safe, gentle ingredients, this nourishing cream helps maintain soft, smooth, and healthy skin while providing relief from common skin irritations.",
       "mrp": 450,
       "price": 405,
-      "stars": 4.6,
+      "stars": 4.4,
       "category": "Care",
       "image_url": "https://m.media-amazon.com/images/I/51UznxTFmWL.jpg",
-      "in_stock": true,
-      "special_offer": "Free travel-size bottle included",
+      "in_stock": false,
       "discount": 10,
       "quantity": 1,
-      "additional_details": "Pediatrician-recommended, fragrance-free. Nourishing Cream."
+      "additional_details": "Pediatrician-recommended, fragrance-free. Nourishing Cream.",
+      "flip_image_url": "https://m.media-amazon.com/images/I/71+SH1KyCQL.jpg"
     },
     {
       "id": "53",
       "name": "Fever Reducer Syrup",
       "description": "Oral Fever Reducer Syrup provide fast and effective relief from fever and pain in babies. Made with safe ingredients and no added preservatives, this gentle syrup is designed to offer comfort during teething, colds, or flu, ensuring your baby feels better quickly.",
+      "mrp": 170,
       "price": 170,
-      "stars": 4.9,
+      "stars": 4.4,
       "category": "Care",
-      "image_url": "https://5.imimg.com/data5/SELLER/Default/2022/5/CC/SD/LE/133778022/new-product.jpeg",
+      "image_url": "https://5.imimg.com/data5/SELLER/Default/2022/4/NO/ZO/WU/127249929/1.jpg",
       "in_stock": true,
-      "special_offer": "Save 10% on next purchase",
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Alocohol free. Includes dosage instructions and dropper. Dosage 5-10 ml."
+      "additional_details": "Alocohol free. Includes dosage instructions and dropper. Dosage 5-10 ml.",
+      "flip_image_url": "https://5.imimg.com/data5/SELLER/Default/2022/4/NO/ZO/WU/127249929/1.jpg",
+      "stock": 21
     },
     {
       "id": "54",
-      "name": "Cold & Cough Medicine",
+      "name": "Cold & Cough Syrup",
       "description": "A gentle cold and cough medicine for babies, providing fast relief from common cold symptoms without causing drowsiness. Ease the sneezing, soothe the sore throat, and loosen up the congestion so that many parents have demand on thi item",
+      "mrp": 270,
       "price": 270,
       "stars": 4.1,
       "category": "Care",
-      "image_url": "https://hylands.com/cdn/shop/products/D06_R001_CCFK-L4Z_Bottle_A_001_large.jpg?v=1645550703",
+      "image_url": "https://target.scene7.com/is/image/Target/GUEST_156c7b9b-6e7e-4ae7-90a9-673229c11212?wid=488&hei=488&fmt=pjpeg",
       "in_stock": true,
-      "special_offer": "Buy one, get one 50% off",
       "discount": 0,
-      "quantity": 1,
-      "additional_details": "200 ml bottle. Can use upto 2-12 years old childrens. Non-drowsy formula, easy to administer."
+      "quantity": -1,
+      "additional_details": "200 ml bottle. Can use upto 2-12 years old childrens. Non-drowsy formula, easy to administer.",
+      "flip_image_url": "https://i5.walmartimages.com/seo/Hyland-s-Naturals-Baby-Nighttime-Cold-Syrup-Natural-Relief-of-Runny-Nose-Congestion-and-Sleeplessness-4-Ounces_faa61d7f-ca34-46c8-ad02-b01234292e2e.69b895525b7cfb337dcec3041e70683c.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+      "stock": 19
     },
     {
       "id": "55",
       "name": "Sunscreen Lotion SPF 50",
       "description": "Specially formulated to provide optimal sun protection for your baby's delicate skin. With SPF 50 and broad-spectrum coverage, this sunscreen shields your baby from harmful UVA and UVB rays, ensuring they stay safe during outdoor play.",
+      "mrp": 350,
       "price": 350,
       "stars": 4.2,
       "category": "Care",
       "image_url": "https://rukminim2.flixcart.com/image/850/1000/kiqbma80-0/sunscreen/q/s/u/200-baby-sun-lotion-spf-50-baby-sunscreen-lotion-200ml-spf-50-original-imafygkjvdkmfbmv.jpeg?q=90&crop=false",
       "in_stock": true,
-      "special_offer": "Free after-sun lotion included",
       "discount": 0,
       "quantity": 1,
-      "additional_details": "200ml bottle. Water-resistant, safe for sensitive skin."
+      "additional_details": "200ml bottle. Water-resistant, safe for sensitive skin.",
+      "flip_image_url": "https://www.mywellnesskart.com/Images/4006648.Sebamed-Baby-Sun-lotion-SPF50+-200ml-details.default.jpg?resizeid=319&resizeh=1015&resizew=861",
+      "stock": 10
     },
     {
       "id": "56",
       "name": "Nail Care Set",
       "description": "Help parents to safely and easily trim and maintain their baby’s delicate nails. This set includes all the essential tools like nail scissors, clippers, and a gentle nail buffer making it easy to keep your baby's nails trimmed, smooth, and free from sharp edges.",
+      "mrp": 300,
       "price": 300,
       "stars": 4.4,
       "category": "Care",
@@ -842,12 +930,14 @@
       "special_offer": "10% off when purchased with a baby grooming kit",
       "discount": 0,
       "quantity": 1,
-      "additional_details": "Safe and easy to use, comes with a storage case."
+      "additional_details": "Safe and easy to use, comes with a storage case.",
+      "flip_image_url": "https://image.made-in-china.com/202f0j00tonbLQgRRucT/4PCS-safety-Cutter-Care-Kit-for-Baby-Nail-File-Clipper-Scissors-Baby-Nail-Clippers-Set.webp",
+      "stock": 13
     },
     {
       "id": "57",
       "name": "Teething Gel",
-      "description": "Specially formulated for instant relief from the discomfort of teething, offering a gentle and effective solution for sore gums and irritability in babies. Made with baby-friendly ingredients, this teething gel is a must-have for parents looking to ease their baby’s teething pain.",
+      "description": "Specially formulated for instant relief from the discomfort of teething, offering a gentle and effective solution for sore gums and irritability in babies. Made with baby-friendly ingredients.",
       "mrp": 479,
       "price": 407,
       "stars": 4.6,
@@ -857,21 +947,57 @@
       "special_offer": "Buy 2, get 1 free",
       "discount": 15,
       "quantity": 1,
-      "additional_details": "No.1 Pediatrician recommended teething gel. Free from artificial colors and flavors."
+      "additional_details": "No.1 Pediatrician recommended teething gel. Free from artificial colors and flavors.",
+      "stock": 16,
+      "flip_image_url": "https://m.media-amazon.com/images/I/61dDsLzcYnL.jpg"
     },
     {
       "id": "58",
       "name": "Ear & Nose Cleaner Kit",
       "description": "A safe and effective ear and nose cleaning kit for babies, including a soft-tipped aspirator and cleaning tools designed to remove mucus and wax gently and make the both ear and nose clear. Soft rubber coating is slip-free and gentle against baby’s skin.",
-      "price": 580,
+      "price": 380,
       "stars": 4.3,
       "category": "Care",
       "image_url": "https://m.media-amazon.com/images/I/51hsMYF7DBL._AC_UF1000,1000_QL80_.jpg",
-      "in_stock": true,
+      "in_stock": false,
       "special_offer": "Includes extra filters for aspirator",
       "discount": 0,
       "quantity": 1,
-      "additional_details": "BPA-free, safe for newborns.Loop end for sticky mucus and Scoop end for dried mucus, Easy to clean"
+      "additional_details": "BPA-free, safe for newborns.Loop end for sticky mucus and Scoop end for dried mucus, Easy to clean",
+      "mrp": 380,
+      "flip_image_url": "https://b-arm.com/wp-content/uploads/2024/01/Baby-nasal-booger-cleaner.png"
+    },
+    {
+      "id": "59",
+      "name": "Baby Diapers",
+      "description": "Specially designed diapers for baby’s comfort. Adjustable Fit-Taped diapers which you can make fit or loose based on your baby’s size. Stretchable soft material to fit snugly around waist & side. All-around cotton-like softness for baby’s delicate skin.",
+      "price": 1014,
+      "stars": 4.1,
+      "category": "Care",
+      "image_url": "https://m.media-amazon.com/images/I/619N1qVcRML.jpg",
+      "flip_image_url": "https://m.media-amazon.com/images/I/71X9ewCJS6L._SX679_.jpg",
+      "in_stock": true,
+      "stock": 22,
+      "discount": 0,
+      "quantity": 1,
+      "additional_details": "Magic Gel technology to keep baby dry all night(Up to 12 hrs absorption) | Supports Extra Dry Layer.",
+      "mrp": 1014
+    },
+    {
+      "id": "60",
+      "name": "Monkey Faced Car",
+      "description": "Our push ride-on car can handle weight maximum upto 15-20 kg and is ideal for 1 year to 3 year old toddlers. It is convenient to carry where ever you go. Designed with utmost comfort of the baby with optimum height and round edges. ",
+      "price": 1699,
+      "stars": 3,
+      "category": "Toys",
+      "image_url": "https://baybee.co.in/cdn/shop/products/611y_J_BLfL_1400x.jpg?v=1681974700",
+      "flip_image_url": "https://baybee.co.in/cdn/shop/products/61NEFJGOLJL_1400x.jpg?v=1681974700",
+      "in_stock": true,
+      "stock": 13,
+      "discount": 0,
+      "quantity": 1,
+      "additional_details": "Material Type - Plastic | Colour‎ - Blue | Item Weight‎ - 2.4 kg.",
+      "mrp": 1699
     }
   ]
 }

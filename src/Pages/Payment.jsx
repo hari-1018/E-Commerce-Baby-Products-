@@ -105,6 +105,12 @@ const Payment = () => {
       </div>
 
       <div className="mt-8">
+        <h2 className="text-xl font-semibold text-indigo-600 mb-4 flex items-center">Shipping Address <FaShippingFast className='ml-2' /></h2>
+        <textarea value={shippingAddress} onChange={handleShippingAddressChange} className={`block w-full p-2 border ${formErrors.shippingAddress ? 'border-red-500' : 'border-gray-300'} rounded-md bg-white text-gray-700`} required></textarea>
+        {formErrors.shippingAddress && <p className="text-red-500 text-sm mt-2">Please enter your shipping address.</p>}
+      </div>
+      
+      <div className="mt-8">
         <h2 className="text-xl font-semibold text-indigo-600 mb-4 flex items-center">Select Payment Method <BsCashCoin className='ml-2' /></h2>
         <select value={paymentMethod} onChange={handlePaymentMethodChange} className={`block w-full p-2 border ${formErrors.paymentMethod ? 'border-red-500' : 'border-gray-300'} rounded-md bg-white text-gray-700`}>
           <option value="" disabled>Select a payment method</option>
@@ -132,22 +138,9 @@ const Payment = () => {
             <option value="Kotak">Kotak Mahindra Bank</option>
             <option value="SBI">SBI</option>
             <option value="SIB">South Indian Bank</option>
-
-
-
-
-
-
-            {/* Add more banks as needed */}
           </select>
         </div>
       )}
-
-      <div className="mt-8">
-        <h2 className="text-xl font-semibold text-indigo-600 mb-4 flex items-center">Shipping Address <FaShippingFast className='ml-2' /></h2>
-        <textarea value={shippingAddress} onChange={handleShippingAddressChange} className={`block w-full p-2 border ${formErrors.shippingAddress ? 'border-red-500' : 'border-gray-300'} rounded-md bg-white text-gray-700`} required></textarea>
-        {formErrors.shippingAddress && <p className="text-red-500 text-sm mt-2">Please enter your shipping address.</p>}
-      </div>
 
       <div className="text-center mt-8">
         <button onClick={handleConfirmPayment} className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-6 py-3 rounded-lg font-semibold text-lg shadow-lg transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-l hover:from-blue-500 hover:to-pink-500">Confirm Payment</button>

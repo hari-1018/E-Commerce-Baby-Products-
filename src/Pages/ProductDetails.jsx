@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import { CartContext} from '../Context/CartContext';
+import { CartContext } from '../Context/CartContext';
 import '../../src/App.css';
 
 const ProductDetails = () => {
@@ -43,7 +43,6 @@ const ProductDetails = () => {
 
     const userId = JSON.parse(loggedInUser).id; 
 
-
     addToCart(product);
     try {
       const currentCart = await getUserCart(userId);
@@ -61,7 +60,7 @@ const ProductDetails = () => {
   if (error) return <p className="text-red-500 text-center">{error}</p>;
 
   return (
-    <div className="product-details-container bg-gradient-to-r from-pink-100 to-blue-100 p-8 rounded-lg shadow-lg max-w-4xl mx-auto mt-28 mb-24 h-[550px]">
+    <div className="product-details-container bg-gradient-to-r from-pink-100 to-blue-100 p-8 rounded-lg shadow-lg max-w-4xl mx-auto mt-24 mb-12 h-[575px]">
       {product ? (
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
           <div className="flex-1 lg:w-1/2">
@@ -93,22 +92,36 @@ const ProductDetails = () => {
               <p className="text-base font-semibold md:text-lg text-yellow-500 mb-4">Material: {product.material}</p>
             )}
 
-            {product.discount > 0 ? (
+            {product.in_stock ? (
               <>
-                <p className="text-xl font-semibold text-red-500 mb-2 line-through">MRP: ₹ {product.mrp.toFixed(2)}/-</p>
-                <p className="text-small font-semibold text-green-600 mb-2">{product.discount} % Off</p>
-                <p className="text-2xl font-semibold text-green-600 mb-2">Offer Price: ₹ {product.price.toFixed(2)}/-</p>
+                {product.discount > 0 ? (
+                  <>
+                    <p className="text-xl font-semibold text-red-500 line-through">MRP: ₹ {product.mrp.toFixed(2)}/-</p>
+                    <p className="text-small font-semibold text-green-600">{product.discount} % Off</p>
+                    <p className="text-2xl font-semibold text-green-600 mb-2">Offer Price: ₹ {product.price.toFixed(2)}/-</p>
+                  </>
+                ) : (
+                  <p className="text-2xl font-semibold text-indigo-600 mb-2">MRP: ₹ {product.mrp.toFixed(2)}/-</p>
+                )}
+                <div className=' border bg-green-400 w-[60px] h-[30px] mb-2'>
+                  <p className="text-lg font-bold text-white mb-2">⭐ {product.stars}</p>
+                </div>
+                <div>
+                  <p className="text-base font-bold text-yellow-500">{product.stock} Stocks Available</p>
+                </div>
+                <div className='w-[300px] h-[30px] mb-2'>
+                {product.stock <= 5 && <p className="text-red-500 font-bold mb-2">Hurry Up! Only few left!</p>}
+                
+                </div>
               </>
             ) : (
-              <p className="text-2xl font-semibold text-indigo-600 mb-2">MRP: ₹ {product.mrp.toFixed(2)}/-</p>
+              <p className="text-red-500 font-bold mb-4">Currently Out of Stock</p>
             )}
-            <div className=' border bg-green-400 w-[60px] h-[30px] mb-2'>
-              <p className="text-lg font-bold text-white mb-2">⭐ {product.stars}</p>
-            </div>
 
             <button 
               onClick={handleAddToCart} 
               className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-4 py-2 rounded-lg font-semibold text-lg shadow-lg transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-l hover:from-blue-500 hover:to-pink-500"
+              disabled={!product.in_stock} 
             >
               Add to Cart
             </button>

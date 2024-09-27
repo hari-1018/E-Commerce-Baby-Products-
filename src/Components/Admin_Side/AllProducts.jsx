@@ -77,7 +77,7 @@ function AllProducts() {
           className="search-bar text-gray-800 w-[250px] border-2 border-pink-400 rounded-full px-3 py-1 focus:outline-pink-400"
         />
         <button type="submit" className="absolute right-2 top-1/2 transform -translate-y-1/2 text-pink-400">
-          <FaSearch />
+          <FaSearch className='mr-[610px]'/>
         </button>
       </form>
 

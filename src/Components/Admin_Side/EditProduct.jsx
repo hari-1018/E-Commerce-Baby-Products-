@@ -9,16 +9,17 @@ function EditProduct() {
     id: '',
     name: '',
     description: '',
-    price: '',
-    stars: '',
+    price: 0,
+    stars: 0,
     category: '',
     image_url: '',
     flip_image_url: '',
     in_stock: true,
-    special_offer: 'None',
+    stock: '',
     discount: 0,
     quantity: 1,
-    additional_details: ''
+    additional_details: '',
+    mrp: 0 // Initialize MRP in state
   });
   const navigate = useNavigate();
   const { id } = useParams();
@@ -34,10 +35,8 @@ function EditProduct() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    
-    // Ensure numeric fields are correctly parsed
-    if (name === 'price' || name === 'discount' || name === 'stars' || name === 'quantity') {
-      setProduct({ ...product, [name]: Number(value) });
+    if (name === 'price' || name === 'discount' || name === 'stars' || name === 'quantity' || name === 'stock' || name === 'mrp') {
+      setProduct({ ...product, [name]: Number(value) }); // Convert value to number
     } else if (name === 'in_stock') {
       setProduct({ ...product, [name]: value === 'true' });
     } else {
@@ -103,7 +102,7 @@ function EditProduct() {
 
         <div className="mb-4">
           <label className="block mb-2 font-semibold">Description:</label>
-          <input
+          <textarea
             type="text"
             name="description"
             value={product.description}
@@ -113,24 +112,11 @@ function EditProduct() {
           />
         </div>
 
-        {product.discount > 0 && (
-          <div className="mb-4">
-            <label className="block mb-2 font-semibold">₹ MRP:</label>
-            <input
-              type="text"
-              name="mrp"
-              value={product.mrp}
-              onChange={handleChange}
-              className="w-full border rounded px-3 py-2 text-gray-700"
-              required
-            />
-          </div>
-        )}
-
+        {/* Display Discount field */}
         <div className="mb-4">
           <label className="block mb-2 font-semibold">Discount (%):</label>
           <input
-            type="text"
+            type="number"
             name="discount"
             value={product.discount}
             onChange={handleChange}
@@ -140,27 +126,50 @@ function EditProduct() {
         </div>
 
         <div className="mb-4">
-          {product.discount > 0 && (
-            <label className="block mb-2 font-semibold">₹ Offer Price:</label>
-          )}
-          {product.discount == 0 && (
-            <label className="block mb-2 font-semibold">₹ MRP:</label>
-          )}
+          <label className="block mb-2 font-semibold">₹ MRP:</label>
           <input
             type="text"
-            name="price"
-            value={product.price}
+            name="mrp"
+            value={product.mrp}
             onChange={handleChange}
             className="w-full border rounded px-3 py-2 text-gray-700"
             required
           />
         </div>
 
+        {/* Display Offer Price if discount > 0 */}
+        {product.discount > 0 ? (
+          <div className="mb-4">
+            <label className="block mb-2 font-semibold">₹ Offer Price:</label>
+            <input
+              type="text"
+              name="price"
+              value={product.price}
+              onChange={handleChange}
+              className="w-full border rounded px-3 py-2 text-gray-700"
+              required
+            />
+          </div>
+        ) : (
+          <div className="mb-4">
+            <label className="block mb-2 font-semibold">₹ Price:</label>
+            <input
+              type="text"
+              name="price"
+              value={product.price}
+              onChange={handleChange}
+              className="w-full border rounded px-3 py-2 text-gray-700"
+              required
+            />
+          </div>
+        )}
+
         <div className="mb-4">
           <label className="block mb-2 font-semibold">Stars (Rating):</label>
           <input
-            type="text"
+            type="number"
             name="stars"
+            step="0.01"
             value={product.stars}
             onChange={handleChange}
             className="w-full border rounded px-3 py-2 text-gray-700"
@@ -170,14 +179,21 @@ function EditProduct() {
 
         <div className="mb-4">
           <label className="block mb-2 font-semibold">Category:</label>
-          <input
-            type="text"
+          <select
             name="category"
             value={product.category}
             onChange={handleChange}
-            className="w-full border rounded px-3 py-2 text-gray-700"
+            className="w-full border rounded px-3 py-2 text-grey-700"
             required
-          />
+          >
+            <option value="" disabled>Select Category</option>
+            <option value="Clothes">Clothes</option>
+            <option value="Gear">Baby Gears</option>
+            <option value="Toys">Toys</option>
+            <option value="Care">Baby Care</option>
+            <option value="Food">Foods & Nutritions</option>
+            <option value="Furniture">Furniture & Bedding</option>
+          </select>
         </div>
 
         <div className="mb-4">
@@ -217,22 +233,24 @@ function EditProduct() {
           </select>
         </div>
 
-        <div className="mb-4">
-          <label className="block mb-2 font-semibold">Special Offer:</label>
-          <input
-            type="text"
-            name="special_offer"
-            value={product.special_offer}
-            onChange={handleChange}
-            className="w-full border rounded px-3 py-2 text-gray-700"
-            required
-          />
-        </div>
+        {product.in_stock && (
+          <div className="mb-4">
+            <label className="block mb-2 font-semibold">Stocks Available (No.s):</label>
+            <input
+              type="number"
+              name="stock"
+              value={product.stock}
+              onChange={handleChange}
+              className="w-full border rounded px-3 py-2 text-gray-700"
+              required
+            />
+          </div>
+        )}
 
         <div className="mb-4">
           <label className="block mb-2 font-semibold">Quantity:</label>
           <input
-            type="text"
+            type="number"
             name="quantity"
             value={product.quantity}
             onChange={handleChange}
@@ -253,8 +271,11 @@ function EditProduct() {
           />
         </div>
 
-        <div className="flex justify-center mt-4">
-          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
+        <div className="text-center">
+          <button
+            type="submit"
+            className="bg-pink-500 text-white py-2 px-4 rounded hover:bg-pink-600 transition duration-300"
+          >
             Update Product
           </button>
         </div>
