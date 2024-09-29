@@ -15,11 +15,16 @@ const Cart = () => {
     });
   };
 
+  const handleBackToShop = () => {
+    navigate('/shop');
+  };
+
   if (cart.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-pink-100 to-blue-100 p-8">
         <img src={empty} alt="Empty Cart" className="w-72 h-60 mb-4" />
-        <p className="text-center text-2xl font-bold text-gray-600">Oops..! Your cart is empty. 😓</p>
+        <p className="text-center text-2xl font-bold text-gray-600 mb-8">Oops..! Your cart is empty. 😓</p>
+        <button onClick={handleBackToShop} className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-5 py-2 rounded-lg font-semibold text-lg shadow-lg transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-l hover:from-blue-500 hover:to-pink-500">Back to Shop</button>
       </div>
     );
   }

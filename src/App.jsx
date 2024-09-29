@@ -20,7 +20,8 @@ import Dashboard from './Components/Admin_Side/Dashboard';
 import { CartProvider } from './Context/CartContext';
 import PaymentMethod from './Components/Footer/PaymentMethod';
 import AllProducts from './Components/Admin_Side/AllProducts';
-import AllCustomers from './Components/Admin_Side/AllCustomers'
+import AllCustomers from './Components/Admin_Side/AllCustomers';
+import AllOrders from './Components/Admin_Side/AllOrders';
 import EditProduct from './Components/Admin_Side/EditProduct';
 import AddProduct from './Components/Admin_Side/AddProducts'
 
@@ -38,6 +39,8 @@ function App() {
         <Route path="/admin-dashboard" element={<Dashboard />} />
         <Route path="/all-products" element={<AllProducts />} />
         <Route path="/all-customers" element={<AllCustomers />} />
+        <Route path="/all-orders" element={<AllOrders />} />
+
         <Route path="/add-product" element={<AddProduct />} />
         <Route path="/edit-product/:id" element={<EditProduct />} /> 
         <Route path="/forgot-password" element={<ForgotPassword />} />

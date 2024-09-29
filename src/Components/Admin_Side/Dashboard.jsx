@@ -1,32 +1,10 @@
 import { useEffect, useState } from 'react';
-// import { Line } from 'react-chartjs-2';
 import { MdSpaceDashboard, MdAdminPanelSettings, MdLocalShipping } from "react-icons/md";
 import { FaUsers } from "react-icons/fa";
 import { BsCartCheckFill } from "react-icons/bs";
 import { GiMoneyStack } from "react-icons/gi";
 import { Link } from 'react-router-dom';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
 import axios from 'axios';
-
-// Register the required components
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
 
 function Dashboard() {
   const [totalProducts, setTotalProducts] = useState(0);
@@ -38,27 +16,57 @@ function Dashboard() {
   const fetchTotalProducts = async () => {
     try {
       const response = await axios.get('http://localhost:5000/item');
-      // Assuming response.data returns an array of products
       setTotalProducts(response.data.length);
     } catch (error) {
       console.error('Error fetching total products:', error);
     }
   };
+
   const fetchTotalCustomers = async () => {
     try {
       const response = await axios.get('http://localhost:5000/users');
-      setTotalCustomers(response.data.length);
+      // Filter out admin users
+      const nonAdminCustomers = response.data.filter(customer => !customer.admin);
+      setTotalCustomers(nonAdminCustomers.length);
     } catch (error) {
       console.error('Error fetching customers:', error);
     }
   };
 
+  const fetchTotalOrders = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/users'); // Fetch all users to access their orders
+      const ordersCount = response.data.reduce((acc, user) => {
+        return acc + (user.order ? user.order.length : 0); // Count orders for each user
+      }, 0);
+      setTotalOrders(ordersCount);
+    } catch (error) {
+      console.error('Error fetching total orders:', error);
+    }
+  };
+
+  const fetchTotalEarnings = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/users'); // Fetch all users to access their orders
+      const earnings = response.data.reduce((acc, user) => {
+        if (user.order) {
+          user.order.forEach(order => {
+            acc += order.totalAmount; // Sum total amount of each order
+          });
+        }
+        return acc;
+      }, 0);
+      setTotalEarnings(earnings);
+    } catch (error) {
+      console.error('Error fetching total earnings:', error);
+    }
+  };
 
   useEffect(() => {
     fetchTotalProducts();
     fetchTotalCustomers();
-    // fetchTotalOrders();
-    // fetchTotalEarnings();
+    fetchTotalOrders();
+    fetchTotalEarnings();
   }, []);
 
   return (
@@ -71,13 +79,13 @@ function Dashboard() {
             <span>Dashboard<MdSpaceDashboard className='ml-[75px] -mt-5 size-5' /></span>
           </li>
           <li className="flex items-center space-x-3 p-2 hover:bg-gray-700 rounded-md cursor-pointer">
-            <span>Orders<MdLocalShipping className='ml-[55px] -mt-5 size-5'/></span>
+            <Link to='/all-orders'>Orders<MdLocalShipping className='ml-[55px] -mt-5 size-5'/></Link>
           </li>
           <li className="flex items-center space-x-3 p-2 hover:bg-gray-700 rounded-md cursor-pointer">
-          <Link to="/all-customers">Customers<FaUsers className='ml-[80px] -mt-5 size-5'/></Link>
+            <Link to="/all-customers">Customers<FaUsers className='ml-[80px] -mt-5 size-5'/></Link>
           </li>
           <li className="flex items-center space-x-3 p-2 hover:bg-gray-700 rounded-md cursor-pointer">
-          <Link to="/all-products">Products<BsCartCheckFill className='ml-[65px] -mt-5 size-5' /></Link>
+            <Link to="/all-products">Products<BsCartCheckFill className='ml-[65px] -mt-5 size-5' /></Link>
           </li>
           <li className="flex items-center space-x-3 p-2 hover:bg-gray-700 rounded-md cursor-pointer">
             <span>Earnings<GiMoneyStack className='ml-[60px] -mt-6 size-6'/></span>
@@ -112,7 +120,7 @@ function Dashboard() {
           <div className="bg-white p-6 rounded-md shadow-md flex items-center space-x-4">
             <div>
               <h3 className="text-xl font-bold">Total Earnings<GiMoneyStack className='ml-[140px] -mt-7 size-7'/></h3>
-              <p className="text-3xl font-semibold">₹ {totalEarnings}/-</p>
+              <p className="text-3xl font-semibold">₹ {totalEarnings.toFixed(2)}/-</p>
             </div>
           </div>
         </div>
@@ -120,13 +128,13 @@ function Dashboard() {
         {/* Sales Report (Chart) */}
         <div className="bg-white p-6 rounded-md shadow-md mb-6">
           <h3 className="text-xl font-bold mb-4">Sales Report</h3>
-          {/* <Line data={data} /> */}
+          {/* Add chart here if needed */}
         </div>
 
         {/* Earnings Report */}
         <div className="bg-white p-6 rounded-md shadow-md">
           <h3 className="text-xl font-bold mb-4">Earnings Report</h3>
-          {/* Add earnings chart or table here */}
+          {/* Add earnings chart or table here if needed */}
         </div>
       </div>
     </div>

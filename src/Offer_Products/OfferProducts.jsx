@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -27,15 +27,15 @@ const CustomArrow = ({ className, style, onClick, direction }) => {
   );
 };
 
-const TopProducts = () => {
+const OfferProducts = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     // Fetch items from the API
     axios.get('http://localhost:5000/item')
       .then(response => {
-        const filteredProducts = response.data.filter(product => product.stars >= 4.6);
-        const sortedProducts = filteredProducts.sort((a, b) => b.stars - a.stars);
+        const filteredProducts = response.data.filter(product => product.discount >= 15);
+        const sortedProducts = filteredProducts.sort((a, b) => b.discount - a.discount);
         setProducts(sortedProducts);
       })
       .catch(error => console.error('Error fetching data:', error));
@@ -74,7 +74,7 @@ const TopProducts = () => {
 
   return (
     <div className="shop-container mb-12 mt-20 px-4">
-      <h1 className="text-4xl font-extrabold text-center mb-4 text-pink-400 tracking-wide">Our Top Rated Products</h1>
+      <h1 className="text-4xl font-extrabold text-center mb-4 text-pink-400 tracking-wide">Special Offers</h1>
       {/* <p className="text-center font-semibold text-lg text-blue-400 mb-8">{products.length} Items Available</p> */}
 
       <Slider {...settings}>
@@ -92,7 +92,9 @@ const TopProducts = () => {
                   />
                 </div>
                 <h2 className="text-md font-medium mb-2 text-center text-gray-900">{product.name}</h2>
-                <p className="text-center text-lg font-semibold text-gray-700 mb-4">₹ {product.price.toFixed(2)}</p>
+                {/* <p className="text-center text-lg font-semibold text-gray-700 mb-4">₹ {product.price.toFixed(2)}</p> */}
+                <p className="text-center text-lg font-semibold text-green-600 mb-4">{product.discount}% Off</p>
+
                 <p className="text-center text-lg font-semibold text-yellow-500 mb-4">⭐ {product.stars}</p>
 
                 <button className="mt-auto py-2 w-full text-white font-bold rounded-lg 
@@ -110,4 +112,4 @@ const TopProducts = () => {
   );
 };
 
-export default TopProducts;
+export default OfferProducts;

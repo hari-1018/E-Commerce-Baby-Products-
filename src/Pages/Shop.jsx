@@ -29,7 +29,7 @@ const Shop = () => {
   return (
     <div className="shop-container mb-12 mt-28 px-4">
       <h1 className="text-4xl font-extrabold text-center mb-2 text-pink-400 tracking-wide">Our Products</h1>
-      <p className="text-center font-semibold text-lg text-blue-400 mb-8">{products.length} Items Available</p>
+      <p className="text-center font-semibold text-md text-blue-400 mb-8">Explore our wide range of premium baby products, designed for your little one&apos;s comfort and care🎉.</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
         {products.map(product => (
           <Link key={product.id} to={`/product/${product.id}`}>
@@ -43,8 +43,8 @@ const Shop = () => {
                   className="max-h-full max-w-full object-contain rounded-lg"
                 />
               </div>
-              <h2 className="text-md font-medium mb-2 text-center text-gray-900">{product.name}</h2>
-              <p className="text-center text-lg font-semibold text-gray-700 mb-4">₹ {product.price.toFixed(2)}</p>
+              <h2 className="text-md font-bold mb-2 text-center text-gray-900">{product.name}</h2>
+              <p className="text-center text-md font-semibold text-green-600 mb-4">₹ {product.mrp.toFixed(2)}/-</p>
               <button className="mt-auto py-2 w-full text-white font-bold rounded-lg bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-indigo-500 hover:to-purple-600 shadow-md hover:shadow-xl">
                 View Details
               </button>
