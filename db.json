@@ -18,98 +18,7 @@
       "mobile": "9961158293",
       "cart": [],
       "order": [
-        {
-          "id": "eec3fb69-9e4c-48e9-95a3-d59c0ebdf82e",
-          "cartItems": [
-            {
-              "id": "6",
-              "name": "Teddy Bear",
-              "description": "It brings comfort and happiness to babies and young children. It's gentle on their skin, making it perfect for snuggling, playing, and bedtime. With its cute face and huggable body, a teddy bear can quickly become a child's favorite companion.",
-              "mrp": 585,
-              "price": 585,
-              "stars": 4,
-              "category": "Toys",
-              "image_url": "https://ae01.alicdn.com/kf/H18762f701f254c4386c959849f908187d/22CM-Pilot-Teddy-Bear-Plush-Toy-Captain-Bear-flight-attendant-Doll-Birthday-Gift-Kids-Toy-Baby.jpg",
-              "flip_image_url": "https://ae-pic-a1.aliexpress-media.com/kf/Ha6cdf3234c0c4a619d54f942b8080c61I.jpg_640x640Q90.jpg_.webp",
-              "in_stock": true,
-              "discount": 0,
-              "quantity": 1,
-              "additional_details": "15-inches tall (38cm) | Movable head, arms and legs.",
-              "stock": 25
-            }
-          ],
-          "totalAmount": 585,
-          "shippingAddress": "Krishnakripa(HO), Kannadipoyil(Post), Balussery-Koottalida(Via)",
-          "landmark": "sd",
-          "city": "Balussery",
-          "pincode": "673612",
-          "district": "Kozhikode",
-          "paymentMethod": "Cash on Delivery",
-          "selectedBank": null,
-          "orderDate": "2024-09-29T10:47:16.182Z"
-        },
-        {
-          "id": "bc3fc70f-fd49-4cfb-8533-08667b7cd5f5",
-          "cartItems": [
-            {
-              "id": "53",
-              "name": "Fever Reducer Syrup",
-              "description": "Oral Fever Reducer Syrup provide fast and effective relief from fever and pain in babies. Made with safe ingredients and no added preservatives, this gentle syrup is designed to offer comfort during teething, colds, or flu, ensuring your baby feels better quickly.",
-              "mrp": 170,
-              "price": 170,
-              "stars": 4.4,
-              "category": "Care",
-              "image_url": "https://5.imimg.com/data5/SELLER/Default/2022/4/NO/ZO/WU/127249929/1.jpg",
-              "in_stock": true,
-              "discount": 0,
-              "quantity": 1,
-              "additional_details": "Alocohol free. Includes dosage instructions and dropper. Dosage 5-10 ml.",
-              "flip_image_url": "https://5.imimg.com/data5/SELLER/Default/2022/4/NO/ZO/WU/127249929/1.jpg",
-              "stock": 21
-            },
-            {
-              "id": "24",
-              "name": "Polka Dot Baby Dress",
-              "description": "Featuring an adorable polka dot pattern that’s perfect for special occasions! It ensures your baby stays comfortable while looking stylish. The elegant red polka dots in the white colmakes it ideal for family gatherings, holidays, or parties.",
-              "mrp": 450,
-              "price": 425,
-              "stars": 4.2,
-              "category": "Clothes",
-              "image_url": "https://rukminim2.flixcart.com/image/850/1000/kzpw2vk0/kids-apparel-combo/5/c/l/0-3-months-strap-white-em-dresses-original-imagbzafxab9m4zc.jpeg?q=90&crop=false",
-              "flip_image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSETpJVcksDeTVDQEu2aYN952aZ4IMdQkshJFlzetw28E0Eg2mR",
-              "in_stock": true,
-              "discount": 5,
-              "quantity": 1,
-              "additional_details": "Includes a matching headband. Available in sizes 6-24 months.",
-              "stock": 5
-            },
-            {
-              "id": "3",
-              "name": "Baby Unisex Outfits",
-              "description": "A cute summer outfit for toddlers. Includes a short-sleeve top with matching shorts with a comfy drawstring waist. The set is perfect for warm days, offering both style and comfort for little ones. ",
-              "mrp": 830,
-              "price": 705,
-              "stars": 4.3,
-              "category": "Clothes",
-              "image_url": "https://i5.walmartimages.com/asr/ed2d8b35-52b4-4f44-bb20-98ca9b19bc96.f4e0b6b2a66a33d1ca6afa3b949e5b6b.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
-              "flip_image_url": "https://i5.walmartimages.com/seo/Summer-Toddler-Baby-Boy-Girl-Clothes-Set-Unisex-Outfits-Color-Block-Short-Sleeve-Pocket-Tops-New-Bundle-Princess-Little-Babies-5t-Girls-6months_18a00b07-172a-4c72-a76d-12c50fb2b5b7.a5a8ff1faa5b1d643d7d8b1bd011d025.jpeg",
-              "in_stock": true,
-              "discount": 15,
-              "quantity": 1,
-              "additional_details": "The white sneakers and toy camera add a fun touch to the look.",
-              "stock": 20
-            }
-          ],
-          "totalAmount": 1300,
-          "shippingAddress": "Krishnakripa(HO), Kannadipoyil(Post), Balussery-Koottalida(Via)",
-          "landmark": "sdsfg",
-          "city": "Balussery",
-          "pincode": "673612",
-          "district": "Kozhikode",
-          "paymentMethod": "Cash on Delivery",
-          "selectedBank": null,
-          "orderDate": "2024-09-29T10:49:20.507Z"
-        }
+
       ],
       "blocked": false
     },
@@ -120,6 +29,9 @@
       "password": "tester",
       "mobile": "9876543210",
       "cart": [],
+      "order": [
+
+      ],
       "blocked": false
     },
     {
@@ -130,37 +42,7 @@
       "mobile": "1234567890",
       "cart": [],
       "order": [
-        {
-          "id": "c225cb50-1b0b-4435-8e3e-aab9b1af56fd",
-          "cartItems": [
-            {
-              "id": "33",
-              "name": "Wooden Crib with Mattress",
-              "description": "A sturdy wooden crib with a comfortable mattress to provide and restful sleep environment for your baby by combining durability with comfort.",
-              "mrp": 11050,
-              "price": 9392,
-              "stars": 4.8,
-              "category": "Furniture",
-              "material": "Wood",
-              "image_url": "https://staranddaisy.in/wp-content/uploads/2024/07/Woodsy-Wonder-baby-Wooden-Crib-B26-main.jpg",
-              "in_stock": true,
-              "discount": 15,
-              "quantity": 1,
-              "additional_details": "Includes a mattress and adjustable mattress height.",
-              "flip_image_url": "https://staranddaisy.in/wp-content/uploads/2024/07/B27-Multifuctional-Baby-Wooden-Cot-Main.jpg",
-              "stock": 9
-            }
-          ],
-          "totalAmount": 9392,
-          "shippingAddress": "Krishnakripa(HO), Kannadipoyil(Post), Balussery-Koottalida(Via)",
-          "landmark": "axsdfg",
-          "city": "Balussery",
-          "pincode": "673612",
-          "district": "Kozhikode",
-          "paymentMethod": "Cash on Delivery",
-          "selectedBank": null,
-          "orderDate": "2024-09-29T10:24:14.788Z"
-        }
+        
       ],
       "blocked": false
     }

@@ -104,7 +104,7 @@ function AllProducts() {
                 <img src={product.image_url} alt={product.name} className="w-20 h-20 mx-auto object-cover" />
               </td>
               <td className="py-2 px-2 border font-bold w-[300px]">{product.name}</td>
-              <td className="py-2 px-2 border font-semibold w-[50px]">₹ {product.price.toFixed(2)} /-</td>
+              <td className="py-2 px-2 border font-semibold w-[50px]">₹ {product.mrp.toFixed(2)} /-</td>
               <td className="py-2 px-2 border w-[50px]">
                 <button
                   className="bg-blue-500 border-2 p-2 text-white mr-2"

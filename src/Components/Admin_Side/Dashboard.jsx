@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { Bar } from 'react-chartjs-2'; // Import the Bar chart
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { MdSpaceDashboard, MdAdminPanelSettings, MdLocalShipping } from "react-icons/md";
 import { FaUsers } from "react-icons/fa";
 import { BsCartCheckFill } from "react-icons/bs";
@@ -6,13 +8,16 @@ import { GiMoneyStack } from "react-icons/gi";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+// Register the necessary chart components
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
 function Dashboard() {
   const [totalProducts, setTotalProducts] = useState(0);
   const [totalCustomers, setTotalCustomers] = useState(0);
   const [totalOrders, setTotalOrders] = useState(0);
   const [totalEarnings, setTotalEarnings] = useState(0);
+  const [monthlyOrders, setMonthlyOrders] = useState([]); // New state for monthly orders
 
-  // Function to fetch total products
   const fetchTotalProducts = async () => {
     try {
       const response = await axios.get('http://localhost:5000/item');
@@ -25,7 +30,6 @@ function Dashboard() {
   const fetchTotalCustomers = async () => {
     try {
       const response = await axios.get('http://localhost:5000/users');
-      // Filter out admin users
       const nonAdminCustomers = response.data.filter(customer => !customer.admin);
       setTotalCustomers(nonAdminCustomers.length);
     } catch (error) {
@@ -35,11 +39,12 @@ function Dashboard() {
 
   const fetchTotalOrders = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/users'); // Fetch all users to access their orders
+      const response = await axios.get('http://localhost:5000/users');
       const ordersCount = response.data.reduce((acc, user) => {
-        return acc + (user.order ? user.order.length : 0); // Count orders for each user
+        return acc + (user.order ? user.order.length : 0);
       }, 0);
       setTotalOrders(ordersCount);
+      setMonthlyOrders(calculateMonthlyOrders(response.data)); // Calculate monthly orders
     } catch (error) {
       console.error('Error fetching total orders:', error);
     }
@@ -47,11 +52,11 @@ function Dashboard() {
 
   const fetchTotalEarnings = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/users'); // Fetch all users to access their orders
+      const response = await axios.get('http://localhost:5000/users');
       const earnings = response.data.reduce((acc, user) => {
         if (user.order) {
           user.order.forEach(order => {
-            acc += order.totalAmount; // Sum total amount of each order
+            acc += order.totalAmount;
           });
         }
         return acc;
@@ -62,6 +67,20 @@ function Dashboard() {
     }
   };
 
+  // Function to calculate monthly orders
+  const calculateMonthlyOrders = (users) => {
+    const months = new Array(12).fill(0); // Array to store the number of orders for each month
+    users.forEach(user => {
+      if (user.order) {
+        user.order.forEach(order => {
+          const orderMonth = new Date(order.date).getMonth(); // Get the month from the order date
+          months[orderMonth] += 1; // Increment the count for that month
+        });
+      }
+    });
+    return months;
+  };
+
   useEffect(() => {
     fetchTotalProducts();
     fetchTotalCustomers();
@@ -69,10 +88,49 @@ function Dashboard() {
     fetchTotalEarnings();
   }, []);
 
+  // Data for the bar chart
+  const barData = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    datasets: [
+      {
+        label: 'Number of Orders',
+        data: monthlyOrders,
+        backgroundColor: 'rgba(75, 192, 192, 0.6)', // Customize the bar colors
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  // Options for the bar chart
+  const barOptions = {
+    responsive: true,
+    maintainAspectRatio: false, // Ensures the chart takes full width and height of the container
+    scales: {
+      y: {
+        beginAtZero: true,
+        title: {
+          display: true,
+          text: 'No. of Orders',
+        },
+        ticks: {
+          stepSize: 5, // Set the step size to 5
+          max: 100, // Set the maximum value to 100
+        },
+      },
+      x: {
+        title: {
+          display: true,
+          text: 'Months',
+        },
+      },
+    },
+  };
+
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
-      <div className="w-64 bg-gray-800 text-white p-6 mt-20">
+      <div className="w-64 bg-gray-800 text-white p-6 fixed h-full mt-20">
         <h2 className="text-3xl font-bold mb-8 text-center">BabyBuds</h2>
         <ul className="space-y-4">
           <li className="flex items-center space-x-3 p-2 hover:bg-gray-700 rounded-md cursor-pointer">
@@ -94,7 +152,7 @@ function Dashboard() {
       </div>
 
       {/* Main content */}
-      <div className="flex-grow p-8 bg-gray-100 mt-20">
+      <div className="flex-grow p-8 bg-gray-100 mt-20 ml-64"> {/* Adjust margin to account for fixed sidebar */}
         <h1 className="text-3xl font-bold text-center text-pink-500 mb-8">Admin Dashboard <MdAdminPanelSettings className='ml-[730px] -mt-8'/></h1>
         
         {/* Dashboard Stats */}
@@ -128,13 +186,9 @@ function Dashboard() {
         {/* Sales Report (Chart) */}
         <div className="bg-white p-6 rounded-md shadow-md mb-6">
           <h3 className="text-xl font-bold mb-4">Sales Report</h3>
-          {/* Add chart here if needed */}
-        </div>
-
-        {/* Earnings Report */}
-        <div className="bg-white p-6 rounded-md shadow-md">
-          <h3 className="text-xl font-bold mb-4">Earnings Report</h3>
-          {/* Add earnings chart or table here if needed */}
+          <div className="h-96">
+            <Bar data={barData} options={barOptions} />
+          </div>
         </div>
       </div>
     </div>

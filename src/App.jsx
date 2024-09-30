@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Footer from './Components/Footer/Footer';
 import Navbar from './Components/Navbar/Navbar';
 import Shop from './Pages/Shop';
@@ -23,9 +23,17 @@ import AllProducts from './Components/Admin_Side/AllProducts';
 import AllCustomers from './Components/Admin_Side/AllCustomers';
 import AllOrders from './Components/Admin_Side/AllOrders';
 import EditProduct from './Components/Admin_Side/EditProduct';
-import AddProduct from './Components/Admin_Side/AddProducts'
+import AddProduct from './Components/Admin_Side/AddProducts';
+import CustomerOrder from './Components/Admin_Side/CustomerOrder';
+import Security from './Components/Footer/Security';
+import FAQ from './Components/Footer/FAQ';
 
 function App() {
+  const location = useLocation();
+
+  // Routes where the footer should not be shown (admin-related routes)
+  const noFooterRoutes = ['/admin-dashboard'];
+
   return (
     <CartProvider>
       <Navbar />
@@ -40,9 +48,9 @@ function App() {
         <Route path="/all-products" element={<AllProducts />} />
         <Route path="/all-customers" element={<AllCustomers />} />
         <Route path="/all-orders" element={<AllOrders />} />
-
         <Route path="/add-product" element={<AddProduct />} />
-        <Route path="/edit-product/:id" element={<EditProduct />} /> 
+        <Route path="/customer-order/:customerId" element={<CustomerOrder />} />
+        <Route path="/edit-product/:id" element={<EditProduct />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<Cart />} />
@@ -50,11 +58,14 @@ function App() {
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/return-policy" element={<ReturnPolicy />} />    
-        <Route path="/payment-methods" element={<PaymentMethod />} />        
-    
+        <Route path="/return-policy" element={<ReturnPolicy />} />
+        <Route path="/payment-methods" element={<PaymentMethod />} />
+        <Route path="/security" element={<Security />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
-      <Footer />
+      
+      {/* Conditionally render Footer if current path is not in noFooterRoutes */}
+      {!noFooterRoutes.includes(location.pathname) && <Footer />}
     </CartProvider>
   );
 }

@@ -123,7 +123,7 @@ const Payment = () => {
 
       // Create new order object with a unique ID
       const newOrder = {
-        id: uuidv4(), // Unique identifier for the order
+        id: uuidv4().slice(0, 8), // Unique identifier for the order
         cartItems,
         totalAmount,
         shippingAddress,
@@ -231,7 +231,7 @@ const Payment = () => {
 
   // Payment Form Rendering
   return (
-    <div className="bg-gradient-to-r from-pink-100 to-blue-100 p-6 rounded-lg shadow-lg max-w-2xl mx-auto mt-28 mb-28">
+    <div className="bg-gradient-to-r from-pink-100 to-blue-100 p-6 rounded-lg shadow-lg max-w-3xl mx-auto mt-28 mb-28">
       <h1 className="text-3xl font-bold text-indigo-600 text-center mb-8">Order Summary</h1>
 
       <ul className="mb-6">

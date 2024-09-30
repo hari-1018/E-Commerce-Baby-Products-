@@ -44,7 +44,7 @@ const AllOrders = () => {
                   {order.cartItems.map(item => (
                     <div key={item.id} className="flex items-center mb-1">
                       <img src={item.image_url} alt={item.name} className="w-10 h-10 mr-2 object-cover" />
-                      <span>{item.name}</span>
+                      <span>{item.name} (Qty: {item.quantity})</span>
                       {/* <span className="ml-2">₹ {item.price.toFixed(2)} /-</span> */}
                     </div>
                   ))}

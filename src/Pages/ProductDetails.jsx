@@ -41,7 +41,7 @@ const ProductDetails = () => {
       return;
     }
 
-    const userId = JSON.parse(loggedInUser).id; 
+    const userId = JSON.parse(loggedInUser).id;
 
     addToCart(product);
     try {
@@ -54,6 +54,17 @@ const ProductDetails = () => {
     }
 
     navigate('/cart');
+  };
+
+  const handleQuickBuy = () => {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    if (!loggedInUser) {
+      navigate('/login');
+      return;
+    }
+
+    const totalAmount = product.price * 1; // Assuming 1 quantity for quick buy
+    navigate('/payment', { state: { cartItems: [{ ...product, quantity: 1 }], totalAmount } });
   };
 
   if (loading) return <p className="text-center text-lg text-gray-500">Loading...</p>;
@@ -110,21 +121,31 @@ const ProductDetails = () => {
                   <p className="text-base font-bold text-yellow-500">{product.stock} Stocks Available</p>
                 </div>
                 <div className='w-[300px] h-[30px] mb-2'>
-                {product.stock <= 5 && <p className="text-red-500 font-bold mb-2">Hurry Up! Only few left!</p>}
-                
+                  {product.stock <= 5 && <p className="text-red-500 font-bold mb-2">Hurry Up! Only few left!</p>}
                 </div>
               </>
             ) : (
               <p className="text-red-500 font-bold mb-4">Currently Out of Stock</p>
             )}
 
-            <button 
-              onClick={handleAddToCart} 
-              className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-4 py-2 rounded-lg font-semibold text-lg shadow-lg transition-transform duration-300 transform hover:scale-110 hover:bg-gradient-to-l hover:from-blue-500 hover:to-pink-500"
-              disabled={!product.in_stock} 
-            >
-              Add to Cart
-            </button>
+            {/* Buttons: Add to Cart and Quick Buy */}
+            <div className="flex gap-4">
+              <button
+                onClick={handleAddToCart}
+                className="bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold text-lg shadow-lg transition-transform duration-300 transform hover:scale-110 hover:bg-pink-500"
+                disabled={!product.in_stock}
+              >
+                Add to Cart
+              </button>
+
+              <button
+                onClick={handleQuickBuy}
+                className="bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold text-lg shadow-lg transition-transform duration-300 transform hover:scale-110 hover:bg-pink-500"
+                disabled={!product.in_stock}
+              >
+                Quick Buy
+              </button>
+            </div>
           </div>
         </div>
       ) : (
