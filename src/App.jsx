@@ -1,3 +1,4 @@
+// src/App.js
 import './App.css';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Footer from './Components/Footer/Footer';
@@ -27,45 +28,102 @@ import AddProduct from './Components/Admin_Side/AddProducts';
 import CustomerOrder from './Components/Admin_Side/CustomerOrder';
 import Security from './Components/Footer/Security';
 import FAQ from './Components/Footer/FAQ';
+import ProtectedRoute from './Components/Admin_Side/ProtectedRoute'; 
+// import { useContext } from 'react';
+// import { AuthContext } from './Context/AuthContext'; // Import AuthContext
 
 function App() {
   const location = useLocation();
 
   // Routes where the footer should not be shown (admin-related routes)
-  const noFooterRoutes = ['/admin-dashboard'];
+  const noFooterRoutes = [
+    '/admin-dashboard'
+  ];
 
   return (
     <CartProvider>
       <Navbar />
       <Routes>
+        {/* Public Routes */}
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/search" element={<SearchProduct />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/admin-dashboard" element={<Dashboard />} />
-        <Route path="/all-products" element={<AllProducts />} />
-        <Route path="/all-customers" element={<AllCustomers />} />
-        <Route path="/all-orders" element={<AllOrders />} />
-        <Route path="/add-product" element={<AddProduct />} />
-        <Route path="/customer-order/:customerId" element={<CustomerOrder />} />
-        <Route path="/edit-product/:id" element={<EditProduct />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/category/:category" element={<CategoryPage />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/payment" element={<Payment />} />
-        <Route path="*" element={<NotFound />} />
         <Route path="/return-policy" element={<ReturnPolicy />} />
         <Route path="/payment-methods" element={<PaymentMethod />} />
         <Route path="/security" element={<Security />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="*" element={<NotFound />} />
+
+        {/* Protected Admin Routes */}
+        <Route
+          path="/admin-dashboard"
+          element={
+            <ProtectedRoute requiredRole="admin">
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/all-products"
+          element={
+            <ProtectedRoute requiredRole="admin">
+              <AllProducts />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/all-customers"
+          element={
+            <ProtectedRoute requiredRole="admin">
+              <AllCustomers />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/all-orders"
+          element={
+            <ProtectedRoute requiredRole="admin">
+              <AllOrders />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/add-product"
+          element={
+            <ProtectedRoute requiredRole="admin">
+              <AddProduct />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/customer-order/:customerId"
+          element={
+            <ProtectedRoute requiredRole="admin">
+              <CustomerOrder />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/edit-product/:id"
+          element={
+            <ProtectedRoute requiredRole="admin">
+              <EditProduct />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
-      
+
       {/* Conditionally render Footer if current path is not in noFooterRoutes */}
-      {!noFooterRoutes.includes(location.pathname) && <Footer />}
+      {!noFooterRoutes.some((path) => location.pathname.startsWith(path)) && <Footer />}
     </CartProvider>
   );
 }

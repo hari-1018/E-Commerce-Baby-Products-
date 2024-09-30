@@ -5,14 +5,15 @@ import './index.css'
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter } from 'react-router-dom'
-// import Footer from './Components/Footer/Footer.jsx';
+import { AuthProvider } from './Context/AuthContext.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
+    <AuthProvider>
     <App />
+    </AuthProvider>
     <ToastContainer />
-    {/* <Footer /> */}
     </BrowserRouter>
   </StrictMode>,
 )

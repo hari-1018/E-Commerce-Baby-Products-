@@ -91,9 +91,9 @@ const TopProducts = () => {
                     className="max-h-full max-w-full object-contain rounded-lg"
                   />
                 </div>
-                <h2 className="text-md font-medium mb-2 text-center text-gray-900">{product.name}</h2>
-                <p className="text-center text-lg font-semibold text-gray-700 mb-4">₹ {product.price.toFixed(2)}</p>
-                <p className="text-center text-lg font-semibold text-yellow-500 mb-4">⭐ {product.stars}</p>
+                <h2 className="text-md font-semibold mb-2 text-center text-gray-900">{product.name}</h2>
+                <p className="text-center text-md font-semibold text-green-600 mb-2">₹ {product.mrp.toFixed(2)}</p>
+                <p className="text-center text-md font-semibold text-yellow-500 mb-2">⭐ {product.stars}</p>
 
                 <button className="mt-auto py-2 w-full text-white font-bold rounded-lg 
                                  bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-indigo-500 hover:to-purple-600 
