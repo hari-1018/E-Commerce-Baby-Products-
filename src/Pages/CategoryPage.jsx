@@ -50,7 +50,7 @@ const CategoryPage = () => {
                   />
                 </div>
                 <h2 className="text-lg font-semibold mb-2 text-center text-pink-500">{item.name}</h2>
-                <p className="text-center text-base font-semibold text-green-500 mb-4">₹ {item.price.toFixed(2)}/-</p>
+                <p className="text-center text-base font-semibold text-green-500 mb-4">₹ {item.mrp.toFixed(2)}/-</p>
                 <p className="text-center text-base font-semibold text-yellow-500 mb-2">⭐ {item.stars}</p>
 
                 <button className="mt-auto py-2 w-full text-white font-bold rounded-lg bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-indigo-500 hover:to-purple-600 shadow-md hover:shadow-xl">

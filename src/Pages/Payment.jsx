@@ -356,7 +356,7 @@ const Payment = () => {
           <option value="UPI">UPI</option>
           <option value="Bank Transfer">Bank Transfer</option>
           <option value="Net Banking">Net Banking</option>
-          <option value="Credit/Debit/ATM Card/EMI">Credit/Debit/ATM Card/EMI</option>
+          <option value="Credit/Debit/ATM Card/EMI">Credit/Debit/ATM Card/</option>
           <option value="EMI">EMI</option>
         </select>
         {formErrors.paymentMethod && <p className="text-red-500 text-sm mt-2">Please select a payment method.</p>}
@@ -384,6 +384,7 @@ const Payment = () => {
           </select>
         </div>
       )}
+      
 
       {/* Confirm Payment Button */}
       <div className="text-center mt-8">

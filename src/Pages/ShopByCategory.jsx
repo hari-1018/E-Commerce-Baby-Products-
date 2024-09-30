@@ -50,14 +50,14 @@ const ShopByCategory = () => {
             className="flex flex-col items-center space-y-2 p-4 cursor-pointer"
             onClick={() => handleClickOnCategory(category.route)} 
           >
-            <div className="w-48 h-48 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden shadow-lg">
+            <div className="w-32 h-32 md:w-48 md:h-48 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden shadow-lg">
               <img
                 src={category.imageUrl}
                 alt={category.name}
                 className="w-full h-full object-cover"
               />
             </div>
-            <p className="text-md font-semibold">{category.name}</p>
+            <p className="text-sm md:text-md font-semibold">{category.name}</p>
           </div>
         ))}
       </div>

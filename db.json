@@ -7,7 +7,41 @@
       "password": "hari1018",
       "mobile": "8086765870",
       "admin": true,
-      "cart": [],
+      "cart": [
+        {
+          "id": "57",
+          "name": "Teething Gel",
+          "description": "Specially formulated for instant relief from the discomfort of teething, offering a gentle and effective solution for sore gums and irritability in babies. Made with baby-friendly ingredients.",
+          "mrp": 479,
+          "price": 407,
+          "stars": 4.6,
+          "category": "Care",
+          "image_url": "https://www.orajelkids.com/images/products/baby-daytime-nighttime-cooling-gels-for-teething-04.jpg",
+          "in_stock": true,
+          "special_offer": "Buy 2, get 1 free",
+          "discount": 15,
+          "quantity": 1,
+          "additional_details": "No.1 Pediatrician recommended teething gel. Free from artificial colors and flavors.",
+          "stock": 16,
+          "flip_image_url": "https://m.media-amazon.com/images/I/61dDsLzcYnL.jpg"
+        },
+        {
+          "id": "51",
+          "name": "Soothing Massage Oil",
+          "description": "Crafted with natural ingredients to provide soothing care for your baby's delicate skin. This lightweight oil is perfect for daily moisturizing, massage, and relaxation, helping to keep your baby's skin soft, smooth, and hydrated.",
+          "mrp": 560,
+          "price": 448,
+          "stars": 4.8,
+          "category": "Care",
+          "image_url": "https://staranddaisy.in/wp-content/uploads/2023/08/Sebamed-Soothing-Baby-Massage-Oil-150-ml-1.jpg",
+          "in_stock": true,
+          "discount": 20,
+          "quantity": 1,
+          "additional_details": "Dermatologically tested, hypoallergenic | One bottle 150 ml.",
+          "flip_image_url": "https://www.luluhypermarket.com/cdn-cgi/image/f=auto/medias/442713-01.jpg-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w5MzUxNHxpbWFnZS9qcGVnfGFHVm1MMmcwWXk4eE1qVTFPRGcwT0RZMU5UTTVNQzgwTkRJM01UTXRNREV1YW5Cblh6RXlNREJYZURFeU1EQkl8Njc4NmFkYzAyMzE5MDgwOWM1ZmZhNDE2OWIyMWFmNTBkNWUwODY4YTg4OWRkZDc0NzY4NDczNzJlY2M0YzdlNA",
+          "stock": 15
+        }
+      ],
       "blocked": false
     },
     {
@@ -18,7 +52,66 @@
       "mobile": "9961158293",
       "cart": [],
       "order": [
-
+        {
+          "id": "13db850f",
+          "cartItems": [
+            {
+              "id": "43",
+              "name": "Baby Stroller",
+              "description": "A lightweight and durable stroller with an adjustable seat, designed for comfort and convenience while traveling with your baby.",
+              "mrp": 7800,
+              "price": 7020,
+              "stars": 4.7,
+              "category": "Gear",
+              "image_url": "https://kidzon.co/cdn/shop/products/BR958-RD1_1800x1800.jpg?v=1669114170",
+              "in_stock": true,
+              "discount": 10,
+              "quantity": 1,
+              "additional_details": "Includes a storage basket and cup holder | Free stroller rain cover.",
+              "flip_image_url": "https://m.media-amazon.com/images/I/71zfQx0cEhL._AC_UF350,350_QL80_.jpg",
+              "stock": 8
+            }
+          ],
+          "totalAmount": 7020,
+          "shippingAddress": "Krishnakripa(HO), Kannadipoyil(Post), Balussery-Koottalida(Via)",
+          "landmark": "Temple",
+          "city": "Balussery",
+          "pincode": "673612",
+          "district": "Kozhikode",
+          "paymentMethod": "Cash on Delivery",
+          "selectedBank": null,
+          "orderDate": "2024-09-30T12:33:34.151Z"
+        },
+        {
+          "id": "5d818746",
+          "cartItems": [
+            {
+              "id": "51",
+              "name": "Soothing Massage Oil",
+              "description": "Crafted with natural ingredients to provide soothing care for your baby's delicate skin. This lightweight oil is perfect for daily moisturizing, massage, and relaxation, helping to keep your baby's skin soft, smooth, and hydrated.",
+              "mrp": 560,
+              "price": 448,
+              "stars": 4.8,
+              "category": "Care",
+              "image_url": "https://staranddaisy.in/wp-content/uploads/2023/08/Sebamed-Soothing-Baby-Massage-Oil-150-ml-1.jpg",
+              "in_stock": true,
+              "discount": 20,
+              "quantity": 1,
+              "additional_details": "Dermatologically tested, hypoallergenic | One bottle 150 ml.",
+              "flip_image_url": "https://www.luluhypermarket.com/cdn-cgi/image/f=auto/medias/442713-01.jpg-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w5MzUxNHxpbWFnZS9qcGVnfGFHVm1MMmcwWXk4eE1qVTFPRGcwT0RZMU5UTTVNQzgwTkRJM01UTXRNREV1YW5Cblh6RXlNREJYZURFeU1EQkl8Njc4NmFkYzAyMzE5MDgwOWM1ZmZhNDE2OWIyMWFmNTBkNWUwODY4YTg4OWRkZDc0NzY4NDczNzJlY2M0YzdlNA",
+              "stock": 15
+            }
+          ],
+          "totalAmount": 448,
+          "shippingAddress": "Krishnakripa(HO), Kannadipoyil(Post), Balussery-Koottalida(Via)",
+          "landmark": "Bakery",
+          "city": "Balussery",
+          "pincode": "673612",
+          "district": "Kozhikode",
+          "paymentMethod": "Cash on Delivery",
+          "selectedBank": null,
+          "orderDate": "2024-09-30T13:46:44.481Z"
+        }
       ],
       "blocked": false
     },
@@ -29,10 +122,8 @@
       "password": "tester",
       "mobile": "9876543210",
       "cart": [],
-      "order": [
-
-      ],
-      "blocked": false
+      "order": [],
+      "blocked": true
     },
     {
       "id": "387c",
@@ -42,7 +133,101 @@
       "mobile": "1234567890",
       "cart": [],
       "order": [
-        
+        {
+          "id": "c7fa5e70",
+          "cartItems": [
+            {
+              "id": "15",
+              "name": "DHA+ Omega-3 Baby Food",
+              "description": "Nutrient-packed baby food enriched with DHA and Omega-3, essential for your baby’s brain development! Helps to provide the key nutrients needed for cognitive growth and overall health. DHA and Omega-3 are crucial for supporting your baby’s brain function, vision, and nervous system.",
+              "mrp": 320,
+              "price": 320,
+              "stars": 4.1,
+              "category": "Food",
+              "image_url": "https://http2.mlstatic.com/D_NQ_NP_973388-MLU78325529121_082024-O.webp",
+              "flip_image_url": "https://cdn.shopify.com/s/files/1/0511/3059/7560/files/53787RN1-BabyDHA_2oz_Box_Front.jpg?v=1718812590",
+              "in_stock": true,
+              "discount": 0,
+              "quantity": 1,
+              "additional_details": "No artificial colors or flavors.",
+              "stock": 15
+            },
+            {
+              "id": "45",
+              "name": "Baby Travel Crib",
+              "description": "Designed to offer a comfortable and safe sleeping environment for your baby, whether you're at home or on the go. With its lightweight, portable, easy-to-assemble design make sure your little one can nap peacefully wherever you are.",
+              "mrp": 6850,
+              "price": 6850,
+              "stars": 4.8,
+              "category": "Gear",
+              "image_url": "https://pamobabe.com/cdn/shop/files/81XSbbkVQ4L._SL1500.jpg?v=1698458306",
+              "in_stock": true,
+              "discount": 0,
+              "quantity": 1,
+              "additional_details": "Compact and lightweight design | Free carrying bag included.",
+              "flip_image_url": "https://m.media-amazon.com/images/I/816HR5uesdL._AC_UF894,1000_QL80_.jpg",
+              "stock": 9
+            },
+            {
+              "id": "33",
+              "name": "Wooden Crib with Mattress",
+              "description": "A sturdy wooden crib with a comfortable mattress to provide and restful sleep environment for your baby by combining durability with comfort.",
+              "mrp": 11050,
+              "price": 9392,
+              "stars": 4.8,
+              "category": "Furniture",
+              "material": "Wood",
+              "image_url": "https://staranddaisy.in/wp-content/uploads/2024/07/Woodsy-Wonder-baby-Wooden-Crib-B26-main.jpg",
+              "in_stock": true,
+              "discount": 15,
+              "quantity": 1,
+              "additional_details": "Includes a mattress and adjustable mattress height.",
+              "flip_image_url": "https://staranddaisy.in/wp-content/uploads/2024/07/B27-Multifuctional-Baby-Wooden-Cot-Main.jpg",
+              "stock": 9
+            },
+            {
+              "id": "5",
+              "name": "Outdoor Picnic Set Yellow",
+              "description": "The Sunny Outdoor Picnic Set Yellow is a cheerful and durable picnic set, perfect for outdoor fun, featuring vibrant yellow pieces designed for little hands.",
+              "mrp": 700,
+              "price": 616,
+              "stars": 4.4,
+              "category": "Clothes",
+              "image_url": "https://m.media-amazon.com/images/I/81IqACEdAhL._AC_UY1100_.jpg",
+              "flip_image_url": "https://arashoes.shop/wp-content/uploads/2023/03/baby-store-product-img-8.jpg",
+              "in_stock": true,
+              "discount": 12,
+              "quantity": 1,
+              "additional_details": "Hand Wash Only | We've got dresses to suit every age, from 1-2 years to 9-10 years!",
+              "stock": 15
+            },
+            {
+              "id": "3",
+              "name": "Baby Unisex Outfits",
+              "description": "A cute summer outfit for toddlers. Includes a short-sleeve top with matching shorts with a comfy drawstring waist. The set is perfect for warm days, offering both style and comfort for little ones. ",
+              "mrp": 830,
+              "price": 705,
+              "stars": 4.3,
+              "category": "Clothes",
+              "image_url": "https://i5.walmartimages.com/asr/ed2d8b35-52b4-4f44-bb20-98ca9b19bc96.f4e0b6b2a66a33d1ca6afa3b949e5b6b.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+              "flip_image_url": "https://i5.walmartimages.com/seo/Summer-Toddler-Baby-Boy-Girl-Clothes-Set-Unisex-Outfits-Color-Block-Short-Sleeve-Pocket-Tops-New-Bundle-Princess-Little-Babies-5t-Girls-6months_18a00b07-172a-4c72-a76d-12c50fb2b5b7.a5a8ff1faa5b1d643d7d8b1bd011d025.jpeg",
+              "in_stock": true,
+              "discount": 15,
+              "quantity": 1,
+              "additional_details": "The white sneakers and toy camera add a fun touch to the look.",
+              "stock": 20
+            }
+          ],
+          "totalAmount": 17883,
+          "shippingAddress": "Krishnakripa(HO), Kannadipoyil(Post), Balussery-Koottalida(Via)",
+          "landmark": "Bus stop",
+          "city": "Balussery",
+          "pincode": "673612",
+          "district": "Kozhikode",
+          "paymentMethod": "Cash on Delivery",
+          "selectedBank": null,
+          "orderDate": "2024-09-30T12:41:46.997Z"
+        }
       ],
       "blocked": false
     }

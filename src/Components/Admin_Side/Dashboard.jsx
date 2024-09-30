@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Bar } from 'react-chartjs-2'; // Import the Bar chart
+import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { MdSpaceDashboard, MdAdminPanelSettings, MdLocalShipping } from "react-icons/md";
 import { FaUsers } from "react-icons/fa";
@@ -8,7 +8,6 @@ import { GiMoneyStack } from "react-icons/gi";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-// Register the necessary chart components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 function Dashboard() {
@@ -16,7 +15,12 @@ function Dashboard() {
   const [totalCustomers, setTotalCustomers] = useState(0);
   const [totalOrders, setTotalOrders] = useState(0);
   const [totalEarnings, setTotalEarnings] = useState(0);
-  const [monthlyOrders, setMonthlyOrders] = useState([]); // New state for monthly orders
+  
+  // New state for category orders
+  const [categoryOrders, setCategoryOrders] = useState([]);
+
+  // Define the categories
+  const categories = ['Clothes', 'Gear', 'Toys', 'Care', 'Food', 'Furniture'];
 
   const fetchTotalProducts = async () => {
     try {
@@ -40,11 +44,31 @@ function Dashboard() {
   const fetchTotalOrders = async () => {
     try {
       const response = await axios.get('http://localhost:5000/users');
-      const ordersCount = response.data.reduce((acc, user) => {
-        return acc + (user.order ? user.order.length : 0);
-      }, 0);
-      setTotalOrders(ordersCount);
-      setMonthlyOrders(calculateMonthlyOrders(response.data)); // Calculate monthly orders
+      const users = response.data;
+      let orderCount = 0;
+      const categoryCounts = Array(categories.length).fill(0);
+
+      users.forEach(user => {
+        if (user.order) {
+          user.order.forEach(order => {
+            orderCount += 1;
+            // Updated to use cartItems instead of items
+            if (order.cartItems) {
+              order.cartItems.forEach(item => {
+                const categoryIndex = categories.findIndex(
+                  cat => cat.toLowerCase() === item.category.toLowerCase()
+                );
+                if (categoryIndex !== -1) {
+                  categoryCounts[categoryIndex] += 1;
+                }
+              });
+            }
+          });
+        }
+      });
+
+      setTotalOrders(orderCount);
+      setCategoryOrders(categoryCounts); // Set the category orders
     } catch (error) {
       console.error('Error fetching total orders:', error);
     }
@@ -67,20 +91,6 @@ function Dashboard() {
     }
   };
 
-  // Function to calculate monthly orders
-  const calculateMonthlyOrders = (users) => {
-    const months = new Array(12).fill(0); // Array to store the number of orders for each month
-    users.forEach(user => {
-      if (user.order) {
-        user.order.forEach(order => {
-          const orderMonth = new Date(order.date).getMonth(); // Get the month from the order date
-          months[orderMonth] += 1; // Increment the count for that month
-        });
-      }
-    });
-    return months;
-  };
-
   useEffect(() => {
     fetchTotalProducts();
     fetchTotalCustomers();
@@ -88,13 +98,13 @@ function Dashboard() {
     fetchTotalEarnings();
   }, []);
 
-  // Data for the bar chart
+  // Data for the bar chart with categories
   const barData = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    labels: categories, // Use categories as labels
     datasets: [
       {
         label: 'Number of Orders',
-        data: monthlyOrders,
+        data: categoryOrders, // Use categoryOrders as data
         backgroundColor: 'rgba(75, 192, 192, 0.6)', // Customize the bar colors
         borderColor: 'rgba(75, 192, 192, 1)',
         borderWidth: 1,
@@ -111,17 +121,19 @@ function Dashboard() {
         beginAtZero: true,
         title: {
           display: true,
-          text: 'No. of Orders',
+          text: 'Number of Orders',
         },
         ticks: {
           stepSize: 5, // Set the step size to 5
-          max: 100, // Set the maximum value to 100
+          // Adjust the max dynamically based on the data
+          // Optionally, you can set a static max like 100
+          // max: 100,
         },
       },
       x: {
         title: {
           display: true,
-          text: 'Months',
+          text: 'Categories',
         },
       },
     },

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify'; // Import ToastContainer
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
@@ -23,6 +23,7 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setError(""); // Clear previous errors
     try {
       const response = await axios.get('http://localhost:5000/users');
       const users = response.data;
@@ -33,6 +34,12 @@ const Login = () => {
       );
 
       if (foundUser) {
+        // **Blocked User Check**
+        if (foundUser.blocked) {
+          setError("Your account is temporarily blocked. Try again later.");
+          return; // Prevent further execution
+        }
+
         // Store logged-in user details and their cart in local storage
         localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
         localStorage.setItem("id", foundUser.id);
@@ -40,36 +47,44 @@ const Login = () => {
 
         window.dispatchEvent(new Event('loginChange'));
 
-        toast.success(
-          <div>
-            <span style={{ fontWeight: 'bold' }}>You&apos;re in! Time to explore all baby things! ✨🎉</span>
-          </div>,
-          {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            style: {
-              backgroundColor: '#ffe5b4',
-              border: '1px solid #ffcc00',
-              color: '#333',
-              width: '300px',
-              padding: '10px',
-              borderRadius: '8px',
-              fontSize: '16px',
-            },
-            progressStyle: {
-              backgroundColor: '#ffcc00',
-            },
-          }
-        );
+        // **Toast Options (Common for both Admin and Regular Users)**
+        const toastOptions = {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          style: {
+            backgroundColor: '#ffe5b4',
+            border: '1px solid #ffcc00',
+            color: '#333',
+            width: '300px',
+            padding: '10px',
+            borderRadius: '8px',
+            fontSize: '16px',
+          },
+          progressStyle: {
+            backgroundColor: '#ffcc00',
+          },
+        };
 
-        // Check if the user is an admin and navigate accordingly
+        // **Admin Check and Toast Message**
         if (foundUser.admin) {
+          toast.success(
+            <div>
+              <span style={{ fontWeight: 'bold' }}>Welcome Back Admin! Ready to manage things? 🛠️✨</span>
+            </div>,
+            toastOptions
+          );
           navigate('/admin-dashboard');
         } else {
+          toast.success(
+            <div>
+              <span style={{ fontWeight: 'bold' }}>You&apos;re in! Time to explore all baby things! ✨🎉</span>
+            </div>,
+            toastOptions
+          );
           navigate('/');
         }
       } else {
@@ -91,6 +106,9 @@ const Login = () => {
 
   return (
     <div className="flex items-center justify-center bg-blue-100 mt-28">
+      {/* **ToastContainer to Render Toasts** */}
+      <ToastContainer />
+
       <form
         onSubmit={handleLogin}
         className="bg-white mt-8 mb-8 p-6 rounded-lg shadow-lg w-full max-w-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105"
@@ -114,6 +132,7 @@ const Login = () => {
             placeholder="Enter Your Username"
             value={formData.username}
             onChange={handleInputChange}
+            required // **Add required attribute for better UX**
           />
         </label>
 
@@ -126,15 +145,16 @@ const Login = () => {
             placeholder="Enter Your Password"
             value={formData.password}
             onChange={handleInputChange}
+            required // **Add required attribute for better UX**
           />
         </label>
 
-        {error && <p className="text-red-500 text-sm">{error}</p>}
+        {error && <p className="text-red-500 text-sm mb-4">{error}</p>} {/* **Added mb-4 for spacing** */}
 
         <button
           type="button"
           onClick={() => navigate('/forgot-password')}
-          className="text-pink-400 ml-36 font-semibold"
+          className="text-pink-400 ml-36 font-semibold hover:text-blue-400 transition-colors duration-300"
         >
           Forgot Password? 😞
         </button>
