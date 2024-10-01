@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/Baby_Buds.png';
 import { BsFillCartFill, BsPersonCircle } from "react-icons/bs";
 import { FaSearch, FaBars, FaTimes } from 'react-icons/fa';
-import Darkmode from './Darkmode';
 import { CartContext } from '../../Context/CartContext'; 
 import { MdMenu } from 'react-icons/md';
 import { IoClose } from 'react-icons/io5';
@@ -92,7 +91,7 @@ const Navbar = () => {
           <li className="cursor-pointer text-base text-pink-500 hover:text-blue-400"><Link to="/contact">CONTACT US</Link></li>
           {/* Show "Dashboard" only if admin is logged in */}
           {isLoggedIn && userData && userData.admin && (
-            <li className="cursor-pointer text-base text-pink-500 hover:text-blue-400"><Link to="/admin-dashboard">DASHBOARD</Link></li>
+            <li className="cursor-pointer text-base text-pink-500 hover:text-blue-400"><Link to="/admin">DASHBOARD</Link></li>
           )}
         </ul>
 
@@ -146,11 +145,10 @@ const Navbar = () => {
                 <div className="absolute bottom-6 right-0 bg-pink-400 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center border border-gray-300">
                   {cartCount} {/* Count of unique items */}
                 </div>
-                <Link to="/cart">
+                <Link to={isLoggedIn ? '/cart' : '/login'}>
                   <BsFillCartFill className="text-3xl cursor-pointer text-pink-400" />
                 </Link>
               </div>
-              <Darkmode />
             </>
           ) : null}
         </div>

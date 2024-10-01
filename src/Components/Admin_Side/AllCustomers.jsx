@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { FaTimes } from 'react-icons/fa';
+// import { FaTimes } from 'react-icons/fa';
 
 function AllCustomers() {
   const [customers, setCustomers] = useState([]);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [selectedCustomer, setSelectedCustomer] = useState(null);
-  const [actionType, setActionType] = useState(''); // 'block' or 'unblock'
+  const [actionType, setActionType] = useState('');
+  
+  // **1. Add searchTerm state**
+  const [searchTerm, setSearchTerm] = useState('');
 
   const fetchCustomers = async () => {
     try {
@@ -43,10 +46,33 @@ function AllCustomers() {
     fetchCustomers();
   }, []);
 
+  // **2. Filter customers based on searchTerm**
+  const filteredCustomers = customers.filter(customer => {
+    const lowerCaseSearchTerm = searchTerm.toLowerCase();
+    return (
+      customer.username.toLowerCase().includes(lowerCaseSearchTerm) ||
+      customer.email.toLowerCase().includes(lowerCaseSearchTerm) ||
+      customer.mobile.includes(lowerCaseSearchTerm) ||
+      customer.id.toString().includes(lowerCaseSearchTerm)
+    );
+  });
+
   return (
     <div className="p-8 bg-gray-100">
-      <h1 className="text-3xl font-bold text-center text-pink-500 mt-16 mb-8">All Customers</h1>
-      <table className="min-w-full bg-white border border-gray-300">
+      {/* **3. Add Search Input Field** */}
+
+      <h1 className="text-3xl font-bold ml-[750px] text-pink-500 mt-16 mb-4">All Customers</h1>
+      <div className="flex justify-end mb-4">
+        <input
+          type="text"
+          placeholder="Search customers..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="search-bar text-gray-800 w-[250px] mr-[500px] border-2 border-pink-400 rounded-full px-3 py-1 focus:outline-pink-400"
+        />
+      </div>
+
+      <table className="min-w-[1225px] ml-auto bg-white border border-gray-300">
         <thead>
           <tr className="bg-gray-200">
             <th className="py-2 px-4 border">ID</th>
@@ -59,34 +85,42 @@ function AllCustomers() {
           </tr>
         </thead>
         <tbody>
-          {customers.map((customer) => (
-            <tr key={customer.id} className="hover:bg-gray-100">
-              <td className="py-2 px-2 border text-gray-600">{customer.id}</td>
-              <td className="py-2 px-2 border text-gray-600 font-bold">{customer.username}</td>
-              <td className="py-2 px-2 border text-gray-600">{customer.email}</td>
-              <td className="py-2 px-2 border text-gray-600">{customer.mobile}</td>
-              <td className="py-2 px-2 border">
-                <span className={`font-bold ${customer.blocked ? 'text-red-500' : 'text-green-500'}`}>
-                  {customer.blocked ? 'Blocked' : 'Active'}
-                </span>
-              </td>
-              <td className="py-2 px-2 border">
-                <Link to={`/customer-order/${customer.id}`}>
-                  <button className="bg-green-500 text-white p-2">
-                    Order Details
+          {filteredCustomers.length > 0 ? (
+            filteredCustomers.map((customer) => (
+              <tr key={customer.id} className="hover:bg-gray-100">
+                <td className="py-2 px-2 border text-gray-600">{customer.id}</td>
+                <td className="py-2 px-2 border text-gray-600 font-bold">{customer.username}</td>
+                <td className="py-2 px-2 border text-gray-600">{customer.email}</td>
+                <td className="py-2 px-2 border text-gray-600">{customer.mobile}</td>
+                <td className="py-2 px-2 border">
+                  <span className={`font-bold ${customer.blocked ? 'text-red-500' : 'text-green-500'}`}>
+                    {customer.blocked ? 'Blocked' : 'Active'}
+                  </span>
+                </td>
+                <td className="py-2 px-2 border">
+                  <Link to={`/admin/customer-order/${customer.id}`}>
+                    <button className="bg-green-500 text-white p-2">
+                      Order Details
+                    </button>
+                  </Link>
+                </td>
+                <td className="py-2 px-2 border">
+                  <button
+                    onClick={() => handleBlockUnblock(customer.id, customer.blocked)}
+                    className={`border-2 p-2 ${customer.blocked ? 'bg-green-500 text-white' : 'bg-red-500 text-white'}`}
+                  >
+                    {customer.blocked ? 'Unblock' : 'Block'}
                   </button>
-                </Link>
-              </td>
-              <td className="py-2 px-2 border">
-                <button
-                  onClick={() => handleBlockUnblock(customer.id, customer.blocked)}
-                  className={`border-2 p-2 ${customer.blocked ? 'bg-green-500 text-white' : 'bg-red-500 text-white'}`}
-                >
-                  {customer.blocked ? 'Unblock' : 'Block'}
-                </button>
+                </td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="7" className="text-center py-4 text-gray-500">
+                No customers found.
               </td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
 

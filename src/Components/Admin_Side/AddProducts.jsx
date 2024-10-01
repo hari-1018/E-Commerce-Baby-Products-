@@ -51,7 +51,7 @@ const AddProducts = () => {
     e.preventDefault();
     try {
       await axios.post('http://localhost:5000/item', product);
-      navigate('/all-products');
+      navigate('/admin/all-products');
       toast.success(
         <div>
           <span style={{ fontWeight: 'bold' }}>Product Added Successfully! 👍</span>
@@ -83,10 +83,10 @@ const AddProducts = () => {
   };
 
   return (
-    <div className="p-8 bg-gray-100 mt-20">
+    <div className="p-8 bg-gray-100">
       <form
         onSubmit={handleSubmit}
-        className="max-w-3xl mx-auto bg-white p-6 rounded-md shadow-md"
+        className="max-w-4xl ml-96 bg-white p-6 rounded-md shadow-md  mt-20"
       >
         <h1 className="text-2xl font-bold text-center text-pink-500 mb-4">
           Add Product

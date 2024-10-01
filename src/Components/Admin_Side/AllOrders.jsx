@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const AllOrders = () => {
@@ -7,9 +7,14 @@ const AllOrders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/users'); // Update the API endpoint as necessary
-        // Filter users that have orders
+        const response = await axios.get('http://localhost:5000/users'); 
         const usersWithOrders = response.data.filter(user => user.order && user.order.length > 0);
+        
+        // Sort orders by latest first
+        usersWithOrders.forEach(user => {
+          user.order.sort((a, b) => new Date(b.orderDate) - new Date(a.orderDate));
+        });
+
         setOrders(usersWithOrders);
       } catch (error) {
         console.error('Error fetching orders:', error);
@@ -18,13 +23,12 @@ const AllOrders = () => {
     fetchOrders();
   }, []);
 
-  // Function to determine the order status
   const getOrderStatus = (orderDate) => {
     const now = new Date();
     const orderTime = new Date(orderDate);
-    const timeDifference = now - orderTime; // difference in milliseconds
+    const timeDifference = now - orderTime;
 
-    const hoursElapsed = Math.floor(timeDifference / (1000 * 60 * 60)); // Convert to hours
+    const hoursElapsed = Math.floor(timeDifference / (1000 * 60 * 60));
 
     if (hoursElapsed < 12) {
       return 'Pending ⏳';
@@ -36,19 +40,19 @@ const AllOrders = () => {
   };
 
   return (
-    <div className="p-8 bg-gray-100 mt-16">
-      <h1 className="text-2xl font-bold text-center text-pink-500 mb-4">All Orders</h1>
-      <table className="mx-auto bg-white border border-gray-300">
+    <div className="p-8 bg-gray-100 ">
+      <h1 className="text-3xl font-bold ml-[750px] text-pink-500 mt-16 mb-4">All Orders</h1>
+      <table className="ml-auto bg-white border border-gray-300">
         <thead>
           <tr className="bg-gray-200">
             <th className="py-2 px-4 border">UserId</th>
             <th className="py-2 px-4 border">Username</th>
             <th className="py-2 px-4 border">Order ID</th>
-            <th className="py-2 px-4 border">Cart Items</th>
+            <th className="py-2 px-4 border">Ordered Items</th>
             <th className="py-2 px-4 border">Total Amount</th>
             <th className="py-2 px-4 border">Payment Method</th>
             <th className="py-2 px-4 border">Order Date</th>
-            <th className="py-2 px-4 border">Order Status</th> {/* New Column */}
+            <th className="py-2 px-4 border">Order Status</th>
           </tr>
         </thead>
         <tbody>
@@ -58,7 +62,7 @@ const AllOrders = () => {
                 <td className="py-2 px-4 border text-gray-600">{user.id}</td>
                 <td className="py-2 px-4 border text-gray-600">{user.username}</td>
                 <td className="py-2 px-4 border text-gray-600">{order.id}</td>
-                <td className="py-2 px-4 border text-gray-500">
+                <td className="py-2 px-4 border text-gray-600">
                   {order.cartItems.map(item => (
                     <div key={item.id} className="flex items-center mb-1">
                       <img src={item.image_url} alt={item.name} className="w-10 h-10 mr-2 object-cover" />

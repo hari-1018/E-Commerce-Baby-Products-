@@ -111,6 +111,68 @@
           "paymentMethod": "Cash on Delivery",
           "selectedBank": null,
           "orderDate": "2024-09-30T13:46:44.481Z"
+        },
+        {
+          "id": "0e514ece",
+          "cartItems": [
+            {
+              "id": "54",
+              "name": "Cold & Cough Syrup",
+              "description": "A gentle cold and cough medicine for babies, providing fast relief from common cold symptoms without causing drowsiness. Ease the sneezing, soothe the sore throat, and loosen up the congestion so that many parents have demand on thi item",
+              "mrp": 270,
+              "price": 270,
+              "stars": 4.1,
+              "category": "Care",
+              "image_url": "https://target.scene7.com/is/image/Target/GUEST_156c7b9b-6e7e-4ae7-90a9-673229c11212?wid=488&hei=488&fmt=pjpeg",
+              "in_stock": true,
+              "discount": 0,
+              "quantity": 1,
+              "additional_details": "200 ml bottle. Can use upto 2-12 years old childrens. Non-drowsy formula, easy to administer.",
+              "flip_image_url": "https://i5.walmartimages.com/seo/Hyland-s-Naturals-Baby-Nighttime-Cold-Syrup-Natural-Relief-of-Runny-Nose-Congestion-and-Sleeplessness-4-Ounces_faa61d7f-ca34-46c8-ad02-b01234292e2e.69b895525b7cfb337dcec3041e70683c.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+              "stock": 19
+            },
+            {
+              "id": "5",
+              "name": "Outdoor Picnic Set Yellow",
+              "description": "The Sunny Outdoor Picnic Set Yellow is a cheerful and durable picnic set, perfect for outdoor fun, featuring vibrant yellow pieces designed for little hands.",
+              "mrp": 700,
+              "price": 616,
+              "stars": 4.4,
+              "category": "Clothes",
+              "image_url": "https://m.media-amazon.com/images/I/81IqACEdAhL._AC_UY1100_.jpg",
+              "flip_image_url": "https://arashoes.shop/wp-content/uploads/2023/03/baby-store-product-img-8.jpg",
+              "in_stock": true,
+              "discount": 12,
+              "quantity": 1,
+              "additional_details": "Hand Wash Only | We've got dresses to suit every age, from 1-2 years to 9-10 years!",
+              "stock": 15
+            },
+            {
+              "id": "60",
+              "name": "Monkey Faced Car",
+              "description": "Our push ride-on car can handle weight maximum upto 15-20 kg and is ideal for 1 year to 3 year old toddlers. It is convenient to carry where ever you go. Designed with utmost comfort of the baby with optimum height and round edges. ",
+              "price": 1699,
+              "stars": 3,
+              "category": "Toys",
+              "image_url": "https://baybee.co.in/cdn/shop/products/611y_J_BLfL_1400x.jpg?v=1681974700",
+              "flip_image_url": "https://baybee.co.in/cdn/shop/products/61NEFJGOLJL_1400x.jpg?v=1681974700",
+              "in_stock": true,
+              "stock": 13,
+              "discount": 0,
+              "quantity": 1,
+              "additional_details": "Material Type - Plastic | Colour‎ - Blue | Item Weight‎ - 2.4 kg.",
+              "mrp": 1699
+            }
+          ],
+          "totalAmount": 2585,
+          "shippingAddress": "Krishnakripa(HO), Kannadipoyil(Post), Balussery-Koottalida(Via)",
+          "landmark": "Bus stop",
+          "city": "Balussery",
+          "pincode": "673612",
+          "district": "Kozhikode",
+          "paymentMethod": "Cash on Delivery",
+          "selectedBank": null,
+          "orderDate": "2024-10-01T03:31:28.592Z"
         }
       ],
       "blocked": false
@@ -123,7 +185,7 @@
       "mobile": "9876543210",
       "cart": [],
       "order": [],
-      "blocked": true
+      "blocked": false
     },
     {
       "id": "387c",
@@ -237,8 +299,8 @@
       "id": "2",
       "name": "Twin Bunny Set Combo",
       "description": "The Twin Cute Bunny Set Combo features two soft, breathable cotton outfits with adorable bunny designs, perfect for keeping your little ones cute and stylish",
-      "mrp": 400,
-      "price": 400,
+      "mrp": 420,
+      "price": 420,
       "stars": 4.3,
       "category": "Toys",
       "image_url": "https://imgcdn.floweraura.com/cute-white-bunny-soft-toy-duo-9861177gf-B_0.jpg",

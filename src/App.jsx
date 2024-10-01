@@ -28,16 +28,22 @@ import AddProduct from './Components/Admin_Side/AddProducts';
 import CustomerOrder from './Components/Admin_Side/CustomerOrder';
 import Security from './Components/Footer/Security';
 import FAQ from './Components/Footer/FAQ';
-import ProtectedRoute from './Components/Admin_Side/ProtectedRoute'; 
-// import { useContext } from 'react';
-// import { AuthContext } from './Context/AuthContext'; // Import AuthContext
+import ProtectedRoute from './Components/Admin_Side/ProtectedRoute';
+import Sidebar from './Components/Admin_Side/Sidebar'; // Import Sidebar
 
 function App() {
   const location = useLocation();
 
   // Routes where the footer should not be shown (admin-related routes)
   const noFooterRoutes = [
-    '/admin-dashboard'
+    '/admin',
+    '/admin-dashboard',
+    '/all-products',
+    '/all-customers',
+    '/all-orders',
+    '/add-product',
+    '/customer-order',
+    '/edit-product',
   ];
 
   return (
@@ -63,63 +69,18 @@ function App() {
         <Route path="/faq" element={<FAQ />} />
         <Route path="*" element={<NotFound />} />
 
-        {/* Protected Admin Routes */}
-        <Route
-          path="/admin-dashboard"
-          element={
-            <ProtectedRoute requiredRole="admin">
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/all-products"
-          element={
-            <ProtectedRoute requiredRole="admin">
-              <AllProducts />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/all-customers"
-          element={
-            <ProtectedRoute requiredRole="admin">
-              <AllCustomers />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/all-orders"
-          element={
-            <ProtectedRoute requiredRole="admin">
-              <AllOrders />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/add-product"
-          element={
-            <ProtectedRoute requiredRole="admin">
-              <AddProduct />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/customer-order/:customerId"
-          element={
-            <ProtectedRoute requiredRole="admin">
-              <CustomerOrder />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/edit-product/:id"
-          element={
-            <ProtectedRoute requiredRole="admin">
-              <EditProduct />
-            </ProtectedRoute>
-          }
-        />
+        {/* Protected Admin Routes with Sidebar Layout */}
+        <Route path="/admin" element={<ProtectedRoute requiredRole="admin"><Sidebar /></ProtectedRoute>}>
+          {/* Default Admin Dashboard Route */}
+          <Route index element={<Dashboard />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="all-products" element={<AllProducts />} />
+          <Route path="all-customers" element={<AllCustomers />} />
+          <Route path="all-orders" element={<AllOrders />} />
+          <Route path="add-product" element={<AddProduct />} />
+          <Route path="edit-product/:id" element={<EditProduct />} />
+          <Route path="customer-order/:customerId" element={<CustomerOrder />} />
+        </Route>
       </Routes>
 
       {/* Conditionally render Footer if current path is not in noFooterRoutes */}

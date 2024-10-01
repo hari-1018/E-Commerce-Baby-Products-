@@ -16,10 +16,8 @@ function Dashboard() {
   const [totalOrders, setTotalOrders] = useState(0);
   const [totalEarnings, setTotalEarnings] = useState(0);
   
-  // New state for category orders
   const [categoryOrders, setCategoryOrders] = useState([]);
 
-  // Define the categories
   const categories = ['Clothes', 'Gear', 'Toys', 'Care', 'Food', 'Furniture'];
 
   const fetchTotalProducts = async () => {
@@ -141,30 +139,9 @@ function Dashboard() {
 
   return (
     <div className="flex h-screen">
-      {/* Sidebar */}
-      <div className="w-64 bg-gray-800 text-white p-6 fixed h-full mt-20">
-        <h2 className="text-3xl font-bold mb-8 text-center">BabyBuds</h2>
-        <ul className="space-y-4">
-          <li className="flex items-center space-x-3 p-2 hover:bg-gray-700 rounded-md cursor-pointer">
-            <span>Dashboard<MdSpaceDashboard className='ml-[75px] -mt-5 size-5' /></span>
-          </li>
-          <li className="flex items-center space-x-3 p-2 hover:bg-gray-700 rounded-md cursor-pointer">
-            <Link to='/all-orders'>Orders<MdLocalShipping className='ml-[55px] -mt-5 size-5'/></Link>
-          </li>
-          <li className="flex items-center space-x-3 p-2 hover:bg-gray-700 rounded-md cursor-pointer">
-            <Link to="/all-customers">Customers<FaUsers className='ml-[80px] -mt-5 size-5'/></Link>
-          </li>
-          <li className="flex items-center space-x-3 p-2 hover:bg-gray-700 rounded-md cursor-pointer">
-            <Link to="/all-products">Products<BsCartCheckFill className='ml-[65px] -mt-5 size-5' /></Link>
-          </li>
-          <li className="flex items-center space-x-3 p-2 hover:bg-gray-700 rounded-md cursor-pointer">
-            <span>Earnings<GiMoneyStack className='ml-[60px] -mt-6 size-6'/></span>
-          </li>
-        </ul>
-      </div>
 
       {/* Main content */}
-      <div className="flex-grow p-8 bg-gray-100 mt-20 ml-64"> {/* Adjust margin to account for fixed sidebar */}
+      <div className="flex-grow p-8 bg-gray-100 mt-16 ml-64"> {/* Adjust margin to account for fixed sidebar */}
         <h1 className="text-3xl font-bold text-center text-pink-500 mb-8">Admin Dashboard <MdAdminPanelSettings className='ml-[730px] -mt-8'/></h1>
         
         {/* Dashboard Stats */}

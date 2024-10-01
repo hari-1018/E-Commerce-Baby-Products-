@@ -77,7 +77,7 @@ const Login = () => {
             </div>,
             toastOptions
           );
-          navigate('/admin-dashboard');
+          navigate('/admin');
         } else {
           toast.success(
             <div>

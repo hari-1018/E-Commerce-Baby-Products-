@@ -23,22 +23,23 @@ function CustomerOrder() {
 
   return (
     <div className="p-8 bg-gray-100">
-      <Link to="/customers" className="text-pink-500 mb-4 inline-block">
-        Back to Customers
-      </Link>
-      <h1 className="text-3xl font-bold text-center text-pink-500 mt-4 mb-4">Order Details</h1>
+      <h1 className="text-3xl font-bold text-center text-pink-500 mt-16 mb-4 ml-[250px]">Order Details</h1>
 
       {/* Display customer details */}
       {customer && (
-        <div className="mb-4">
-          <h2 className="text-xl font-semibold">Customer Details</h2>
-          <p><strong>Username:</strong> {customer.username}</p>
-          <p><strong>Email:</strong> {customer.email}</p>
-          <p><strong>Mobile:</strong> {customer.mobile}</p>
+        <div className="mb-4 ml-[250px] text-blue-500">
+          <h2 className="text-xl font-semibold mb-2 text-pink-500">Customer Details</h2>
+          <p><strong className='text-gray-600'>Username:</strong> {customer.username}</p>
+          <p><strong className='text-gray-600'>Email:</strong> {customer.email}</p>
+          <p><strong className='text-gray-600'>Mobile:</strong> {customer.mobile}</p>
         </div>
       )}
 
-      <table className="min-w-full bg-white border border-gray-300">
+<Link to="/admin/all-customers" className="ml-[245px] text-white font-semibold mb-4 inline-block border-2 px-3 py-2 rounded-full bg-pink-400 ">
+        Back to Customers
+</Link>
+
+      <table className="ml-[250px] bg-white border border-gray-300">
         <thead>
           <tr className="bg-gray-200">
             <th className="py-2 px-4 border">Order ID</th>
@@ -64,7 +65,7 @@ function CustomerOrder() {
                 </ul>
               </td>
               <td className="py-2 px-2 border font-semibold text-gray-600">₹ {order.totalAmount}/-</td>
-              <td className="py-2 px-2 border text-gray-600">{order.shippingAddress}</td>
+              <td className="py-2 px-2 border w-[350px] text-gray-600">{order.shippingAddress}, Pin:{order.pincode}, {order.city}, {order.district}</td>
               <td className="py-2 px-2 border text-gray-600">{order.paymentMethod}</td>
               <td className="py-2 px-2 border text-gray-600">
                 {new Date(order.orderDate).toLocaleDateString()}
