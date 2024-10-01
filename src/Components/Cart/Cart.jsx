@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { BsFillCartFill } from "react-icons/bs";
-import { CartContext } from '../Context/CartContext'; 
-import empty from '../assets/empty-shopping-cart.png';
+import { CartContext } from '../../Context/CartContext'; 
+import empty from '../../assets/empty-shopping-cart.png';
 import { useContext } from 'react';
 
 const Cart = () => {

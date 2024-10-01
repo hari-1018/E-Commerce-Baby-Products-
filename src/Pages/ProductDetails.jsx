@@ -3,6 +3,8 @@ import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { CartContext } from '../Context/CartContext';
 import '../../src/App.css';
+import { toast, ToastContainer } from 'react-toastify'; // Import ToastContainer
+import 'react-toastify/dist/ReactToastify.css';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -52,8 +54,34 @@ const ProductDetails = () => {
     } catch (err) {
       console.error("Error updating cart on server", err);
     }
+    const toastOptions = {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      style: {
+        backgroundColor: '#ffe5b4',
+        border: '1px solid #ffcc00',
+        color: '#333',
+        width: '300px',
+        padding: '10px',
+        borderRadius: '8px',
+        fontSize: '16px',
+      },
+      progressStyle: {
+        backgroundColor: '#ffcc00',
+      },
+    };
 
-    navigate('/cart');
+    toast.success(
+      <div>
+        <span style={{ fontWeight: 'bold' }}>Great Choice! Your item has been added to the Cart! ✨</span>
+      </div>,
+      toastOptions
+    );
+
   };
 
   const handleQuickBuy = () => {
@@ -72,6 +100,7 @@ const ProductDetails = () => {
 
   return (
     <div className="product-details-container bg-gradient-to-r from-pink-100 to-blue-100 p-8 rounded-lg shadow-lg max-w-4xl mx-auto mt-24 mb-12 h-[575px]">
+      <ToastContainer /> {/* Add this line */}
       {product ? (
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
           <div className="flex-1 lg:w-1/2">

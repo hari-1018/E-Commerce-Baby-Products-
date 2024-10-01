@@ -74,7 +74,7 @@ const OfferProducts = () => {
 
   return (
     <div className="shop-container mb-12 mt-20 px-4">
-      <h1 className="text-4xl font-extrabold text-center mb-4 text-pink-400 tracking-wide">Special Offers</h1>
+      <h1 className="text-4xl font-extrabold text-center mb-4 text-pink-500 tracking-wide">Special Offers</h1>
       {/* <p className="text-center font-semibold text-lg text-blue-400 mb-8">{products.length} Items Available</p> */}
 
       <Slider {...settings}>

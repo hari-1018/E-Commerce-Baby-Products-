@@ -8,7 +8,7 @@ import CategoryPage from './Pages/CategoryPage';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
-import Cart from './Pages/Cart';
+import Cart from './Components/Cart/Cart';
 import NotFound from './Pages/NotFound';
 import Login from './Components/Login_Register/Login';
 import Register from './Components/Login_Register/Register';
@@ -29,6 +29,7 @@ import CustomerOrder from './Components/Admin_Side/CustomerOrder';
 import Security from './Components/Footer/Security';
 import FAQ from './Components/Footer/FAQ';
 import ProtectedRoute from './Components/Admin_Side/ProtectedRoute';
+import ProtectRoute from './Components/Cart/ProtectRoute';
 import Sidebar from './Components/Admin_Side/Sidebar'; // Import Sidebar
 
 function App() {
@@ -50,7 +51,6 @@ function App() {
     <CartProvider>
       <Navbar />
       <Routes>
-        {/* Public Routes */}
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/about" element={<About />} />
@@ -59,7 +59,17 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/cart" element={<Cart />} />
+        
+        {/* Protect the /cart route */}
+        <Route
+          path="/cart"
+          element={
+            <ProtectRoute>
+              <Cart />
+            </ProtectRoute>
+          }
+        />
+        
         <Route path="/category/:category" element={<CategoryPage />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/payment" element={<Payment />} />
@@ -69,9 +79,15 @@ function App() {
         <Route path="/faq" element={<FAQ />} />
         <Route path="*" element={<NotFound />} />
 
-        {/* Protected Admin Routes with Sidebar Layout */}
-        <Route path="/admin" element={<ProtectedRoute requiredRole="admin"><Sidebar /></ProtectedRoute>}>
-          {/* Default Admin Dashboard Route */}
+        {/* Admin Routes with Sidebar Layout */}
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute requiredRole="admin">
+              <Sidebar />
+            </ProtectedRoute>
+          }
+        >
           <Route index element={<Dashboard />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="all-products" element={<AllProducts />} />
@@ -83,7 +99,6 @@ function App() {
         </Route>
       </Routes>
 
-      {/* Conditionally render Footer if current path is not in noFooterRoutes */}
       {!noFooterRoutes.some((path) => location.pathname.startsWith(path)) && <Footer />}
     </CartProvider>
   );
