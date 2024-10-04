@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'; // Install axios with `npm install axios`
-import { ToastContainer, toast } from 'react-toastify'; // Import ToastContainer and toast
-import 'react-toastify/dist/ReactToastify.css'; // Import CSS for toast
+import axios from 'axios'; 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
   const navigate = useNavigate(); 
@@ -25,40 +25,14 @@ const Register = () => {
       try {
         await axios.post('http://localhost:5000/users', data);
         toast.success(
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <span style={{ fontSize: '24px', marginRight: '8px' }}>🎉</span>
-            <span style={{ fontWeight: 'bold' }}>
-              Welcome to the family! You&apos;re officially registered and ready to explore a world of baby products.
-            </span>
-          </div>,
-          {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            style: {
-              backgroundColor: '#ffe5b4', 
-              border: '1px solid #ffcc00', 
-              color: '#333',
-              width: '400px',
-              padding: '20px',
-              borderRadius: '8px', 
-              fontSize: '16px',
-            },
-            progressStyle: {
-              backgroundColor: '#ffcc00', 
-            },
-          }
+          <div>
+            <span style={{ fontWeight: 'bold' }}>🎉 Welcome to the family! You&apos;re officially registered and ready to explore a world of baby products.</span>
+          </div>
         );
         
         navigate('/login');
       } catch (error) {
-        toast.error('Error registering user.', {
-          position: "top-center",
-          autoClose: 5000,
-        });
+        toast.error('Error registering user.');
       }
     }
   };
@@ -107,7 +81,6 @@ const Register = () => {
 
   return (
     <div className="flex items-center justify-center bg-blue-100">
-      {/* <ToastContainer /> Ensure this is rendered here */}
       <form
         onSubmit={clickSubmit}
         className="bg-white mt-28 mb-16 p-4 rounded-lg shadow-lg w-full max-w-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105"

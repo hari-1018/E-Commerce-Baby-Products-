@@ -9,7 +9,6 @@ function AllCustomers() {
   const [selectedCustomer, setSelectedCustomer] = useState(null);
   const [actionType, setActionType] = useState('');
   
-  // **1. Add searchTerm state**
   const [searchTerm, setSearchTerm] = useState('');
 
   const fetchCustomers = async () => {
@@ -32,10 +31,10 @@ function AllCustomers() {
     if (selectedCustomer) {
       try {
         await axios.patch(`http://localhost:5000/users/${selectedCustomer}`, {
-          blocked: actionType === 'block', // Block if actionType is 'block'
+          blocked: actionType === 'block', 
         });
-        fetchCustomers(); // Refresh the customer list
-        setShowConfirmModal(false); // Close the modal
+        fetchCustomers(); 
+        setShowConfirmModal(false);
       } catch (error) {
         console.error('Error updating customer status:', error);
       }
@@ -46,7 +45,6 @@ function AllCustomers() {
     fetchCustomers();
   }, []);
 
-  // **2. Filter customers based on searchTerm**
   const filteredCustomers = customers.filter(customer => {
     const lowerCaseSearchTerm = searchTerm.toLowerCase();
     return (
@@ -59,7 +57,6 @@ function AllCustomers() {
 
   return (
     <div className="p-8 bg-gray-100">
-      {/* **3. Add Search Input Field** */}
 
       <h1 className="text-3xl font-bold ml-[750px] text-pink-500 mt-16 mb-4">All Customers</h1>
       <div className="flex justify-end mb-4">
@@ -72,7 +69,7 @@ function AllCustomers() {
         />
       </div>
 
-      <table className="min-w-[1225px] ml-auto bg-white border border-gray-300">
+      <table className="ml-56 w-[1220px] bg-white border border-gray-300">
         <thead>
           <tr className="bg-gray-200">
             <th className="py-2 px-4 border">ID</th>

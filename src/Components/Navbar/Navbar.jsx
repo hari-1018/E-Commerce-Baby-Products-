@@ -7,7 +7,7 @@ import { CartContext } from '../../Context/CartContext';
 import { MdMenu } from 'react-icons/md';
 import { IoClose } from 'react-icons/io5';
 import NavMobile from './NavbarMobile';
-import ProfileData from '../Login_Register/ProfileData'; // Import the new ProfileData component
+import ProfileData from '../Login_Register/ProfileData'; 
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -21,7 +21,7 @@ const Navbar = () => {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (searchQuery.trim() !== '') {
-      navigate(`/search?query=${searchQuery}`); // Fixed syntax here
+      navigate(`/search?query=${searchQuery}`);
     }
   };
 
@@ -29,7 +29,7 @@ const Navbar = () => {
   const [userData, setUserData] = useState(null);
   const [showUserData, setShowUserData] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [cartCount, setCartCount] = useState(cart.length); // Initialize with the number of unique items
+  const [cartCount, setCartCount] = useState(cart.length); 
   const [open, setOpen] = useState(false);
 
   const checkLoginState = () => {
@@ -47,16 +47,13 @@ const Navbar = () => {
     checkLoginState();
     window.addEventListener('loginChange', checkLoginState);
 
-    // Update cart count whenever the cart changes
-    const updateCartCount = () => setCartCount(cart.length); // Count unique items
-
-    // Call updateCartCount initially
+  
+    const updateCartCount = () => setCartCount(cart.length); 
     updateCartCount();
-
     return () => {
       window.removeEventListener('loginChange', checkLoginState);
     };
-  }, [cart]); // Depend on cart to update count
+  }, [cart]);
 
   const handleLogout = () => {
     clearCart();

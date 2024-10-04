@@ -51,7 +51,7 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="flex items-center justify-center bg-gray-200">
+    <div className="flex items-center justify-center bg-gray-200 mt-12">
       <form
         onSubmit={handlePasswordReset}
         className="bg-white mt-12 mb-12 p-6 rounded-lg shadow-lg w-full max-w-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105"

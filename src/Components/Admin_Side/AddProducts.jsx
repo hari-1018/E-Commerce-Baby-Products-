@@ -14,25 +14,26 @@ const AddProducts = () => {
     category: '',
     image_url: '',
     flip_image_url: '',
-    in_stock: true, // Set default to true
+    in_stock: true, 
     stock: '',
     discount: 0,
     quantity: 1,
     additional_details: '',
-    mrp: '', // Ensure this state is included
+    mrp: '',
   });
 
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    const { name, type, checked, value } = e.target;
+    const { name, value } = e.target;
 
     if (name === 'in_stock') {
-      // Convert the string value to boolean
-      setProduct({ ...product, [name]: value === 'true' }); // Convert to boolean
-    } else if (type === 'checkbox') {
-      setProduct({ ...product, [name]: checked }); // Toggle in_stock
-    } else if (
+      setProduct({ ...product, [name]: value === 'true' });
+    } 
+    // else if (type === 'checkbox') {
+    //   setProduct({ ...product, [name]: checked }); 
+    // } 
+    else if (
       name === 'price' ||
       name === 'discount' ||
       name === 'stars' ||
@@ -40,7 +41,6 @@ const AddProducts = () => {
       name === 'stock' ||
       name === 'mrp'
     ) {
-      // Convert the input value to a number; if empty, set to ''
       setProduct({ ...product, [name]: value ? Number(value) : '' });
     } else {
       setProduct({ ...product, [name]: value });
@@ -53,29 +53,9 @@ const AddProducts = () => {
       await axios.post('http://localhost:5000/item', product);
       navigate('/admin/all-products');
       toast.success(
-        <div>
-          <span style={{ fontWeight: 'bold' }}>Product Added Successfully! 👍</span>
-        </div>,
-        {
-          position: "top-center",
-          autoClose: 4000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          style: {
-            backgroundColor: '#ffe5b4',
-            border: '1px solid #ffcc00',
-            color: '#333',
-            width: '300px',
-            padding: '10px',
-            borderRadius: '8px',
-            fontSize: '16px',
-          },
-          progressStyle: {
-            backgroundColor: '#ffcc00',
-          },
-        }
+        <div style={{ backgroundColor: '#ffe5b4', border: '1px solid #ffcc00', borderRadius:'8px', padding: '10px'}}>
+          <span style={{ fontWeight: 'bold', color: 'black'}}>Product Added Successfully!👍</span>
+        </div>
       );
     } catch (error) {
       console.error('Error adding product:', error);
@@ -130,7 +110,7 @@ const AddProducts = () => {
         <div className="mb-4">
           <label className="block mb-2 font-semibold">Discount:</label>
           <input
-            type="number" // Changed to number input
+            type="number" 
             name="discount"
             value={product.discount}
             onChange={handleChange}
@@ -142,7 +122,7 @@ const AddProducts = () => {
         <div className="mb-4">
           <label className="block mb-2 font-semibold">₹ MRP:</label>
           <input
-            type="number" // Changed to number input
+            type="number" 
             name="mrp"
             value={product.mrp}
             onChange={handleChange}
@@ -155,7 +135,7 @@ const AddProducts = () => {
           <div className="mb-4">
             <label className="block mb-2 font-semibold">₹ Offer Price:</label>
             <input
-              type="number" // Changed to number input
+              type="number" 
               name="price"
               value={product.price}
               onChange={handleChange}
@@ -167,7 +147,7 @@ const AddProducts = () => {
           <div className="mb-4">
             <label className="block mb-2 font-semibold">₹ Price:</label>
             <input
-              type="number" // Changed to number input
+              type="number"
               name="price"
               value={product.price}
               onChange={handleChange}
@@ -237,7 +217,7 @@ const AddProducts = () => {
           <label className="block mb-2 font-semibold">In Stock:</label>
           <select
             name="in_stock"
-            value={product.in_stock ? 'true' : 'false'} // Ensure value is string
+            value={product.in_stock ? 'true' : 'false'} 
             onChange={handleChange}
             className="w-full border rounded px-3 py-2 text-gray-700"
           >
@@ -246,11 +226,11 @@ const AddProducts = () => {
           </select>
         </div>
 
-        {product.in_stock && ( // Show stock input only if in_stock is true
+        {product.in_stock && ( 
           <div className="mb-4">
             <label className="block mb-2 font-semibold">Stock Available(No.s):</label>
             <input
-              type="number" // Changed to number input
+              type="number" 
               name="stock"
               value={product.stock}
               onChange={handleChange}

@@ -19,7 +19,7 @@ function EditProduct() {
     discount: 0,
     quantity: 1,
     additional_details: '',
-    mrp: 0 // Initialize MRP in state
+    mrp: 0 
   });
   const navigate = useNavigate();
   const { id } = useParams();
@@ -36,7 +36,7 @@ function EditProduct() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === 'price' || name === 'discount' || name === 'stars' || name === 'quantity' || name === 'stock' || name === 'mrp') {
-      setProduct({ ...product, [name]: Number(value) }); // Convert value to number
+      setProduct({ ...product, [name]: Number(value) }); 
     } else if (name === 'in_stock') {
       setProduct({ ...product, [name]: value === 'true' });
     } else {
@@ -178,12 +178,12 @@ function EditProduct() {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 font-semibold">Category:</label>
+          <label className="block mb-2 font-semibold ">Category:</label>
           <select
             name="category"
             value={product.category}
             onChange={handleChange}
-            className="w-full border rounded px-3 py-2 text-grey-700"
+            className="w-full border rounded px-3 py-2 text-grey-700 text-gray-800"
             required
           >
             <option value="" disabled>Select Category</option>

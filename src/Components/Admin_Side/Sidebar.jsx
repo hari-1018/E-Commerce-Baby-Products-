@@ -8,8 +8,7 @@ import { Outlet } from "react-router-dom";
 const Sidebar = () => {
   return (
     <>
-    <aside>
-    <div className="w-64 bg-gray-800 text-white p-6 fixed h-full">
+    <aside className="w-64 bg-gray-800 text-white p-6 fixed h-full">
         <h2 className="text-3xl font-bold mt-16 mb-8 text-center">BabyBuds</h2>
         <ul className="space-y-4">
           <li className="flex items-center space-x-3 p-2 hover:bg-gray-700 rounded-md cursor-pointer">
@@ -28,9 +27,8 @@ const Sidebar = () => {
             <span>Earnings<GiMoneyStack className='ml-[60px] -mt-6 size-6'/></span>
           </li>
         </ul>
-      </div>
       </aside>
-      <main>
+      <main className="flex-1 p-6 bg-gray-100 overflow-auto">
         <Outlet />
       </main>  
     </>

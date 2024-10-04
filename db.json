@@ -20,7 +20,7 @@
           "in_stock": true,
           "special_offer": "Buy 2, get 1 free",
           "discount": 15,
-          "quantity": 1,
+          "quantity": 6,
           "additional_details": "No.1 Pediatrician recommended teething gel. Free from artificial colors and flavors.",
           "stock": 16,
           "flip_image_url": "https://m.media-amazon.com/images/I/61dDsLzcYnL.jpg"
@@ -36,10 +36,42 @@
           "image_url": "https://staranddaisy.in/wp-content/uploads/2023/08/Sebamed-Soothing-Baby-Massage-Oil-150-ml-1.jpg",
           "in_stock": true,
           "discount": 20,
-          "quantity": 1,
+          "quantity": 6,
           "additional_details": "Dermatologically tested, hypoallergenic | One bottle 150 ml.",
           "flip_image_url": "https://www.luluhypermarket.com/cdn-cgi/image/f=auto/medias/442713-01.jpg-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w5MzUxNHxpbWFnZS9qcGVnfGFHVm1MMmcwWXk4eE1qVTFPRGcwT0RZMU5UTTVNQzgwTkRJM01UTXRNREV1YW5Cblh6RXlNREJYZURFeU1EQkl8Njc4NmFkYzAyMzE5MDgwOWM1ZmZhNDE2OWIyMWFmNTBkNWUwODY4YTg4OWRkZDc0NzY4NDczNzJlY2M0YzdlNA",
           "stock": 15
+        },
+        {
+          "id": "61",
+          "name": "Floral Sleeveless Outfit",
+          "description": "A delightful baby dress featuring vibrant floral prints, paired with a matching bow headband for a charming, garden-inspired look. This dress with a matching bow is designed to make your baby look irresistibly adorable.",
+          "price": 504,
+          "stars": 4.3,
+          "category": "Clothes",
+          "image_url": "https://image.made-in-china.com/2f0j00RdUlcoAKnakp/Fashion-Children-Clothes-Summer-Cotton-Baby-Girl-Dresses-Comfortable-Girls-Clothing.webp",
+          "flip_image_url": "https://image.made-in-china.com/43f34j00YdRVcDAGaaqg/Fashion-Children-Clothes-Summer-Cotton-Baby-Girl-Dresses-Comfortable-Girls-Clothing.jpg",
+          "in_stock": true,
+          "stock": 22,
+          "discount": 10,
+          "quantity": 1,
+          "additional_details": "\tRound Neck | 100% Cotton |",
+          "mrp": 560
+        },
+        {
+          "id": "7",
+          "name": "Playful Puppy Plush Toy",
+          "description": "Perfect companion for endless playtime fun. With its gentle, huggable design, it’s great for babies to play and take along on adventures. This adorable plush puppy adds warmth and joy to any playtime or nap time.",
+          "mrp": 715,
+          "price": 586,
+          "stars": 4.1,
+          "category": "Toys",
+          "image_url": "https://lazybaby.in/cdn/shop/files/ddd.jpg?v=1685469187&width=1445",
+          "flip_image_url": "https://lazybaby.in/cdn/shop/files/754A3543.jpgweb.jpg?v=1685011957",
+          "in_stock": true,
+          "discount": 18,
+          "quantity": 1,
+          "additional_details": "Size-40 cm, Pack Of 1, Orange Color | Useful for all ages. Machine washable.",
+          "stock": 25
         }
       ],
       "blocked": false
@@ -173,6 +205,66 @@
           "paymentMethod": "Cash on Delivery",
           "selectedBank": null,
           "orderDate": "2024-10-01T03:31:28.592Z"
+        },
+        {
+          "id": "50bcf819",
+          "cartItems": [
+            {
+              "id": "12",
+              "name": "Floral Summer Dress",
+              "description": "A Lightweight Summer Dress with a charming floral pattern is perfect for warm days. It ensures comfort while allowing for easy movement. The delightful floral design adds a touch of sweetness, making this dress an ideal choice for playdates, picnics, or family outings.",
+              "mrp": 649,
+              "price": 649,
+              "stars": 4.5,
+              "category": "Clothes",
+              "image_url": "https://image.made-in-china.com/202f0j00liSVfcabamUQ/2022-Summer-Baby-Girl-Dress-Floral-Print-Newborn-Infant-Dresses.jpg",
+              "flip_image_url": "https://pinkbluebabyshop.com/cdn/shop/products/Saf2bbba35bbd4dde9ec9a01804a38279J_887f92be-62ab-4779-b622-5d5d5e92919a_300x300.jpg?v=1655990997",
+              "in_stock": true,
+              "discount": 0,
+              "quantity": 2,
+              "additional_details": "Available in sizes 1-5 years. Free matching Hat and Headband",
+              "stock": 18
+            }
+          ],
+          "totalAmount": 1298,
+          "shippingAddress": "Krishnakripa(HO), Kannadipoyil(Post), Balussery-Koottalida(Via)",
+          "landmark": "school",
+          "city": "Balussery",
+          "pincode": "673612",
+          "district": "Kozhikode",
+          "paymentMethod": "UPI",
+          "selectedBank": null,
+          "orderDate": "2024-10-01T09:13:51.068Z"
+        },
+        {
+          "id": "a599aaca",
+          "cartItems": [
+            {
+              "id": "30",
+              "name": "Cheddar Cheese Puffs",
+              "description": "Treat your little one to a crunchy and tasty snack with these cheddar cheese puffs! Made with real cheddar cheese. Light and airy with a satisfying crunch, they’re the perfect bite-sized snack for little hands.\n",
+              "mrp": 1020,
+              "price": 918,
+              "stars": 3.9,
+              "category": "Food",
+              "image_url": "https://m.media-amazon.com/images/I/81wYuyGuQGL.jpg",
+              "in_stock": true,
+              "discount": 10,
+              "quantity": 1,
+              "additional_details": "Non-GMO baked | Offer 5 grams of whole grains and contain no artificial flavors or colors.",
+              "flip_image_url": "https://m.media-amazon.com/images/I/81DAMesedTL.jpg",
+              "stock": 12
+            }
+          ],
+          "totalAmount": 918,
+          "shippingAddress": "Krishnakripa(HO), Kannadipoyil(Post), Balussery-Koottalida(Via)",
+          "landmark": "School",
+          "city": "Balussery",
+          "pincode": "673612",
+          "district": "Kozhikode",
+          "paymentMethod": "Cash on Delivery",
+          "selectedBank": null,
+          "orderDate": "2024-10-01T10:18:28.663Z"
         }
       ],
       "blocked": false
@@ -185,7 +277,7 @@
       "mobile": "9876543210",
       "cart": [],
       "order": [],
-      "blocked": false
+      "blocked": true
     },
     {
       "id": "387c",
@@ -289,9 +381,229 @@
           "paymentMethod": "Cash on Delivery",
           "selectedBank": null,
           "orderDate": "2024-09-30T12:41:46.997Z"
+        },
+        {
+          "id": "67a01663",
+          "cartItems": [
+            {
+              "id": "31",
+              "name": "Wooden Animal Stacker",
+              "description": "Introduce your child to the timeless fun of this classic wooden toy, featuring stackable animal shapes. Each wooden piece is crafted with smooth, rounded edges, making it safe and easy for little hands to grasp and stack.",
+              "mrp": 460,
+              "price": 460,
+              "stars": 4.1,
+              "category": "Toys",
+              "image_url": "https://smolblock.com/cdn/shop/files/Untitleddesign_31.png?v=1699342764",
+              "in_stock": true,
+              "discount": 0,
+              "quantity": 1,
+              "additional_details": "Crafted from non-toxic wood and painted with safe, vibrant colors.",
+              "stock": 20,
+              "flip_image_url": "https://smolblock.com/cdn/shop/files/WildStack_PuzzleBoard.jpg?v=1706004118"
+            }
+          ],
+          "totalAmount": 460,
+          "shippingAddress": "Krishnakripa(HO), Kannadipoyil(Post), Balussery-Koottalida(Via)",
+          "landmark": "Bus stop",
+          "city": "Balussery",
+          "pincode": "673612",
+          "district": "Kozhikode",
+          "paymentMethod": "Cash on Delivery",
+          "selectedBank": null,
+          "orderDate": "2024-10-01T09:37:54.813Z"
+        },
+        {
+          "id": "e6684369",
+          "cartItems": [
+            {
+              "id": "4",
+              "name": "Nutrikid-Protein Shake",
+              "description": "The Nutrikids Food Nutrition DHA+ Orange is a nutrient-rich formula with DHA to support healthy brain development, packed with a refreshing orange flavor your kids will love.",
+              "mrp": 1530,
+              "price": 1224,
+              "stars": 4.2,
+              "category": "Food",
+              "image_url": "https://nutrikidshake.com/cdn/shop/files/485240507748844428-bba09d7b-dff8-41d3-ad61-3d519664b75d.jpg?v=5009415756166593820",
+              "flip_image_url": "https://nutrikidshake.com/cdn/shop/files/485240507748844428-cc642c40-3e13-4706-9086-9701401a72bc.jpg?v=18142924741206243559",
+              "in_stock": true,
+              "discount": 20,
+              "quantity": 2,
+              "additional_details": "Vanilla and Chocolate flavours are available | Special offer ends soon. Free shipping included.",
+              "stock": 15
+            }
+          ],
+          "totalAmount": 2448,
+          "shippingAddress": "Krishnakripa(HO), Kannadipoyil(Post), Balussery-Koottalida(Via)",
+          "landmark": "Bakery",
+          "city": "Balussery",
+          "pincode": "673612",
+          "district": "Malappuram",
+          "paymentMethod": "Cash on Delivery",
+          "selectedBank": null,
+          "orderDate": "2024-10-01T09:47:57.402Z"
+        },
+        {
+          "id": "85b916b9",
+          "cartItems": [
+            {
+              "id": "4",
+              "name": "Nutrikid-Protein Shake",
+              "description": "The Nutrikids Food Nutrition DHA+ Orange is a nutrient-rich formula with DHA to support healthy brain development, packed with a refreshing orange flavor your kids will love.",
+              "mrp": 1530,
+              "price": 1224,
+              "stars": 4.2,
+              "category": "Food",
+              "image_url": "https://nutrikidshake.com/cdn/shop/files/485240507748844428-bba09d7b-dff8-41d3-ad61-3d519664b75d.jpg?v=5009415756166593820",
+              "flip_image_url": "https://nutrikidshake.com/cdn/shop/files/485240507748844428-cc642c40-3e13-4706-9086-9701401a72bc.jpg?v=18142924741206243559",
+              "in_stock": true,
+              "discount": 20,
+              "quantity": 2,
+              "additional_details": "Vanilla and Chocolate flavours are available | Special offer ends soon. Free shipping included.",
+              "stock": 15
+            },
+            {
+              "id": "3",
+              "name": "Baby Unisex Outfits",
+              "description": "A cute summer outfit for toddlers. Includes a short-sleeve top with matching shorts with a comfy drawstring waist. The set is perfect for warm days, offering both style and comfort for little ones. ",
+              "mrp": 830,
+              "price": 705,
+              "stars": 4.3,
+              "category": "Clothes",
+              "image_url": "https://i5.walmartimages.com/asr/ed2d8b35-52b4-4f44-bb20-98ca9b19bc96.f4e0b6b2a66a33d1ca6afa3b949e5b6b.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+              "flip_image_url": "https://i5.walmartimages.com/seo/Summer-Toddler-Baby-Boy-Girl-Clothes-Set-Unisex-Outfits-Color-Block-Short-Sleeve-Pocket-Tops-New-Bundle-Princess-Little-Babies-5t-Girls-6months_18a00b07-172a-4c72-a76d-12c50fb2b5b7.a5a8ff1faa5b1d643d7d8b1bd011d025.jpeg",
+              "in_stock": true,
+              "discount": 15,
+              "quantity": 1,
+              "additional_details": "The white sneakers and toy camera add a fun touch to the look.",
+              "stock": 20
+            }
+          ],
+          "totalAmount": 3153,
+          "shippingAddress": "Krishnakripa(HO), Kannadipoyil(Post), Balussery-Koottalida(Via)",
+          "landmark": "Government School",
+          "city": "Balussery",
+          "pincode": "673612",
+          "district": "Kozhikode",
+          "paymentMethod": "Cash on Delivery",
+          "selectedBank": null,
+          "orderDate": "2024-10-01T09:52:34.408Z"
         }
       ],
       "blocked": false
+    },
+    {
+      "id": "f40c",
+      "username": "Harikrishnan",
+      "email": "krish2001@gmail.com",
+      "password": "website",
+      "mobile": "7306453567"
+    },
+    {
+      "id": "d9df",
+      "username": "Toastify",
+      "email": "toast@email.com",
+      "password": "toastify",
+      "mobile": "9999999999",
+      "cart": [],
+      "order": [
+        {
+          "id": "6a58ba95",
+          "cartItems": [
+            {
+              "id": "41",
+              "name": "Crib to Toddler Bed",
+              "description": "Convertible Crib is designed to grow with your child, providing a safe and comfortable sleep environment. With its adaptable design, this crib easily converts into a toddler bed, offering long-term value and practicality for your family.",
+              "mrp": 5200,
+              "price": 5200,
+              "stars": 4.8,
+              "category": "Furniture",
+              "image_url": "https://babyletto.com/cdn/shop/products/exyoecmpro3pr00tlkuq_1024x1024.jpg?v=1724786634",
+              "in_stock": true,
+              "discount": 0,
+              "quantity": 1,
+              "additional_details": "Meets all safety standards.",
+              "flip_image_url": "https://m.media-amazon.com/images/I/71RTtFjARxL._AC_UF350,350_QL80_.jpg",
+              "stock": 5
+            }
+          ],
+          "totalAmount": 5200,
+          "shippingAddress": "Krishnakripa(HO), Kannadipoyil(Post), Balussery-Koottalida(Via)",
+          "landmark": "Auto Stand",
+          "city": "Balussery",
+          "pincode": "673612",
+          "district": "Kozhikode",
+          "paymentMethod": "Cash on Delivery",
+          "selectedBank": null,
+          "orderDate": "2024-10-01T10:36:59.536Z"
+        },
+        {
+          "id": "30d3a389",
+          "cartItems": [
+            {
+              "id": "46",
+              "name": "Baby Car Seat",
+              "description": "Rear-Facing Car Seat is medesigned to ensure your baby's safety and comfort during car rides. Equipped with a secure 5-point safety harness and advanced safety features, this car seat provides peace of mind while traveling with your little one.",
+              "mrp": 7200,
+              "price": 5760,
+              "stars": 4.9,
+              "category": "Gear",
+              "image_url": "https://m.media-amazon.com/images/I/81FC2h4iyXL.jpg",
+              "in_stock": true,
+              "discount": 20,
+              "quantity": 1,
+              "additional_details": "Meets all safety standards with side impact protection.",
+              "flip_image_url": "https://www.happybear.co.in/image/cache/catalog/products/baby-seat/baby-car-seater-red-500x500.jpg",
+              "stock": 15
+            }
+          ],
+          "totalAmount": 5760,
+          "shippingAddress": "Krishnakripa(HO), Kannadipoyil(Post), Balussery-Koottalida(Via)",
+          "landmark": "Auto Stand",
+          "city": "Balussery",
+          "pincode": "673612",
+          "district": "Kozhikode",
+          "paymentMethod": "Cash on Delivery",
+          "selectedBank": null,
+          "orderDate": "2024-10-01T10:38:03.084Z"
+        },
+        {
+          "id": "09b775ef",
+          "cartItems": [
+            {
+              "id": "59",
+              "name": "Baby Diapers",
+              "description": "Specially designed diapers for baby’s comfort. Adjustable Fit-Taped diapers which you can make fit or loose based on your baby’s size. Stretchable soft material to fit snugly around waist & side. All-around cotton-like softness for baby’s delicate skin.",
+              "price": 1014,
+              "stars": 4.1,
+              "category": "Care",
+              "image_url": "https://m.media-amazon.com/images/I/619N1qVcRML.jpg",
+              "flip_image_url": "https://m.media-amazon.com/images/I/71X9ewCJS6L._SX679_.jpg",
+              "in_stock": true,
+              "stock": 22,
+              "discount": 0,
+              "quantity": 1,
+              "additional_details": "Magic Gel technology to keep baby dry all night(Up to 12 hrs absorption) | Supports Extra Dry Layer.",
+              "mrp": 1014
+            }
+          ],
+          "totalAmount": 1014,
+          "shippingAddress": "Krishnakripa(HO), Kannadipoyil(Post), Balussery-Koottalida(Via)",
+          "landmark": "Church",
+          "city": "Balussery",
+          "pincode": "673612",
+          "district": "Kozhikode",
+          "paymentMethod": "Cash on Delivery",
+          "selectedBank": null,
+          "orderDate": "2024-10-01T11:26:15.893Z"
+        }
+      ]
+    },
+    {
+      "id": "ef09",
+      "username": "Testing",
+      "email": "testing@email.com",
+      "password": "testing",
+      "mobile": "1111111111"
     }
   ],
   "item": [
@@ -299,8 +611,8 @@
       "id": "2",
       "name": "Twin Bunny Set Combo",
       "description": "The Twin Cute Bunny Set Combo features two soft, breathable cotton outfits with adorable bunny designs, perfect for keeping your little ones cute and stylish",
-      "mrp": 420,
-      "price": 420,
+      "mrp": 430,
+      "price": 430,
       "stars": 4.3,
       "category": "Toys",
       "image_url": "https://imgcdn.floweraura.com/cute-white-bunny-soft-toy-duo-9861177gf-B_0.jpg",
@@ -649,14 +961,14 @@
       "id": "24",
       "name": "Polka Dot Baby Dress",
       "description": "Featuring an adorable polka dot pattern that’s perfect for special occasions! It ensures your baby stays comfortable while looking stylish. The elegant red polka dots in the white colmakes it ideal for family gatherings, holidays, or parties.",
-      "mrp": 450,
-      "price": 425,
+      "mrp": 499,
+      "price": 464,
       "stars": 4.2,
       "category": "Clothes",
       "image_url": "https://rukminim2.flixcart.com/image/850/1000/kzpw2vk0/kids-apparel-combo/5/c/l/0-3-months-strap-white-em-dresses-original-imagbzafxab9m4zc.jpeg?q=90&crop=false",
       "flip_image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSETpJVcksDeTVDQEu2aYN952aZ4IMdQkshJFlzetw28E0Eg2mR",
       "in_stock": true,
-      "discount": 5,
+      "discount": 7,
       "quantity": 1,
       "additional_details": "Includes a matching headband. Available in sizes 6-24 months.",
       "stock": 5
@@ -1241,6 +1553,38 @@
       "quantity": 1,
       "additional_details": "Material Type - Plastic | Colour‎ - Blue | Item Weight‎ - 2.4 kg.",
       "mrp": 1699
+    },
+    {
+      "id": "61",
+      "name": "Floral Sleeveless Outfit",
+      "description": "A delightful baby dress featuring vibrant floral prints, paired with a matching bow headband for a charming, garden-inspired look. This dress with a matching bow is designed to make your baby look irresistibly adorable.",
+      "price": 504,
+      "stars": 4.3,
+      "category": "Clothes",
+      "image_url": "https://image.made-in-china.com/2f0j00RdUlcoAKnakp/Fashion-Children-Clothes-Summer-Cotton-Baby-Girl-Dresses-Comfortable-Girls-Clothing.webp",
+      "flip_image_url": "https://image.made-in-china.com/43f34j00YdRVcDAGaaqg/Fashion-Children-Clothes-Summer-Cotton-Baby-Girl-Dresses-Comfortable-Girls-Clothing.jpg",
+      "in_stock": true,
+      "stock": 22,
+      "discount": 10,
+      "quantity": 1,
+      "additional_details": "\tRound Neck | 100% Cotton.",
+      "mrp": 560
+    },
+    {
+      "id": "62",
+      "name": "Convertible Stroller",
+      "description": "A modern baby stroller in pink with a sleek and versatile design. The suspension EVA wheels are shake absorbing, giving your baby a smooth ride on different roads.",
+      "price": 7224,
+      "stars": 4.4,
+      "category": "Gear",
+      "image_url": "https://m.media-amazon.com/images/I/71dr+gmM40L.jpg",
+      "flip_image_url": "https://i5.walmartimages.com/seo/Babyjoy-2-in-1-Convertible-Baby-Stroller-High-Landscape-Infant-Stroller-Pink_dd5d81d5-752a-46e4-a9c9-184ac47e6a82.b4d3b982e8b41360235c1d236ebdb5fc.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+      "in_stock": true,
+      "stock": 20,
+      "discount": 15,
+      "quantity": 1,
+      "additional_details": "Reversible Seat | Removable Footmuff | Adjustable Backrest & Canopy | Foldable Infant Pram Stroller.",
+      "mrp": 8499
     }
   ]
 }

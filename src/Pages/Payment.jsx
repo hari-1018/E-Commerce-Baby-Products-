@@ -2,17 +2,16 @@ import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FaShippingFast } from "react-icons/fa";
 import { BsCashCoin } from "react-icons/bs";
-import { toast } from 'react-toastify';
+import { toast } from 'react-toastify'; 
 import axios from 'axios';
-import { v4 as uuidv4 } from 'uuid'; // For unique order IDs
+import { v4 as uuidv4 } from 'uuid'; 
 
 const Payment = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { cartItems = [], totalAmount = 0 } = location.state || {};
 
-  // Dynamically retrieve the userId from localStorage
-  const userId = localStorage.getItem('id'); // Ensure 'id' is correctly stored during login
+  const userId = localStorage.getItem('id'); 
 
   const [paymentMethod, setPaymentMethod] = useState('');
   const [selectedBank, setSelectedBank] = useState('');
@@ -31,12 +30,11 @@ const Payment = () => {
   });
   const [isCartCleared, setIsCartCleared] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showConfirmPayment, setShowConfirmPayment] = useState(false); // For confirmation dialog
+  const [showConfirmPayment, setShowConfirmPayment] = useState(false); 
 
-  // Handlers for form inputs
   const handlePaymentMethodChange = (e) => {
     setPaymentMethod(e.target.value);
-    setSelectedBank(''); // Reset bank selection if payment method changes
+    setSelectedBank('');
     setFormErrors({ ...formErrors, paymentMethod: false });
   };
 
@@ -69,19 +67,17 @@ const Payment = () => {
     setFormErrors({ ...formErrors, district: false });
   };
 
-  // Handler to open the confirmation dialog
+
   const openConfirmPayment = () => {
     setShowConfirmPayment(true);
   };
 
-  // Handler to close the confirmation dialog
+
   const closeConfirmPayment = () => {
     setShowConfirmPayment(false);
   };
 
-  // Confirm Payment Handler
   const handleConfirmPaymentClick = () => {
-    // Validate Inputs before opening confirmation dialog
     const paymentMethodValid = paymentMethod !== '';
     const shippingAddressValid = shippingAddress.trim() !== '';
     const landmarkValid = landmark.trim() !== '';
@@ -101,29 +97,23 @@ const Payment = () => {
       toast.error('Please fill out all required fields correctly.');
       return;
     }
-
-    // Open confirmation dialog
     openConfirmPayment();
   };
 
-  // Handler for the "Yes" button in the confirmation dialog
   const handlePaymentYes = async () => {
-    closeConfirmPayment(); // Close the confirmation dialog
-    setIsSubmitting(true); // Start submission
+    closeConfirmPayment(); 
+    setIsSubmitting(true); 
 
     try {
-      // Validate userId
       if (!userId) {
         throw new Error('User ID is not defined. Please log in again.');
       }
 
-      // Fetch current user data
       const userResponse = await axios.get(`http://localhost:5000/users/${userId}`);
       const userData = userResponse.data;
 
-      // Create new order object with a unique ID
       const newOrder = {
-        id: uuidv4().slice(0, 8), // Unique identifier for the order
+        id: uuidv4().slice(0, 8),
         cartItems,
         totalAmount,
         shippingAddress,
@@ -143,7 +133,12 @@ const Payment = () => {
         cart: []
       });
 
-      toast.success('Thank you for your purchase😊. We’re thrilled to be part of your baby’s journey!');
+      // toast.success('Success! Your payment is complete. Get ready for your delivery! ✨');
+      toast.success(
+        <div style={{ backgroundColor: '#ffe5b4', border: '1px solid #ffcc00', borderRadius:'8px', padding: '10px'}}>
+          <span style={{ fontWeight: 'bold', color: 'black'}}>Success! Your payment is complete. Get ready for your delivery! ✨</span>
+        </div>
+      );
 
       setIsCartCleared(true);
 
@@ -166,16 +161,14 @@ const Payment = () => {
       console.error('Error processing the payment:', error.response ? error.response.data : error.message);
       toast.error('Something went wrong while processing your payment. Please try again.');
     } finally {
-      setIsSubmitting(false); // End submission
+      setIsSubmitting(false);
     }
   };
 
-  // Handler for the "Cancel" button in the confirmation dialog
   const handlePaymentCancel = () => {
-    closeConfirmPayment(); // Close the confirmation dialog without doing anything
+    closeConfirmPayment();
   };
 
-  // Conditional Rendering based on Cart State
   if (isCartCleared) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-pink-100 to-blue-100 p-8">
@@ -206,30 +199,6 @@ const Payment = () => {
     );
   }
 
-  const ConfirmationDialog = () => (
-    <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-        <h2 className="text-2xl font-semibold mb-4 text-pink-400 text-center">Confirm Payment</h2>
-        <p className="text-center">Are you sure you want to proceed with the payment?</p>
-        <div className="flex justify-between mt-6">
-          <button
-            onClick={handlePaymentCancel}
-            className="bg-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-400 transition"
-          >
-            Cancel
-          </button>
-          <button
-            onClick={handlePaymentYes}
-            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition"
-          >
-            Yes
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-
-  // Payment Form Rendering
   return (
     <div className="bg-gradient-to-r from-pink-100 to-blue-100 p-6 rounded-lg shadow-lg max-w-3xl mx-auto mt-28 mb-28">
       <h1 className="text-3xl font-bold text-indigo-600 text-center mb-8">Order Summary</h1>
@@ -284,7 +253,7 @@ const Payment = () => {
 
       {/* City and Pincode Fields Side by Side */}
       <div className="mt-6 flex flex-col md:flex-row md:space-x-4">
-        {/* City Field */}
+
         <div className="md:w-1/2">
           <h2 className="text-xl font-semibold text-indigo-600 mb-4">City</h2>
           <input
@@ -384,9 +353,8 @@ const Payment = () => {
           </select>
         </div>
       )}
-      
+    
 
-      {/* Confirm Payment Button */}
       <div className="text-center mt-8">
         <button
           onClick={handleConfirmPaymentClick}
@@ -399,7 +367,6 @@ const Payment = () => {
         </button>
       </div>
 
-      {/* Confirmation Dialog */}
       {showConfirmPayment && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-96">
