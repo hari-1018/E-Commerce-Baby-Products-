@@ -43,21 +43,21 @@ const ShopByCategory = () => {
   return (
     <div className="text-center mt-10">
       <h2 className="text-4xl font-bold mb-6">Shop By Category</h2>
-      <div className="flex justify-center space-x-4 overflow-x-auto">
+      <div className="flex justify-center space-x-4 overflow-x-auto flex-wrap sm:flex-nowrap">
         {categories.map((category, index) => (
           <div
             key={index}
             className="flex flex-col items-center space-y-2 p-4 cursor-pointer"
             onClick={() => handleClickOnCategory(category.route)} 
           >
-            <div className="w-32 h-32 md:w-48 md:h-48 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden shadow-lg">
+            <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden shadow-lg">
               <img
                 src={category.imageUrl}
                 alt={category.name}
                 className="w-full h-full object-cover"
               />
             </div>
-            <p className="text-sm md:text-md font-semibold">{category.name}</p>
+            <p className="text-xs sm:text-sm md:text-md font-semibold">{category.name}</p>
           </div>
         ))}
       </div>

@@ -430,114 +430,8 @@
       "username": "Harikrishnan",
       "email": "krish2001@gmail.com",
       "password": "website",
-      "mobile": "7306453567"
-    },
-    {
-      "id": "d9df",
-      "username": "Toastify",
-      "email": "toast@email.com",
-      "password": "toastify",
-      "mobile": "9999999999",
-      "cart": [],
-      "order": [
-        {
-          "id": "6a58ba95",
-          "cartItems": [
-            {
-              "id": "41",
-              "name": "Crib to Toddler Bed",
-              "description": "Convertible Crib is designed to grow with your child, providing a safe and comfortable sleep environment. With its adaptable design, this crib easily converts into a toddler bed, offering long-term value and practicality for your family.",
-              "mrp": 5200,
-              "price": 5200,
-              "stars": 4.8,
-              "category": "Furniture",
-              "image_url": "https://babyletto.com/cdn/shop/products/exyoecmpro3pr00tlkuq_1024x1024.jpg?v=1724786634",
-              "in_stock": true,
-              "discount": 0,
-              "quantity": 1,
-              "additional_details": "Meets all safety standards.",
-              "flip_image_url": "https://m.media-amazon.com/images/I/71RTtFjARxL._AC_UF350,350_QL80_.jpg",
-              "stock": 5
-            }
-          ],
-          "totalAmount": 5200,
-          "shippingAddress": "Krishnakripa(HO), Kannadipoyil(Post), Balussery-Koottalida(Via)",
-          "landmark": "Auto Stand",
-          "city": "Balussery",
-          "pincode": "673612",
-          "district": "Kozhikode",
-          "paymentMethod": "Cash on Delivery",
-          "selectedBank": null,
-          "orderDate": "2024-10-01T10:36:59.536Z"
-        },
-        {
-          "id": "30d3a389",
-          "cartItems": [
-            {
-              "id": "46",
-              "name": "Baby Car Seat",
-              "description": "Rear-Facing Car Seat is medesigned to ensure your baby's safety and comfort during car rides. Equipped with a secure 5-point safety harness and advanced safety features, this car seat provides peace of mind while traveling with your little one.",
-              "mrp": 7200,
-              "price": 5760,
-              "stars": 4.9,
-              "category": "Gear",
-              "image_url": "https://m.media-amazon.com/images/I/81FC2h4iyXL.jpg",
-              "in_stock": true,
-              "discount": 20,
-              "quantity": 1,
-              "additional_details": "Meets all safety standards with side impact protection.",
-              "flip_image_url": "https://www.happybear.co.in/image/cache/catalog/products/baby-seat/baby-car-seater-red-500x500.jpg",
-              "stock": 15
-            }
-          ],
-          "totalAmount": 5760,
-          "shippingAddress": "Krishnakripa(HO), Kannadipoyil(Post), Balussery-Koottalida(Via)",
-          "landmark": "Auto Stand",
-          "city": "Balussery",
-          "pincode": "673612",
-          "district": "Kozhikode",
-          "paymentMethod": "Cash on Delivery",
-          "selectedBank": null,
-          "orderDate": "2024-10-01T10:38:03.084Z"
-        },
-        {
-          "id": "09b775ef",
-          "cartItems": [
-            {
-              "id": "59",
-              "name": "Baby Diapers",
-              "description": "Specially designed diapers for baby’s comfort. Adjustable Fit-Taped diapers which you can make fit or loose based on your baby’s size. Stretchable soft material to fit snugly around waist & side. All-around cotton-like softness for baby’s delicate skin.",
-              "price": 1014,
-              "stars": 4.1,
-              "category": "Care",
-              "image_url": "https://m.media-amazon.com/images/I/619N1qVcRML.jpg",
-              "flip_image_url": "https://m.media-amazon.com/images/I/71X9ewCJS6L._SX679_.jpg",
-              "in_stock": true,
-              "stock": 22,
-              "discount": 0,
-              "quantity": 1,
-              "additional_details": "Magic Gel technology to keep baby dry all night(Up to 12 hrs absorption) | Supports Extra Dry Layer.",
-              "mrp": 1014
-            }
-          ],
-          "totalAmount": 1014,
-          "shippingAddress": "Krishnakripa(HO), Kannadipoyil(Post), Balussery-Koottalida(Via)",
-          "landmark": "Church",
-          "city": "Balussery",
-          "pincode": "673612",
-          "district": "Kozhikode",
-          "paymentMethod": "Cash on Delivery",
-          "selectedBank": null,
-          "orderDate": "2024-10-01T11:26:15.893Z"
-        }
-      ]
-    },
-    {
-      "id": "ef09",
-      "username": "Testing",
-      "email": "testing@email.com",
-      "password": "testing",
-      "mobile": "1111111111"
+      "mobile": "7306453567",
+      "blocked": false
     }
   ],
   "item": [
@@ -611,7 +505,7 @@
       "description": "It brings comfort and happiness to babies and young children. It's gentle on their skin, making it perfect for snuggling, playing, and bedtime. With its cute face and huggable body, a teddy bear can quickly become a child's favorite companion.",
       "mrp": 585,
       "price": 585,
-      "stars": 4,
+      "stars": 4.2,
       "category": "Toys",
       "image_url": "https://ae01.alicdn.com/kf/H18762f701f254c4386c959849f908187d/22CM-Pilot-Teddy-Bear-Plush-Toy-Captain-Bear-flight-attendant-Doll-Birthday-Gift-Kids-Toy-Baby.jpg",
       "flip_image_url": "https://ae-pic-a1.aliexpress-media.com/kf/Ha6cdf3234c0c4a619d54f942b8080c61I.jpg_640x640Q90.jpg_.webp",
@@ -738,7 +632,7 @@
       "description": "Healthy and nutritious, specially made for babies! With a perfect blend of 2/3 carrot and 1/5 apple, packed with essential vitamins and minerals, supporting your baby's growth and development. The natural sweetness of apples combined with carrots makes it more delicious.",
       "mrp": 800,
       "price": 800,
-      "stars": 4,
+      "stars": 4.1,
       "category": "Food",
       "image_url": "https://i5.walmartimages.com/asr/a029fe62-02ce-4166-b5db-73fbf5b7bf68_1.da36ffc58c2d53db1a2f9dfd07808b4a.jpeg?odnHeight=117&odnWidth=117&odnBg=FFFFFF",
       "flip_image_url": "https://babyamore.in/wp-content/uploads/2022/05/Gerber-Organic-Puree-Apple-carrot-Squash-99-g-01.jpg",

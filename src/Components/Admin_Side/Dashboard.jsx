@@ -138,7 +138,7 @@ function Dashboard() {
     <div className="flex flex-col h-screen">
 
       {/* Main content */}
-      <div className="flex-grow p-8 bg-gray-100 mt-16 ml-0"> {/* Adjust margin to account for fixed sidebar */}
+      <div className="flex-grow p-8 bg-gray-100 mt-12 ml-0"> {/* Adjust margin to account for fixed sidebar */}
         <h1 className="text-3xl font-bold text-center text-pink-500 mb-8">Admin Dashboard <MdAdminPanelSettings className='ml-[730px] -mt-8'/></h1>
         
         {/* Dashboard Stats */}

@@ -85,7 +85,7 @@ function EditProduct() {
 
   return (
     <div className="p-8 bg-gray-100">
-      <form onSubmit={handleSubmit} className="max-w-4xl ml-96 bg-white p-6 rounded-md shadow-md mt-20">
+      <form onSubmit={handleSubmit} className="max-w-4xl mx-auto bg-white p-6 rounded-md shadow-md mt-20">
         <h1 className="text-2xl font-bold text-center text-pink-500 mb-4">Edit Product</h1>
 
         <div className="mb-4">

@@ -12,6 +12,8 @@ function AllProducts() {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const handleSearchChange = (e) => {
     const query = e.target.value;
@@ -61,14 +63,19 @@ function AllProducts() {
     navigate(`/admin/edit-product/${id}`);
   };
 
-  const handleDelete = async (id) => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this product?");
-    if (confirmDelete) {
+  const handleDelete = (id) => {
+    setSelectedProduct(id);
+    setShowConfirmModal(true);
+  };
+
+  const confirmDelete = async () => {
+    if (selectedProduct) {
       try {
-        await axios.delete(`http://localhost:5000/item/${id}`);
-        const updatedProducts = products.filter(product => product.id !== id);
+        await axios.delete(`http://localhost:5000/item/${selectedProduct}`);
+        const updatedProducts = products.filter(product => product.id !== selectedProduct);
         setProducts(updatedProducts);
         setFilteredProducts(updatedProducts);
+        setShowConfirmModal(false);
       } catch (error) {
         console.error('Error deleting product:', error);
       }
@@ -159,6 +166,31 @@ function AllProducts() {
           )}
         </tbody>
       </table>
+
+      {/* Confirmation Modal */}
+      {showConfirmModal && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-80 ml-52">
+            <h2 className="text-lg font-bold mb-4 text-pink-400 text-center">
+              Are you sure you want to delete this product?
+            </h2>
+            <div className="flex justify-between">
+              <button
+                onClick={() => setShowConfirmModal(false)}
+                className="bg-green-300 text-gray-700 py-2 px-4 rounded hover:bg-green-400"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={confirmDelete}
+                className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
+              >
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
