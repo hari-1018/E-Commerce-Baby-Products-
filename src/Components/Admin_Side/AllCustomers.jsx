@@ -58,27 +58,27 @@ function AllCustomers() {
   return (
     <div className="p-8 bg-gray-100">
 
-      <h1 className="text-3xl font-bold ml-[750px] text-pink-500 mt-16 mb-4">All Customers</h1>
+      <h1 className="text-3xl font-bold text-center text-pink-500 mt-16 mb-4">All Customers</h1>
       <div className="flex justify-end mb-4">
         <input
           type="text"
           placeholder="Search customers..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="search-bar text-gray-800 w-[250px] mr-[500px] border-2 border-pink-400 rounded-full px-3 py-1 focus:outline-pink-400"
+          className="search-bar text-gray-800 w-[250px] mr-[470px] border-2 border-pink-400 rounded-full px-3 py-1 focus:outline-pink-400"
         />
       </div>
 
-      <table className="ml-56 w-[1220px] bg-white border border-gray-300">
+      <table className="w-[1200px] bg-white border border-gray-300">
         <thead>
           <tr className="bg-gray-200">
-            <th className="py-2 px-4 border">ID</th>
-            <th className="py-2 px-4 border">Name</th>
-            <th className="py-2 px-4 border">Email</th>
-            <th className="py-2 px-4 border">Mobile No.</th>
-            <th className="py-2 px-4 border">Status</th>
-            <th className="py-2 px-4 border w-[125px]">Order</th>
-            <th className="py-2 px-4 border w-[50px]">Action</th>
+            <th className="py-2 px-4 border w-[100px]">ID</th>
+            <th className="py-2 px-4 border w-[300px]">Name</th>
+            <th className="py-2 px-4 border w-[300px]">Email</th>
+            <th className="py-2 px-4 border w-[200px]">Mobile No.</th>
+            <th className="py-2 px-4 border w-[100px]">Status</th>
+            <th className="py-2 px-4 border w-[100px]">Order</th>
+            <th className="py-2 px-4 border w-[100px]">Action</th>
           </tr>
         </thead>
         <tbody>

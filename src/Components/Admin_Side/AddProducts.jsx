@@ -29,11 +29,7 @@ const AddProducts = () => {
 
     if (name === 'in_stock') {
       setProduct({ ...product, [name]: value === 'true' });
-    } 
-    // else if (type === 'checkbox') {
-    //   setProduct({ ...product, [name]: checked }); 
-    // } 
-    else if (
+    } else if (
       name === 'price' ||
       name === 'discount' ||
       name === 'stars' ||
@@ -63,10 +59,10 @@ const AddProducts = () => {
   };
 
   return (
-    <div className="p-8 bg-gray-100">
+    <div className="p-4 md:p-8 bg-gray-100">
       <form
         onSubmit={handleSubmit}
-        className="max-w-4xl ml-96 bg-white p-6 rounded-md shadow-md  mt-20"
+        className="max-w-4xl mx-auto bg-white p-6 rounded-md shadow-md mt-10"
       >
         <h1 className="text-2xl font-bold text-center text-pink-500 mb-4">
           Add Product

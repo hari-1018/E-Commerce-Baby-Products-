@@ -46,8 +46,8 @@ const AllOrders = () => {
 
   return (
     <div className="p-8 bg-gray-100 ">
-      <h1 className="text-3xl font-bold ml-[750px] text-pink-500 mt-12 mb-4">All Orders</h1>
-      <table className="ml-64 bg-white border border-gray-300">
+      <h1 className="text-3xl font-bold text-center text-pink-500 mt-12 mb-4">All Orders</h1>
+      <table className="bg-white border border-gray-300">
         <thead>
           <tr className="bg-gray-200">
             <th className="py-2 px-4 border">UserId</th>

@@ -8,15 +8,15 @@ import { IoMdAddCircle } from 'react-icons/io';
 function AllProducts() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [categories, setCategories] = useState([]); 
+  const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState(''); 
+  const [selectedCategory, setSelectedCategory] = useState('');
 
   const handleSearchChange = (e) => {
     const query = e.target.value;
     setSearchQuery(query);
-    filterProducts(query, selectedCategory); 
+    filterProducts(query, selectedCategory);
   };
 
   const handleCategoryChange = (e) => {
@@ -80,24 +80,24 @@ function AllProducts() {
   };
 
   return (
-    <div className="p-8 bg-gray-100">
-      <h1 className="text-3xl font-bold ml-[750px] text-pink-500 mt-12 mb-4">All Products</h1>
+    <div className="p-4 md:p-8 bg-gray-100">
+      <h1 className="text-3xl font-bold text-pink-500 mt-12 mb-4 text-center">All Products</h1>
 
-      <div className="flex justify-center items-center mb-4">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-4">
         <input
           type="text"
           placeholder="Search Products..."
           value={searchQuery}
           onChange={handleSearchChange}
-          className="search-bar text-gray-800 w-[250px] ml-[200px] border-2 border-pink-400 rounded-full px-3 py-1 focus:outline-pink-400"
+          className="search-bar text-gray-800 w-full md:w-[250px] border-2 border-pink-400 rounded-full px-3 py-2 focus:outline-pink-400 mb-2 md:mb-0"
         />
 
         <select
           value={selectedCategory}
           onChange={handleCategoryChange}
-          className="ml-4 border-2 text-gray-800 border-pink-400 rounded-full px-3 py-1 focus:outline-pink-400"
+          className="border-2 text-gray-800 border-pink-400 rounded-full px-3 py-2 focus:outline-pink-400 w-full md:w-auto"
         >
-          <option value="" >All Categories</option>
+          <option value="">All Categories</option>
           {categories.map((category) => (
             <option key={category} value={category}>
               {category}
@@ -107,19 +107,19 @@ function AllProducts() {
       </div>
 
       <div className="flex justify-center mb-4 mt-2">
-        <button onClick={handleAdd} className="bg-pink-400 ml-[220px] text-white font-bold rounded-full py-2 px-4 mr-4">
+        <button onClick={handleAdd} className="bg-pink-400 text-white font-bold rounded-full py-2 px-4 flex items-center">
           Add New Product
           <IoMdAddCircle className="inline ml-1 mb-1" />
         </button>
       </div>
 
-      <table className="ml-64 bg-white border border-gray-300">
+      <table className="w-[1200px] bg-white border border-gray-300">
         <thead>
           <tr className="bg-gray-200">
-            <th className="py-2 px-4 border">Item</th>
-            <th className="py-2 px-4 border w-1/4">Name</th>
-            <th className="py-2 px-4 border">Price</th>
-            <th className="py-2 px-4 border">Action</th>
+            <th className="py-2 px-4 border w-[300px]">Item</th>
+            <th className="py-2 px-4 border w-[300px]">Name</th>
+            <th className="py-2 px-4 border w-[300px]">Price</th>
+            <th className="py-2 px-4 border w-[300px]">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -129,9 +129,9 @@ function AllProducts() {
                 <td className="py-2 px-2 border w-[150px]">
                   <img src={product.image_url} alt={product.name} className="w-20 h-20 mx-auto object-cover" />
                 </td>
-                <td className="py-2 px-2 border font-bold w-[300px]">{product.name}</td>
-                <td className="py-2 px-2 border font-semibold w-[50px]">₹ {product.mrp.toFixed(2)} /-</td>
-                <td className="py-2 px-2 border w-[50px]">
+                <td className="py-2 px-2 border font-bold w-[300px] text-gray-600">{product.name}</td>
+                <td className="py-2 px-2 border font-semibold text-gray-600">₹ {product.mrp.toFixed(2)} /-</td>
+                <td className="py-2 px-2 border">
                   <button
                     className="bg-blue-500 border-2 p-2 text-white mr-2"
                     onClick={() => handleEdit(product.id)}

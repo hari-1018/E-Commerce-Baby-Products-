@@ -123,9 +123,6 @@ function Dashboard() {
         },
         ticks: {
           stepSize: 5, // Set the step size to 5
-          // Adjust the max dynamically based on the data
-          // Optionally, you can set a static max like 100
-          // max: 100,
         },
       },
       x: {
@@ -138,14 +135,14 @@ function Dashboard() {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex flex-col h-screen">
 
       {/* Main content */}
-      <div className="flex-grow p-8 bg-gray-100 mt-16 ml-64"> {/* Adjust margin to account for fixed sidebar */}
+      <div className="flex-grow p-8 bg-gray-100 mt-16 ml-0"> {/* Adjust margin to account for fixed sidebar */}
         <h1 className="text-3xl font-bold text-center text-pink-500 mb-8">Admin Dashboard <MdAdminPanelSettings className='ml-[730px] -mt-8'/></h1>
         
         {/* Dashboard Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-6">
           <div className="bg-white p-6 rounded-md shadow-md flex items-center space-x-4">
             <div>
               <h3 className="text-xl font-bold">Total Products<BsCartCheckFill className='ml-[140px] -mt-7 size-6' /></h3>
