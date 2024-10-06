@@ -219,7 +219,24 @@
       "email": "test2@gmail.com",
       "password": "qwe123",
       "mobile": "1234567890",
-      "cart": [],
+      "cart": [
+        {
+          "id": "41",
+          "name": "Crib to Toddler Bed",
+          "description": "Convertible Crib is designed to grow with your child, providing a safe and comfortable sleep environment. With its adaptable design, this crib easily converts into a toddler bed, offering long-term value and practicality for your family.",
+          "mrp": 5200,
+          "price": 5200,
+          "stars": 4.8,
+          "category": "Furniture",
+          "image_url": "https://babyletto.com/cdn/shop/products/exyoecmpro3pr00tlkuq_1024x1024.jpg?v=1724786634",
+          "in_stock": true,
+          "discount": 0,
+          "quantity": 1,
+          "additional_details": "Meets all safety standards.",
+          "flip_image_url": "https://m.media-amazon.com/images/I/71RTtFjARxL._AC_UF350,350_QL80_.jpg",
+          "stock": 5
+        }
+      ],
       "order": [
         {
           "id": "c7fa5e70",
@@ -426,12 +443,76 @@
       "blocked": false
     },
     {
-      "id": "f40c",
-      "username": "Harikrishnan",
-      "email": "krish2001@gmail.com",
-      "password": "website",
-      "mobile": "7306453567",
-      "blocked": false
+      "id": "ed5c",
+      "username": "Kevin",
+      "email": "kevin1983@gmail.com",
+      "password": "kevin123",
+      "mobile": "9876543210",
+      "cart": [],
+      "order": [
+        {
+          "id": "608648de",
+          "cartItems": [
+            {
+              "id": "61",
+              "name": "Floral Sleeveless Outfit",
+              "description": "A delightful baby dress featuring vibrant floral prints, paired with a matching bow headband for a charming, garden-inspired look. This dress with a matching bow is designed to make your baby look irresistibly adorable.",
+              "price": 504,
+              "stars": 4.3,
+              "category": "Clothes",
+              "image_url": "https://image.made-in-china.com/2f0j00RdUlcoAKnakp/Fashion-Children-Clothes-Summer-Cotton-Baby-Girl-Dresses-Comfortable-Girls-Clothing.webp",
+              "flip_image_url": "https://image.made-in-china.com/43f34j00YdRVcDAGaaqg/Fashion-Children-Clothes-Summer-Cotton-Baby-Girl-Dresses-Comfortable-Girls-Clothing.jpg",
+              "in_stock": true,
+              "stock": 22,
+              "discount": 10,
+              "quantity": 1,
+              "additional_details": "\tRound Neck | 100% Cotton.",
+              "mrp": 560
+            },
+            {
+              "id": "3",
+              "name": "Baby Unisex Outfits",
+              "description": "A cute summer outfit for toddlers. Includes a short-sleeve top with matching shorts with a comfy drawstring waist. The set is perfect for warm days, offering both style and comfort for little ones. ",
+              "mrp": 830,
+              "price": 705,
+              "stars": 4.3,
+              "category": "Clothes",
+              "image_url": "https://i5.walmartimages.com/asr/ed2d8b35-52b4-4f44-bb20-98ca9b19bc96.f4e0b6b2a66a33d1ca6afa3b949e5b6b.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+              "flip_image_url": "https://i5.walmartimages.com/seo/Summer-Toddler-Baby-Boy-Girl-Clothes-Set-Unisex-Outfits-Color-Block-Short-Sleeve-Pocket-Tops-New-Bundle-Princess-Little-Babies-5t-Girls-6months_18a00b07-172a-4c72-a76d-12c50fb2b5b7.a5a8ff1faa5b1d643d7d8b1bd011d025.jpeg",
+              "in_stock": true,
+              "discount": 15,
+              "quantity": 1,
+              "additional_details": "The white sneakers and toy camera add a fun touch to the look.",
+              "stock": 20
+            },
+            {
+              "id": "62",
+              "name": "Convertible Stroller",
+              "description": "A modern baby stroller in pink with a sleek and versatile design. The suspension EVA wheels are shake absorbing, giving your baby a smooth ride on different roads.",
+              "price": 7224,
+              "stars": 4.4,
+              "category": "Gear",
+              "image_url": "https://m.media-amazon.com/images/I/71dr+gmM40L.jpg",
+              "flip_image_url": "https://i5.walmartimages.com/seo/Babyjoy-2-in-1-Convertible-Baby-Stroller-High-Landscape-Infant-Stroller-Pink_dd5d81d5-752a-46e4-a9c9-184ac47e6a82.b4d3b982e8b41360235c1d236ebdb5fc.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+              "in_stock": true,
+              "stock": 20,
+              "discount": 15,
+              "quantity": 1,
+              "additional_details": "Reversible Seat | Removable Footmuff | Adjustable Backrest & Canopy | Foldable Infant Pram Stroller.",
+              "mrp": 8499
+            }
+          ],
+          "totalAmount": 8433,
+          "shippingAddress": "Kevin Villa(HO), Calicut -  Coorporation",
+          "landmark": "SM street",
+          "city": "Calicut",
+          "pincode": "673612",
+          "district": "Kozhikode",
+          "paymentMethod": "Cash on Delivery",
+          "selectedBank": null,
+          "orderDate": "2024-10-06T10:01:33.677Z"
+        }
+      ]
     }
   ],
   "item": [

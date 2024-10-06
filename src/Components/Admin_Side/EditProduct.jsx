@@ -50,30 +50,11 @@ function EditProduct() {
       await axios.patch(`http://localhost:5000/item/${id}`, product);
       navigate('/admin/all-products');
       toast.success(
-        <div>
-          <span style={{ fontWeight: 'bold' }}>Updated Product Successfully! 👍</span>
-        </div>,
-        {
-          position: "top-center",
-          autoClose: 4000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          style: {
-            backgroundColor: '#ffe5b4',
-            border: '1px solid #ffcc00',
-            color: '#333',
-            width: '300px',
-            padding: '10px',
-            borderRadius: '8px',
-            fontSize: '16px',
-          },
-          progressStyle: {
-            backgroundColor: '#ffcc00',
-          },
-        }
+        <div style={{ backgroundColor: '#ffe5b4', border: '1px solid #ffcc00', borderRadius:'8px', padding: '10px'}}>
+          <span style={{ fontWeight: 'bold', color: 'black'}}>Updated Product Successfully! 👍</span>
+        </div>
       );
+
     } catch (error) {
       console.error('Error updating product:', error);
     }

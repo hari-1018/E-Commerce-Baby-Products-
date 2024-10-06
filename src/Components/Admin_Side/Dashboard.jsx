@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
-import { MdSpaceDashboard, MdAdminPanelSettings, MdLocalShipping } from "react-icons/md";
+import { MdAdminPanelSettings, MdLocalShipping } from "react-icons/md";
 import { FaUsers } from "react-icons/fa";
 import { BsCartCheckFill } from "react-icons/bs";
 import { GiMoneyStack } from "react-icons/gi";
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
@@ -15,8 +14,8 @@ function Dashboard() {
   const [totalCustomers, setTotalCustomers] = useState(0);
   const [totalOrders, setTotalOrders] = useState(0);
   const [totalEarnings, setTotalEarnings] = useState(0);
-  
   const [categoryOrders, setCategoryOrders] = useState([]);
+  const [recentOrders, setRecentOrders] = useState([]); // State to hold recent 5 orders
 
   const categories = ['Clothes', 'Gear', 'Toys', 'Care', 'Food', 'Furniture'];
 
@@ -45,11 +44,13 @@ function Dashboard() {
       const users = response.data;
       let orderCount = 0;
       const categoryCounts = Array(categories.length).fill(0);
+      const allOrders = [];
 
       users.forEach(user => {
         if (user.order) {
           user.order.forEach(order => {
             orderCount += 1;
+            allOrders.push({ ...order, username: user.username }); // Store orders with username
             // Updated to use cartItems instead of items
             if (order.cartItems) {
               order.cartItems.forEach(item => {
@@ -67,6 +68,7 @@ function Dashboard() {
 
       setTotalOrders(orderCount);
       setCategoryOrders(categoryCounts); // Set the category orders
+      setRecentOrders(allOrders.slice(-5).reverse()); // Get recent 5 orders
     } catch (error) {
       console.error('Error fetching total orders:', error);
     }
@@ -176,6 +178,40 @@ function Dashboard() {
             <Bar data={barData} options={barOptions} />
           </div>
         </div>
+
+                {/* Recent Orders Table */}
+                <div className="bg-white p-6 rounded-md shadow-md mb-6">
+          <h3 className="text-xl font-bold mb-4">Recent Orders</h3>
+          <table className="min-w-full table-auto">
+            <thead>
+              <tr className="bg-gray-200">
+                <th className="px-4 py-2 text-left">Order ID</th>
+                <th className="px-4 py-2 text-left">Username</th>
+                <th className="px-4 py-2 text-left">Items</th>
+                <th className="px-4 py-2 text-left">Ordered Date</th>
+                <th className="px-4 py-2 text-left">Total Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {recentOrders.map((order, index) => (
+                <tr key={index} className="border-b">
+                  <td className="px-4 py-2 text-gray-700">{order.id}</td>
+                  <td className="px-4 py-2 text-gray-700">{order.username}</td>
+                  <td className="px-4 py-2 text-gray-700">
+                    {order.cartItems.map((item, idx) => (
+                      <span key={idx}>
+                        {item.name} ({item.quantity}){idx < order.cartItems.length - 1 && ', '}
+                      </span>
+                    ))}
+                  </td>
+                  <td className="px-4 py-2 text-gray-700">{new Date(order.orderDate).toLocaleString()}</td>
+                  <td className="px-4 py-2 text-gray-700 font-semibold">₹ {order.totalAmount.toFixed(2)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        
       </div>
     </div>
   );

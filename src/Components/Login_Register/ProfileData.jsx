@@ -29,8 +29,12 @@ const ProfileData = ({ userData, handleLogout, closeProfile }) => {
             alt="Profile"
             className="rounded-full w-24 h-24 mb-4"
           />
-          <h2 className="text-white font-bold text-xl">Hello, {userData.username}</h2>
-          <p className='text-white font-semibold text-small mt-4'>Thanks for choosing us!</p>
+          <h2 className="text-white font-bold text-xl">
+            Hello, {userData.admin ? "Admin" : userData.username}
+          </h2>
+          <p className='text-white font-semibold text-small mt-4'>
+            {userData.admin ? "Take Your Charge" : "Thanks for choosing us!"}
+          </p>
         </div>
 
         <div className="flex flex-col p-4 md:w-2/3">
@@ -109,6 +113,7 @@ ProfileData.propTypes = {
     email: PropTypes.string.isRequired,
     mobile: PropTypes.string.isRequired,
     password: PropTypes.string.isRequired,
+    admin: PropTypes.bool.isRequired, // Added admin field
   }).isRequired,
   handleLogout: PropTypes.func.isRequired,
   closeProfile: PropTypes.func.isRequired,

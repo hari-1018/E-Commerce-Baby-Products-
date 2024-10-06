@@ -48,12 +48,6 @@ const Sidebar = () => {
               {isOpen && <BsCartCheckFill className='ml-[5px] size-5' />}
             </Link>
           </li>
-          <li className="flex items-center space-x-3 p-2 hover:bg-gray-700 rounded-md cursor-pointer">
-            <span className={`flex items-center ${isOpen ? '' : 'justify-center'} transition-all duration-300`}>
-              Earnings
-              {isOpen && <GiMoneyStack className='ml-[5px] size-6' />}
-            </span>
-          </li>
         </ul>
       </aside>
       <main className={`flex-1 p-6 bg-gray-100 overflow-auto ${isOpen ? 'ml-64' : 'ml-16'} transition-all duration-300`}>
